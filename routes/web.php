@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ForgotPassword;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
+Route::get('/forgot', function () {
+    return view('forgot');
 });
+
+Route::post('/submitcode', [ForgotPassword::class,'submit']);
