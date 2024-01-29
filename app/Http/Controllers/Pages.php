@@ -10,4 +10,11 @@ class Pages extends Controller
         return view("forgot");
     }
 
+    public function login () {
+        return view("login");
+    }
+
+    public function resetpassword () {
+        return view("reset_password");
+    }
 }

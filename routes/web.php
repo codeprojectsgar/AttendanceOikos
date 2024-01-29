@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ForgotPassword;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Pages;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('reset_password');
+    return view('');
 });
 
-Route::get('/',function(){
-    return view('login');
-});
+Route::get('/forgot', [Pages::class,'forgotpassword']);
+
+Route::get('/login', [Pages::class,'login']);
+
+Route::get('/reset', [Pages::class,'resetpassword']);
 
 Route::post('/submitcode', [ForgotPassword::class,'submit']);
-
-
-//Routes for admins
-Route::get('/admin/dashboard',function(){
-    return view('admin.dashboard');
-});
