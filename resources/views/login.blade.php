@@ -19,7 +19,11 @@
 				<input type="text" id="EI" class="input-group"/>
 			<label for="PI">Password:</label>
 				<input type="password" id="PI" class="input-group"/>
+
                 <small id="user-error"></small>
+
+=======
+            <a href="/forgot">Forgot Password?</a>
 
         <button onclick="submitForm()" class="button sbutton">SUBMIT</button>
     </div>

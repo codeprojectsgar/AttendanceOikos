@@ -3,6 +3,7 @@
 use App\Http\Controllers\ForgotPassword;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Pages;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,13 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/forgot', function () {
-    return view('forgot');
-});
 
-Route::get('/',function(){
-    return view('login');
-});
+Route::get('/login', [Pages::class,'login']);
+
 
 Route::post('/login-user',[LoginController::class,'login']);
 
@@ -35,3 +32,6 @@ Route::get('/admin/dashboard',function(){
 });
 
 Route::get('/admin/logout',[LoginController::class,'logout']);
+=======
+Route::get('/reset', [Pages::class,'resetpassword']);
+
