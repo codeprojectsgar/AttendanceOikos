@@ -22,7 +22,7 @@
 
                 <small id="user-error"></small>
 
-=======
+
             <a href="/forgot">Forgot Password?</a>
 
         <button onclick="submitForm()" class="button sbutton">SUBMIT</button>
