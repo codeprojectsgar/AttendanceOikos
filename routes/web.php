@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/forgot', function () {
-    return view('forgot');
+Route::get('/', function () {
+    return view('reset_password');
 });
 
 Route::post('/submitcode', [ForgotPassword::class,'submit']);
