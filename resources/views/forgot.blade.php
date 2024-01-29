@@ -23,7 +23,7 @@
     <div class="bgbox">
         <img src = "/assets/Oikos BG.png" alt = "Image">
     </div>
-
+    
     <!-- Optional JavaScript -->
     <script src="/JS/main.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
