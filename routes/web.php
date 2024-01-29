@@ -15,14 +15,8 @@ use App\Http\Controllers\Pages;
 |
 */
 
-Route::get('/', function () {
-    return view('');
-});
-
-Route::get('/forgot', [Pages::class,'forgotpassword']);
 
 Route::get('/login', [Pages::class,'login']);
 
 Route::get('/reset', [Pages::class,'resetpassword']);
 
-Route::post('/submitcode', [ForgotPassword::class,'submit']);
