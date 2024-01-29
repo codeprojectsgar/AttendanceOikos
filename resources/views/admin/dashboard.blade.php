@@ -6,6 +6,7 @@
     <link rel = "icon" href = "/assets/Oikos Logo.png">
     <link rel="stylesheet" href = "/CSS/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- implemented sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Oikos Admin: Dashboard</title>
@@ -70,7 +71,7 @@
                 <span class="tooltip">Admins</span>
             </li>
             <li>
-                <a href = "/adminlogout">
+                <a onclick="logout()">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span class="nav-item">Logout</span>
                 </a>
@@ -93,6 +94,22 @@
         btn.onclick = function () {
             sidebar.classList.toggle('active');
         }
+        function logout(){
+            Swal.fire({
+                position: 'center',
+                icon: 'question',
+                title: 'Are you sure you want to log-out',
+                cancelButtonText:'No',
+                showConfirmButton: true,
+                confirmButtonColor: 'green',
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Reload the page
+                    window.location.href='/admin/logout';
+                }
+            });
+        }
+
     </script>
 
 

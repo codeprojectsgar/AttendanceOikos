@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
     <title>Login</title>
@@ -19,7 +19,12 @@
 				<input type="text" id="EI" class="input-group"/>
 			<label for="PI">Password:</label>
 				<input type="password" id="PI" class="input-group"/>
+
+                <small id="user-error"></small>
+
+=======
             <a href="/forgot">Forgot Password?</a>
+
         <button onclick="submitForm()" class="button sbutton">SUBMIT</button>
     </div>
     <div class="bgbox">
@@ -28,7 +33,31 @@
 
     <!-- Optional JavaScript -->
     <script>
-        
+        let email_field=document.getElementById('EI');
+        let pass_field=document.getElementById('PI');
+        let error=document.getElementById('user-error');
+        let csrf=document.querySelector("meta[name='csrf-token']")
+        function submitForm(){
+            let email = email_field.value;
+            let password = pass_field.value;
+            fetch('/login-user', {
+                method:'POST', 
+                headers:{'Content-Type':'application/json', 'X-CSRF-Token': csrf.content},
+                body: JSON.stringify({'email': email, 'password': password})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.success && data.role===1){
+                    window.location.href='/admin/dashboard'
+                }
+                else{
+                    error.textContent="Incorrect Credentials!";
+                }
+            })
+            .catch(error => {
+                console.error('Error Loging In', error)
+            })
+        }
     </script>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

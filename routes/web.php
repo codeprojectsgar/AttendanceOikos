@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ForgotPassword;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages;
 
@@ -18,5 +19,19 @@ use App\Http\Controllers\Pages;
 
 Route::get('/login', [Pages::class,'login']);
 
+
+Route::post('/login-user',[LoginController::class,'login']);
+
+Route::post('/submitcode', [ForgotPassword::class,'submit']);
+
+
+
+//Routes for admins
+Route::get('/admin/dashboard',function(){
+    return view('admin.dashboard');
+});
+
+Route::get('/admin/logout',[LoginController::class,'logout']);
+=======
 Route::get('/reset', [Pages::class,'resetpassword']);
 
