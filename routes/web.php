@@ -17,14 +17,16 @@ use App\Http\Controllers\Pages;
 */
 
 
-Route::get('/login', [Pages::class,'login']);
+Route::get('/', [Pages::class,'login']);
 
 
 Route::post('/login-user',[LoginController::class,'login']);
 
 Route::post('/submitcode', [ForgotPassword::class,'submit']);
 
+Route::get('/forgot',[Pages::class,'forgotpassword']);
 
+Route::get('/reset',[Pages::class,'resetpassword']); 
 
 //Routes for admins
 Route::get('/admin/dashboard',function(){
@@ -32,6 +34,5 @@ Route::get('/admin/dashboard',function(){
 });
 
 Route::get('/admin/logout',[LoginController::class,'logout']);
-=======
-Route::get('/reset', [Pages::class,'resetpassword']);
+
 
