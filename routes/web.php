@@ -18,4 +18,14 @@ Route::get('/', function () {
     return view('reset_password');
 });
 
+Route::get('/',function(){
+    return view('login');
+});
+
 Route::post('/submitcode', [ForgotPassword::class,'submit']);
+
+
+//Routes for admins
+Route::get('/admin/dashboard',function(){
+    return view('admin.dashboard');
+});
