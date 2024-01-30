@@ -12,16 +12,6 @@
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Oikos Student: Calendar</title>
-    <style>
-        
-        .empty {
-            background-color: #f0f0f0; /* Example background color for empty days */
-            color: #999; /* Example text color for empty days */
-            border: 1px solid #ccc; /* Example border for empty days */
-            padding: 10px; /* Example padding for empty days */
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -85,28 +75,31 @@
             </li>
         </ul>
     </div>
-
-    <div class="main-content">
-        <h1>Calendar</h1>
-        <button onclick="window.location.href = '/students/calendar'" class="button notesb">+ Add Notes</button>
-        <div class="container">
+     <div class="main-content">
+        <div class="Calendar1">
+            <h1>Calendar</h1>
+                <button onclick="window.location.href = '/students/calendar'" class="button notesb">+ Add Notes</button>  
+                <div class="DateClickedBG"></div>
+                <div class="DateClicked"></div>
+                <div class="calendarBGS"></div>
+                <div class="calendarBG">
+                    <div class="Upcoming">
+                        <p>Upcoming Events:</p>
+                    </div>                                 
+                    <div class="calendar">
+                        <div class="header">
+                            <button id= "PrevM" onclick="previousMonth()">❮</button>
+                                <h2 id="month-year"></h2>
+                            <button id= "NextM" onclick="nextMonth()">❯</button>
+                        </div>                    
+                    <div class="days">
+                    </div>
+                </div>
+            </div>    
         </div>
     </div>
 
-    <div class="calendarBG">
-
-    </div>
-
-    <div class="calendar">
-        <div class="header">
-            <button id= "PrevM" onclick="previousMonth()">❮</button>
-            <h2 id="month-year"></h2>
-            <button id= "NextM" onclick="nextMonth()">❯</button>
-        </div>
-        <div class="days">
-
-        </div>
-    </div>
+    <!-- JavaScript From Pareng GPT -->
 
     <script>
         let btn = document.querySelector('#btn');
@@ -153,7 +146,8 @@ function createDay(dayNumber) {
     // Check if the day is not empty before attaching the click event
     if (dayNumber !== null) {
         day.addEventListener('click', function () {
-            alert(`You clicked on day ${dayNumber}`);
+            // Print the clicked number in the DateClicked div
+            document.querySelector('.DateClicked').textContent = `${dayNumber}`;
         });
     }
 
