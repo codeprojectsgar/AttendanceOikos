@@ -19,6 +19,7 @@ use App\Http\Controllers\Pages;
 
 Route::get('/', [Pages::class,'login']);
 
+Route::get('/students/time-logs', [Pages::class,'timerecord']);
 
 Route::post('/login-user',[LoginController::class,'login']);
 
