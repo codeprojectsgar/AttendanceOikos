@@ -17,15 +17,16 @@
         <h1>Login</h1>
 			<label for="EI">Email:</label>
 				<input type="text" id="EI" class="input-group"/>
+                <small id="email-error"></small>
 			<label for="PI">Password:</label>
 				<input type="password" id="PI" class="input-group"/>
-
+                <small id="password-error"></small>
                 <small id="user-error"></small>
 
-
+            <br>
             <a href="/forgot">Forgot Password?</a>
 
-        <button onclick="submitForm()" class="button sbutton">SUBMIT</button>
+        <button onclick="handleForm()" class="button sbutton">SUBMIT</button>
     </div>
     <div class="bgbox">
         <img src = "/assets/Oikos BG.png" alt = "Image">
@@ -37,13 +38,11 @@
         let pass_field=document.getElementById('PI');
         let error=document.getElementById('user-error');
         let csrf=document.querySelector("meta[name='csrf-token']")
-        function submitForm(){
-            let email = email_field.value;
-            let password = pass_field.value;
+        function submitForm(email_data,pass_data){
             fetch('/login-user', {
                 method:'POST', 
                 headers:{'Content-Type':'application/json', 'X-CSRF-Token': csrf.content},
-                body: JSON.stringify({'email': email, 'password': password})
+                body: JSON.stringify({'email': email_data, 'password': pass_data})
             })
             .then(response => response.json())
             .then(data => {
@@ -57,6 +56,24 @@
             .catch(error => {
                 console.error('Error Loging In', error)
             })
+        } 
+        //This is the handleForm button event when clicked
+        function handleForm(){
+            let email = email_field.value;
+            let password = pass_field.value;
+            let email_err_field=document.getElementById('email-error')
+            let pass_err_field=document.getElementById('password-error');
+            if(password.length===0){
+                pass_err_field.textContent="Password is required!";
+            }
+            if(email.length===0){
+                email_err_field.textContent="Email is required!";
+            }
+            else{
+                pass_err_field.textContent="";
+                email_err_field.textContent="";
+                submitForm(email,password);
+            }
         }
     </script>
 
