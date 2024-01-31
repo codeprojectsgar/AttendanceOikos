@@ -21,4 +21,8 @@ class Pages extends Controller
     public function timerecord () {
         return view("student.time_record");
     }
+
+    public function userInfo(){
+        return view("employees.userinfo");
+    }
 }

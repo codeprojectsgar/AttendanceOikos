@@ -18,7 +18,7 @@
             display: flex;
 
         }
-         .log-container {
+        .log-container {
             width: 100%;
             background-color: #fff;
             border-radius: 8px;
