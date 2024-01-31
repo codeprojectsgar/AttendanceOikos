@@ -22,7 +22,27 @@ class Pages extends Controller
         return view("student.time_record");
     }
 
-    public function userInfo(){
+
+    //Employee navigation
+    public function e_userInfo(){
         return view("employees.userinfo");
     }
+    
+    public function e_announcement(){
+        return view("employees.announcement");
+    }
+    public function e_calendar(){
+        return view("employees.calendar");
+    }
+    public function e_home(){
+        return view("employees.home");
+    }
+    public function e_time_record(){
+        return view("employees.time_record");
+    }
+
+    public function e_document_request(){
+        return view("employees.document_request");
+    }
+
 }

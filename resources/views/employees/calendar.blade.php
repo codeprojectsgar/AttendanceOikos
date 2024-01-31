@@ -97,7 +97,7 @@
     </div>
 
     <div class="main-content">
-        <h1>User</h1>
+        <h1>Calendar</h1>
         <div class="container">
             <h3 id=container-title>Employee Details</h3>
             <div class="field-group">
