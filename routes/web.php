@@ -28,6 +28,8 @@ Route::get('/forgot',[Pages::class,'forgotpassword']);
 
 Route::get('/reset',[Pages::class,'resetpassword']); 
 
+Route::get('/students/announcement',[Pages::class,'announcement']); 
+
 //Routes for admins
 Route::get('/admin/dashboard',function(){
     return view('admin.dashboard');

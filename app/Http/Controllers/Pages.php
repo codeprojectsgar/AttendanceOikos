@@ -17,4 +17,8 @@ class Pages extends Controller
     public function resetpassword () {
         return view("reset_password");
     }
+
+    public function announcement () {
+        return view("student.announcement");
+    }
 }
