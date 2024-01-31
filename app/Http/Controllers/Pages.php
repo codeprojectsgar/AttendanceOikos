@@ -17,4 +17,12 @@ class Pages extends Controller
     public function resetpassword () {
         return view("reset_password");
     }
+
+    public function timerecord () {
+        return view("student.time_record");
+    }
+
+    public function userInfo(){
+        return view("employees.userinfo");
+    }
 }
