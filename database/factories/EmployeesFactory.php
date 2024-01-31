@@ -19,10 +19,10 @@ class EmployeesFactory extends Factory
     {
         return [
             //
-            'email'=>'miguel@yahoo.com',
+            'email'=>fake()->email(),
             'password'=>bcrypt('1234'),
-            'name'=>'Miguel Alvarez',
-            'role'=>1,
+            'name'=>fake()->name(),
+            'role'=>mt_rand(1,3),
             'status'=>'inactive'
         ];
     }

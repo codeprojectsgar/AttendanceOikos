@@ -55,11 +55,11 @@ label {
     align-self: flex-start;
 }
 
-.input-group{
+#EI,#PI{
     border-radius: 25px;
     border: 2px solid gray;
     padding: 20px; 
-    width: 300px;
+    width: 70%;
     height: 15px;
     margin-top: 1em;
 }       
