@@ -18,7 +18,7 @@ body {
 }
 
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -26,6 +26,7 @@ body {
     background-color: #323468;
     padding: 0.4rem 0.8rem;
     transition: all .5s ease;
+    z-index: 99;
 }
 
 .sidebar.active ~ .main-content {
@@ -142,16 +143,16 @@ body {
     border-radius: .6rem;
     padding: .4rem 1.2rem;
     line-height: 1.8rem;
-    z-index: 20;
+    z-index: 99;
     opacity: 0;
     transition: .3s ease-out;
     white-space: nowrap; 
-
     
 }
 
 .sidebar ul li:hover .tooltip {
     opacity: 1;
+    background-color: white;
 }
 
 .sidebar.active ul li .tooltip {
@@ -172,3 +173,4 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
