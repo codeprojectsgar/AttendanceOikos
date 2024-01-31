@@ -20,6 +20,27 @@ use App\Http\Controllers\Pages;
 Route::get('/', [Pages::class,'login']);
 Route::post('/login-user',[LoginController::class,'login']);
 Route::post('/submitcode', [ForgotPassword::class,'submit']);
+
+
+//routes for students
+Route::get('/student/home',function(){
+    return view('student.home');
+});
+Route::get('/student/announcement',function(){
+    return view('student.announcement');
+});
+Route::get('/student/user',function(){
+    return view('student.user');
+});
+Route::get('/student/time_record',function(){
+    return view('student.dashboard');
+});
+Route::get('/student/calendar',function(){
+    return view('student.calendar');
+});
+
+
+
 Route::get('/forgot',[Pages::class,'forgotpassword']);
 Route::get('/reset',[Pages::class,'resetpassword']); 
 
@@ -28,6 +49,9 @@ Route::get('/admin/dashboard',function(){
     return view('admin.dashboard');
 });
 Route::get('/admin/logout',[LoginController::class,'logout']);
+
+
+Route::get('/reset', [Pages::class,'resetpassword']);
 
 //Routes for students
 Route::get('/students/time-logs', [Pages::class,'timerecord']);
