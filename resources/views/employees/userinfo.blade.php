@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "icon" href = "/assets/Oikos Logo.png">
-    <link rel="stylesheet" href = "/CSS/student.css">
+    <link rel="stylesheet" href = "/CSS/employee.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -74,35 +74,44 @@
         </div>
         <ul>
             <li>
-                <a href = "/employees/home">
+                <a href = "/employees/Home">
                     <i class="fa-solid fa-house"></i>
                     <span class="nav-item">Home</span>
                 </a>
                 <span class="tooltip">Home</span>
             </li>
             <li>
-                <a href = "/employees/user">
+                <a href = "/employees/user-info">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-item">User</span>
                 </a>
                 <span class="tooltip">User Info</span>
             </li>
             <li>
-                <a href = "/employees/announcement">
+                <a href = "/employees/Announcement">
                     <i class="fa-solid fa-bullhorn"></i>
                     <span class="nav-item">Announcement</span>
                 </a>
                 <span class="tooltip">Announcement</span>
             </li>
+
             <li>
-                <a href = "/employees/calendar">
+                <a href = "/employees/Document-Request">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span class="nav-item" >Document Request</span>
+                </a>
+                <span class="tooltip" style="white-space:nowrap;">Document Request</span>
+            </li>
+
+            <li>
+                <a href = "/employees/Calendar">
                     <i class="fa-solid fa-calendar"></i>
                     <span class="nav-item">Calendar</span>
                 </a>
                 <span class="tooltip">Calendar</span>
             </li>
             <li>
-                <a href = "/employees/time_record">
+                <a href = "/employees/Time-Record">
                     <i class="fa-solid fa-clock"></i>
                     <span class="nav-item" style="height:50px;">Time Record</span>
                 </a>
