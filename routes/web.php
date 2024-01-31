@@ -25,6 +25,24 @@ Route::post('/login-user',[LoginController::class,'login']);
 Route::post('/submitcode', [ForgotPassword::class,'submit']);
 
 
+//routes for students
+Route::get('/student/home',function(){
+    return view('student.home');
+});
+Route::get('/student/announcement',function(){
+    return view('student.announcement');
+});
+Route::get('/student/user',function(){
+    return view('student.user');
+});
+Route::get('/student/time_record',function(){
+    return view('student.dashboard');
+});
+Route::get('/student/calendar',function(){
+    return view('student.calendar');
+});
+
+
 
 //Routes for admins
 Route::get('/admin/dashboard',function(){
@@ -32,6 +50,6 @@ Route::get('/admin/dashboard',function(){
 });
 
 Route::get('/admin/logout',[LoginController::class,'logout']);
-=======
+
 Route::get('/reset', [Pages::class,'resetpassword']);
 
