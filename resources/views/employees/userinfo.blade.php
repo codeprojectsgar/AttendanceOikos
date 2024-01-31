@@ -37,17 +37,20 @@
             border-bottom:1px solid #c4c4c4;
         }
         .selector:hover{
-            border-left:6px solid #323468;
+            border-left:5px solid #323468;
+            cursor:pointer;
         }
         .selector.active-div{
-            border-left:6px solid #323468;
+            border-left:5px solid #323468;
         }
-        .employee-container{
+        .employee-container,.family-container{
             margin-left:1em;
             width:85%;
             padding:1em;
             background-color:white;
-            border-radius:5px
+            opacity:1;
+            border-radius:5px;
+            transition: opacity 400ms ease-in-out;
         }
         .field-group{
             margin-top:2em;
@@ -80,6 +83,11 @@
             border:none; 
             font-size:1rem;
             border-bottom:1px solid #dedede;
+        }
+        .hidden{
+            position:absolute;
+            opacity: 0;
+            visibility:hidden;
         }
         label{
             margin-top:.5em;
@@ -163,15 +171,16 @@
         <h1>User</h1>
         <div class="container">
             <div class="side-nav">
-                <div class="personal selector active-div" onclick="selectInput('.personal','.personal-i')">
+                <div class="personal selector active-div" onclick="selectInput('.personal','.personal-i','.family-container')">
                     Personal Information 
                     <i class="personal-i fas fa-chevron-right show-arrow"></i>
                 </div> 
-                <div class="background selector" onclick="selectInput('.background','.background-i')">
+                <div class="background selector" onclick="selectInput('.background','.background-i','.employee-container')">
                     Family Background
                     <i class="background-i fas fa-chevron-right"></i>
                 </div> 
             </div>
+            <!-- Container for employee details -->
             <div class="employee-container">
                 <h3 id=container-title>Employee Details</h3>
                 <div class="field-group">
@@ -247,6 +256,88 @@
                     </div>
                 </div>
             </div>
+            <!-- container for family backgroud-->
+            <div class="family-container hidden">
+                <h3 id=container-title>Father's Name</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='last-name' value="Lupin" readonly>
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='first-name' value="Rudeus" readonly >
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='middle-name' value="Cooperfield" readonly >
+                        <label for="middle-name">Midde Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='extension' value="N/A" readonly >
+                        <label for="extension">Extension</label>
+                    </div>
+                </div>
+                <br>
+                <h3 id=container-title>Mother's Name</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='last-name' value="Vincent" readonly>
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='first-name' value="Slyphy" readonly >
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='middle-name' value="Sydney" readonly >
+                        <label for="middle-name">Midde Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='extension' value="N/A" readonly >
+                        <label for="extension">Extension</label>
+                    </div>
+                </div>
+                <br>
+                <h3 id=container-title>Spouse's Details</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='last-name' value="Spiegel" readonly>
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='first-name' value="Spike" readonly >
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='middle-name' value="Cole" readonly >
+                        <label for="middle-name">Midde Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='extension' value="N/A" readonly >
+                        <label for="extension">Extension</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='email' value="Software Developer" readonly >
+                        <label for="email">Occupation</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='telephone' value="InnovativeTech" readonly >
+                        <label for="telephone">Employer / Bussiness Name</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='email' value="Don Antonio Holy Spirit" readonly >
+                        <label for="email">Bussiness Address</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='telephone' value="N/A" readonly >
+                        <label for="telephone">Telephone No. ie:(02)00-0000</label>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -258,10 +349,10 @@
         btn.onclick = function () {
             sidebar.classList.toggle('active');
         }
-        function handleActive(){
-
-        }
-        function selectInput(div,div_i){
+        
+        function selectInput(div,div_i,prevDisplay){
+            let preDisplay=document.querySelector(prevDisplay);
+            let targetDisplay=document.querySelector('.hidden');
             let activeDiv=document.querySelector('.active-div');
             let showedDiv=document.querySelector('.show-arrow');
             let targetDiv=document.querySelector(div);
@@ -270,7 +361,8 @@
             showedDiv.classList.remove('show-arrow');
             targetDiv.classList.add('active-div');
             targetDivI.classList.add('show-arrow');
-            showDetail();
+            targetDisplay.classList.remove('hidden');
+            preDisplay.classList.add('hidden');
         }
     </script>
 
