@@ -57,5 +57,10 @@ Route::get('/reset', [Pages::class,'resetpassword']);
 Route::get('/students/time-logs', [Pages::class,'timerecord']);
 
 //Routes for employees
-Route::get('/employees/user-info',[Pages::class,'userInfo']);
+Route::get('/employees/user-info',[Pages::class,'e_userInfo']);
+Route::get('/employees/Announcement',[Pages::class,'e_announcement']);
+Route::get('/employees/Calendar',[Pages::class,'e_calendar']);
+Route::get('/employees/Document-Request',[Pages::class,'e_document_request']);
+Route::get('/employees/Time-Record',[Pages::class,'e_time_record']);
+Route::get('/employees/Home',[Pages::class,'e_home']);
 
