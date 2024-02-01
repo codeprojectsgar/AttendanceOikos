@@ -8,37 +8,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Oikos Student: Announcement</title>
+    <title>Oikos Employee: Approval</title>
     <style>
         .container{
-            margin-top:1em;
+            margin-top:.5em;
             padding:1em;
             background-color:white;
             display:flex;
             flex-direction:column;
-            border-radius: 5px;
+        }
+        .steps-container{
+            margin-top: 1.3em;
+            padding:1em;
+            background-color:white;
+            display:flex;
         }
         #container-title{
             font-weight: 400;
-            border-bottom:1px solid #dedede;
-            color:#323468;
         }
-        #post{
-            width:11em;
-            height:2em;
-            padding: .2rem;
-            font-size:1.2rem;
-            letter-spacing: 1px;
-            color:white;
-            background-color:#323468;
-            border:none;
-            border-radius:15px;
-            opacity:100%;
-            transition:opacity 150ms ease-in-out;
+        .header-content {
+            display: flex;
+            flex-direction: row;
         }
-        #post:hover{
-            opacity:75%;
-            cursor: pointer;
+
+        .document-request,
+        .approval {
+            display: inline;
         }
     </style>
 </head>
@@ -113,16 +108,20 @@
             </li>
         </ul>
     </div>
-    <div class="modal-mask">
-        
-    </div>
+
     <div class="main-content">
-        <h1>Announcements</h1>
-        <button id="post">+ Add Annoucement</button>
+        <div class="header-content">
+            <h1 class="document-request" style = "color: rgba(100, 100, 100, 0.700)">Document Request > </h1>
+            <h1 class="approval" style = "margin-left: 0.3em;">Approval</h1>
+        </div>
+
         <div class="container">
-            <div class="post-header">
-                <h3 id=container-title>Annoucement Logs</h3>
-            </div>
+            <h3 id=container-title style = "color: #59A3CD;">Request Summary</div>
+
+        <div class="steps-container">
+            <h4 style = "font-weight: 400;">Request Code</h4>
+            
+        </div>
         </div>
     </div>
 

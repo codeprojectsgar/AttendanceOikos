@@ -175,7 +175,7 @@
                 <span class="tooltip">Home</span>
             </li>
             <li>
-                <a href = "/employees/user-info">
+                <a href = "/employees/User-Info">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-item">User</span>
                 </a>
