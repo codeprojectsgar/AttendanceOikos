@@ -18,7 +18,13 @@ class Pages extends Controller
         return view("reset_password");
     }
 
+
     //Student navigation
+
+    public function calendar () {
+        return view("student.calendar");
+    }
+  
     public function s_timerecord () {
         return view("student.time_record");
     }

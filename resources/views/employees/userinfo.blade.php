@@ -13,10 +13,44 @@
         .container{
             margin-top:1em;
             padding:1em;
+            display:flex;
+        }
+        .side-nav{
             background-color:white;
+            border-radius:5px;
             display:flex;
             flex-direction:column;
+            width:15%;
+            min-height:55em;
+        }
+        .fa-chevron-right{
+            opacity:0;
+        }
+        .fa-chevron-right.show-arrow{
+            opacity:1;
+        }
+        .selector{
+            color:#323468;
+            padding:1.2em;
+            display:flex;
+            justify-content: space-evenly;
+            border-bottom:1px solid #c4c4c4;
+        }
+        .selector:hover{
+            border-left:5px solid #323468;
+            cursor:pointer;
+        }
+        .selector.active-div{
+            border-left:5px solid #323468;
+        }
+        .employee-container,.family-container{
+            margin-left:1em;
+            width:85%;
+            padding:1em;
+            background-color:white;
+            opacity:1;
             border-radius:5px;
+            transition: opacity 400ms ease-in-out;
         }
         .field-group{
             margin-top:2em;
@@ -49,6 +83,11 @@
             border:none; 
             font-size:1rem;
             border-bottom:1px solid #dedede;
+        }
+        .hidden{
+            position:absolute;
+            opacity: 0;
+            visibility:hidden;
         }
         label{
             margin-top:.5em;
@@ -131,77 +170,172 @@
     <div class="main-content">
         <h1>User</h1>
         <div class="container">
-            <h3 id=container-title>Employee Details</h3>
-            <div class="field-group">
-                <div class="input-group">
-                    <input type="text" class='input-field' id='last-name' value="Lupin" readonly>
-                    <label for="last-name">Last Name</label>
+            <div class="side-nav">
+                <div class="personal selector active-div" onclick="selectInput('.personal','.personal-i','.family-container')">
+                    Personal Information 
+                    <i class="personal-i fas fa-chevron-right show-arrow"></i>
+                </div> 
+                <div class="background selector" onclick="selectInput('.background','.background-i','.employee-container')">
+                    Family Background
+                    <i class="background-i fas fa-chevron-right"></i>
+                </div> 
+            </div>
+            <!-- Container for employee details -->
+            <div class="employee-container">
+                <h3 id=container-title>Employee Details</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='last-name' value="Lupin" readonly>
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='first-name' value="Copernicus" readonly >
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='middle-name' value="Vincent" readonly >
+                        <label for="middle-name">Midde Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='extension' value="III" readonly >
+                        <label for="extension">Extension</label>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <input type="text" class='input-field' id='first-name' value="Copernicus" readonly >
-                    <label for="first-name">First Name</label>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="date" class='input-field' id='birthdate' value="August-20-2001" readonly >
+                        <label for="birthdate">Birthdate</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='phone-number' value="09154054370" readonly >
+                        <label for="phone-number">Phone Number</label>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <input type="text" class='input-field' id='middle-name' value="Vincent" readonly >
-                    <label for="middle-name">Midde Name</label>
+                <div class="field-group">
+                    <div class="input-group-single">
+                        <input type="text" class='input-field' id='address' value="1 Riyal Street CBE Town Brgy Pasong Tamo Quezon City" readonly >
+                        <label for="address">Address</label>
+                    </div>
                 </div>
-                <div class="input-group">
-                    <input type="text" class='input-field' id='extension' value="III" readonly >
-                    <label for="extension">Extension</label>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='city' value="Quezon City" readonly >
+                        <label for="city">City</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='region' value="NCR" readonly >
+                        <label for="region">Region</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='postal' value="1101" readonly >
+                        <label for="postal">Postal Code</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='country' value="Philppines" readonly >
+                        <label for="country">Country</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='nationality' value="Russian" readonly >
+                        <label for="nationality">Nationality</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='sex' value="Male" readonly >
+                        <label for="sex">Sex</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='email' value="lupinIII@gmail.com" readonly >
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='telephone' value="N/A" readonly >
+                        <label for="telephone">Telephone Number</label>
+                    </div>
                 </div>
             </div>
-            <div class="field-group">
-                <div class="input-group">
-                    <input type="date" class='input-field' id='birthdate' value="August-20-2001" readonly >
-                    <label for="birthdate">Birthdate</label>
+            <!-- container for family backgroud-->
+            <div class="family-container hidden">
+                <h3 id=container-title>Father's Name</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='last-name' value="Lupin" readonly>
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='first-name' value="Rudeus" readonly >
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='middle-name' value="Cooperfield" readonly >
+                        <label for="middle-name">Midde Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='extension' value="N/A" readonly >
+                        <label for="extension">Extension</label>
+                    </div>
                 </div>
-                <div class="input-group-special">
-                    <input type="text" class='input-field' id='phone-number' value="09154054370" readonly >
-                    <label for="phone-number">Phone Number</label>
+                <br>
+                <h3 id=container-title>Mother's Name</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='last-name' value="Vincent" readonly>
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='first-name' value="Slyphy" readonly >
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='middle-name' value="Sydney" readonly >
+                        <label for="middle-name">Midde Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='extension' value="N/A" readonly >
+                        <label for="extension">Extension</label>
+                    </div>
                 </div>
-            </div>
-            <div class="field-group">
-                <div class="input-group-single">
-                    <input type="text" class='input-field' id='address' value="1 Riyal Street CBE Town Brgy Pasong Tamo Quezon City" readonly >
-                    <label for="address">Address</label>
+                <br>
+                <h3 id=container-title>Spouse's Details</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='last-name' value="Spiegel" readonly>
+                        <label for="last-name">Last Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='first-name' value="Spike" readonly >
+                        <label for="first-name">First Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='middle-name' value="Cole" readonly >
+                        <label for="middle-name">Midde Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='extension' value="N/A" readonly >
+                        <label for="extension">Extension</label>
+                    </div>
                 </div>
-            </div>
-            <div class="field-group">
-                <div class="input-group">
-                    <input type="text" class='input-field' id='city' value="Quezon City" readonly >
-                    <label for="city">City</label>
+                <div class="field-group">
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='email' value="Software Developer" readonly >
+                        <label for="email">Occupation</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='telephone' value="InnovativeTech" readonly >
+                        <label for="telephone">Employer / Bussiness Name</label>
+                    </div>
                 </div>
-                <div class="input-group-special">
-                    <input type="text" class='input-field' id='region' value="NCR" readonly >
-                    <label for="region">Region</label>
-                </div>
-                <div class="input-group">
-                    <input type="text" class='input-field' id='postal' value="1101" readonly >
-                    <label for="postal">Postal Code</label>
-                </div>
-            </div>
-            <div class="field-group">
-                <div class="input-group">
-                    <input type="text" class='input-field' id='country' value="Philppines" readonly >
-                    <label for="country">Country</label>
-                </div>
-                <div class="input-group-special">
-                    <input type="text" class='input-field' id='nationality' value="Russian" readonly >
-                    <label for="nationality">Nationality</label>
-                </div>
-                <div class="input-group">
-                    <input type="text" class='input-field' id='sex' value="Male" readonly >
-                    <label for="sex">Sex</label>
-                </div>
-            </div>
-            <div class="field-group">
-                <div class="input-group-special">
-                    <input type="text" class='input-field' id='email' value="lupinIII@gmail.com" readonly >
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-group-special">
-                    <input type="text" class='input-field' id='telephone' value="N/A" readonly >
-                    <label for="telephone">Telephone Number</label>
+                <div class="field-group">
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='email' value="Don Antonio Holy Spirit" readonly >
+                        <label for="email">Bussiness Address</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='telephone' value="N/A" readonly >
+                        <label for="telephone">Telephone No. ie:(02)00-0000</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -214,6 +348,21 @@
 
         btn.onclick = function () {
             sidebar.classList.toggle('active');
+        }
+        
+        function selectInput(div,div_i,prevDisplay){
+            let preDisplay=document.querySelector(prevDisplay);
+            let targetDisplay=document.querySelector('.hidden');
+            let activeDiv=document.querySelector('.active-div');
+            let showedDiv=document.querySelector('.show-arrow');
+            let targetDiv=document.querySelector(div);
+            let targetDivI=document.querySelector(div_i);
+            activeDiv.classList.remove('active-div');
+            showedDiv.classList.remove('show-arrow');
+            targetDiv.classList.add('active-div');
+            targetDivI.classList.add('show-arrow');
+            targetDisplay.classList.remove('hidden');
+            preDisplay.classList.add('hidden');
         }
     </script>
 
