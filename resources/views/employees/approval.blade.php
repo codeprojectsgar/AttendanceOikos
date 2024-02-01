@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Oikos Student: User Info</title>
+    <title>Oikos Employee: Approval</title>
     <style>
         .container{
             margin-top:.5em;
@@ -17,10 +17,23 @@
             display:flex;
             flex-direction:column;
         }
+        .steps-container{
+            margin-top: 1.3em;
+            padding:1em;
+            background-color:white;
+            display:flex;
+        }
         #container-title{
             font-weight: 400;
-            border-bottom:1px solid #dedede;
-            color:#323468;
+        }
+        .header-content {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .document-request,
+        .approval {
+            display: inline;
         }
     </style>
 </head>
@@ -97,17 +110,18 @@
     </div>
 
     <div class="main-content">
-        <h1>Time_Record</h1>
-        <div class="container">
-            <h3 id=container-title>Employee Details</h3>
-            <div class="field-group">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="field-group">
+        <div class="header-content">
+            <h1 class="document-request" style = "color: rgba(100, 100, 100, 0.700)">Document Request > </h1>
+            <h1 class="approval" style = "margin-left: 0.3em;">Approval</h1>
+        </div>
 
-            </div>
+        <div class="container">
+            <h3 id=container-title style = "color: #59A3CD;">Request Summary</div>
+
+        <div class="steps-container">
+            <h4 style = "font-weight: 400;">Request Code</h4>
+            
+        </div>
         </div>
     </div>
 
