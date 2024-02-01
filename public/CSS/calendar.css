@@ -33,7 +33,7 @@ body {
     background-color: #323468;
     padding: 0.4rem 0.8rem;
     transition: all .5s ease;
-    z-index: 1; /* Ensure the sidebar is above the content */
+    z-index: 1; 
 }
 
 .sidebar.active ~ .main-content {
@@ -166,8 +166,8 @@ body {
 .main-content {
     flex: 1;
     transition: margin-left .5s;
-    z-index: 0; /* Ensure the content is below the sidebar */
-    overflow-y: auto; /* Allow content to be scrollable */
+    z-index: 0; 
+    overflow-y: auto;
 }
 
 .container {
@@ -186,10 +186,10 @@ body {
 }
 
 .notesb {
-    z-index: 2; /* Ensure the button is above the sidebar */
-    position: absolute; /* Use absolute positioning */
-    top: 7%; /* Adjust the top position */
-    left: 7.5%; /* Adjust the left position */
+    z-index: 2; 
+    position: absolute; 
+    top: 7%; 
+    left: 7.5%; 
     border-radius: 15px;
     border: 1px solid #13036dc0;
     background-color: #13036dc0;
@@ -256,11 +256,13 @@ body {
     text-align: center;
     min-height: 10px;
     font-weight: bold;
+    box-shadow: 2% 2% 4% rgba(0, 0, 0, 0.1);
 }
 
 .day:hover {
     background-color: #13036dc0;
     color: #fff;
+    box-shadow: 4% 4% 8% rgba(0, 0, 0, 0.2);
 }
 
 .current-day {
@@ -273,6 +275,27 @@ body {
 
 .current-day:hover {
     background-color: #2980b9;
+}
+
+.days div.first-day {
+    grid-column: 2; 
+ }
+
+.days-of-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1%;
+    justify-content: center;
+    padding: 3%;
+    font-weight: bold;
+}
+
+.day-of-week {
+    text-align: center;
+    background-color: #ecf0f1;
+    color: #000000;
+    padding: 1%;
+    border-radius: 5px;
 }
 
 .empty {
@@ -365,6 +388,15 @@ h2 {
     font-weight: bold;
     color: #000000; 
     position: absolute;
-    top: 40%; 
+    top: 45%; 
     left: 4%;
 }
+
+
+
+
+
+
+
+
+    

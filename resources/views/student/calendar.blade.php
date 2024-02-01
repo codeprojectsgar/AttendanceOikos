@@ -80,7 +80,7 @@
             <h1 id = "CalendarHeader" >Calendar</h1>
                  
                 <div class="DateClickedBG"></div>
-                <button onclick="window.location.href = '/students/calendar'" class="button notesb">+ Add Notes</button> 
+                <button onclick="window.location.href = '/student/calendar'" class="button notesb">+ Add Notes</button> 
                 <div class="DateClicked"></div>
                 <div class="calendarBGS"></div>
                 <div class="calendarBG">
@@ -89,11 +89,21 @@
                     </div>                                 
                     <div class="calendar">
                         <div class="header">
-                            <button id= "PrevM" onclick="previousMonth()">❮</button>
+                            <button id= "PrevM">❮</button>
                                 <h2 id="month-year"></h2>
-                            <button id= "NextM" onclick="nextMonth()">❯</button>
+                            <button id= "NextM">❯</button>
+                        </div>
+                        <div class="days-of-week">
+                            <div class="day-of-week">Sun</div>
+                            <div class="day-of-week">Mon</div>
+                            <div class="day-of-week">Tue</div>
+                            <div class="day-of-week">Wed</div>
+                            <div class="day-of-week">Thu</div>
+                            <div class="day-of-week">Fri</div>
+                            <div class="day-of-week">Sat</div>
                         </div>                    
                     <div class="days">
+
                     </div>
                 </div>
             </div>    
@@ -111,6 +121,17 @@
         }
         document.addEventListener('DOMContentLoaded', function () {
     updateCalendar();
+
+    document.getElementById('PrevM').addEventListener('click', function () {
+            console.log("Previous Month button clicked");
+            previousMonth();
+        });
+
+        document.getElementById('NextM').addEventListener('click', function () {
+            console.log("Next Month button clicked");
+            nextMonth();
+        });
+
 });
 
 function updateCalendar() {
@@ -139,6 +160,7 @@ function updateCalendar() {
     }
 }
 
+
 function createDay(dayNumber) {
     const day = document.createElement('div');
     day.className = 'day';
@@ -151,6 +173,11 @@ function createDay(dayNumber) {
             document.querySelector('.DateClicked').textContent = `${dayNumber}`;
         });
     }
+
+    if (dayNumber === 1) {
+        day.classList.add('first-day');
+    }
+
 
     return day;
 }
@@ -169,18 +196,21 @@ function getMonthName(month) {
 }
 
 function previousMonth() {
-    const currentDate = new Date();
+    const currentMonth = document.getElementById('month-year').textContent;
+    const [month, year] = currentMonth.split(' ');
+    const currentDate = new Date(`${month} 1, ${year}`);
     currentDate.setMonth(currentDate.getMonth() - 1);
     updateCalendar(currentDate);
 }
 
 function nextMonth() {
-    console.log("Next Month button clicked");
-    const currentDate = new Date();
+    const currentMonth = document.getElementById('month-year').textContent;
+    const [month, year] = currentMonth.split(' ');
+    const currentDate = new Date(`${month} 1, ${year}`);
     const newDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
-    console.log("New Date:", newDate);
-    updateCalendar(newDate); 
+    updateCalendar(newDate);
 }
+
     </script>
 
 
