@@ -18,11 +18,31 @@ class Pages extends Controller
         return view("reset_password");
     }
 
+
+    //Student navigation
+
     public function calendar () {
         return view("student.calendar");
     }
-    public function timerecord () {
+  
+    public function s_timerecord () {
         return view("student.time_record");
+    }
+
+    public function s_home () {
+        return view("student.home");
+    }
+
+    public function s_userInfo () {
+        return view("student.user");
+    }
+
+    public function s_calendar () {
+        return view("student.calendar");
+    }
+
+    public function s_announcement () {
+        return view("student.announcement");
     }
 
 
@@ -46,6 +66,10 @@ class Pages extends Controller
 
     public function e_document_request(){
         return view("employees.document_request");
+    }
+
+    public function e_approval(){
+        return view("employees.approval");
     }
 
 }

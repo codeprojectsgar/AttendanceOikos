@@ -181,35 +181,35 @@
         </div>
         <ul>
             <li>
-                <a href = "home">
+                <a href = "/students/Home">
                     <i class="fa-solid fa-house"></i>
                     <span class="nav-item">Home</span>
                 </a>
                 <span class="tooltip">Home</span>
             </li>
             <li>
-                <a href = "user">
+                <a href = "/students/User-Info">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-item">User</span>
                 </a>
                 <span class="tooltip">User</span>
             </li>
             <li>
-                <a href = "announcement">
+                <a href = "/students/Announcement">
                     <i class="fa-solid fa-bullhorn"></i>
                     <span class="nav-item">Announcement</span>
                 </a>
                 <span class="tooltip">Announcement</span>
             </li>
             <li>
-                <a href = "calendar">
+                <a href = "/students/Calendar">
                     <i class="fa-solid fa-calendar"></i>
                     <span class="nav-item">Calendar</span>
                 </a>
                 <span class="tooltip">Calendar</span>
             </li>
             <li>
-                <a href = "time_record">
+                <a href = "/students/Time-Logs">
                     <i class="fa-solid fa-clock"></i>
                     <span class="nav-item" style="height:50px;">Time Record</span>
                 </a>
