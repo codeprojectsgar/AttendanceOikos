@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
 html, body {
     height: 100%;
     margin: 0;
@@ -14,6 +15,7 @@ html, body {
 body {
     font-family: 'Rubik', sans-serif;
     background-color: #f2f2f2 !important;
+    display: flex;
 }
 
 .user-img {
@@ -23,7 +25,7 @@ body {
 }
 
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
@@ -31,11 +33,11 @@ body {
     background-color: #323468;
     padding: 0.4rem 0.8rem;
     transition: all .5s ease;
+    z-index: 1; /* Ensure the sidebar is above the content */
 }
 
 .sidebar.active ~ .main-content {
-    left: 250px;
-    width: calc(100% - 250px);
+    margin-left: 250px;
 }
 
 .sidebar.active {
@@ -151,8 +153,6 @@ body {
     opacity: 0;
     transition: .3s ease-out;
     white-space: nowrap; 
-
-    
 }
 
 .sidebar ul li:hover .tooltip {
@@ -164,32 +164,43 @@ body {
 }
 
 .main-content {
-    position: relative;
-    min-height: 100vh;
-    top: 0;
-    left: 80px;
-    transition: all .5 ease;
-    width: calc(100% - 80px);
-    padding: 1rem;
+    flex: 1;
+    transition: margin-left .5s;
+    z-index: 0; /* Ensure the content is below the sidebar */
+    overflow-y: auto; /* Allow content to be scrollable */
 }
 
 .container {
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
 }
 
-.notesb{
+#CalendarHeader {
+    z-index: 2; 
+    position: absolute; 
+    top: 1%; 
+    left: 7.3%; 
+    color: black;
+    font-size: 50px;
+}
+
+.notesb {
+    z-index: 2; /* Ensure the button is above the sidebar */
+    position: absolute; /* Use absolute positioning */
+    top: 7%; /* Adjust the top position */
+    left: 7.5%; /* Adjust the left position */
     border-radius: 15px;
-    border:1px solid #13036dc0;
-    background-color: #13036dc0; 
-    color: white; 
-    padding: 10px 10px; 
+    border: 1px solid #13036dc0;
+    background-color: #13036dc0;
+    color: white;
+    padding: 10px 10px;
     cursor: pointer;
-    margin-top: 0.5em;
-    opacity:100%;
-    transition:opacity 250ms ease-in-out;
+    opacity: 100%;
+    transition: opacity 250ms ease-in-out;
     font-size: 25px;
 }
+
 .notesb:hover{
     opacity:75%;
 }
@@ -308,7 +319,7 @@ h2 {
     height: 850px;
     position: absolute;
     top: 6%;
-    left: 65.5%;
+    left: 69%;
     border-radius: 10px;
     border: 1px solid #7e7e7e;
 }
@@ -318,8 +329,8 @@ h2 {
     width: 550px;
     height: 850px;
     position: absolute;
-    top: 6.5%;
-    left: 65.7%;
+    top: 6.2%;
+    left: 69.2%;
     border-radius: 10px;
 }
 
@@ -329,7 +340,7 @@ h2 {
     height: 720px;
     position: absolute;
     top: 20%;
-    left: 1%;
+    left: 7.5%;
     border-radius: 10px;
     border: 1px solid #7e7e7e;
 
@@ -344,8 +355,8 @@ h2 {
     width: 1100px;
     height: 720px;
     position: absolute;
-    top: 20.5%;
-    left: 1.2%;
+    top: 20.2%;
+    left: 7.6%;
     border-radius: 10px;
 }
 

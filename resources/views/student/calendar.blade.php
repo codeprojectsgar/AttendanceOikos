@@ -77,9 +77,10 @@
     </div>
      <div class="main-content">
         <div class="Calendar1">
-            <h1>Calendar</h1>
-                <button onclick="window.location.href = '/students/calendar'" class="button notesb">+ Add Notes</button>  
+            <h1 id = "CalendarHeader" >Calendar</h1>
+                 
                 <div class="DateClickedBG"></div>
+                <button onclick="window.location.href = '/students/calendar'" class="button notesb">+ Add Notes</button> 
                 <div class="DateClicked"></div>
                 <div class="calendarBGS"></div>
                 <div class="calendarBG">
@@ -182,6 +183,6 @@ function nextMonth() {
 }
     </script>
 
-<script src="calendar.js"></script>
+
 </body>
 </html>
