@@ -49,7 +49,7 @@
                 <span class="tooltip">Home</span>
             </li>
             <li>
-                <a href = "/employees/user-info">
+                <a href = "/employees/User-Info">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-item">User</span>
                 </a>
@@ -97,7 +97,7 @@
     </div>
 
     <div class="main-content">
-        <h1>Time_Record</h1>
+        <h1>Time Record</h1>
         <div class="container">
             <h3 id=container-title>Employee Details</h3>
             <div class="field-group">

@@ -11,16 +11,34 @@
     <title>Oikos Student: Announcement</title>
     <style>
         .container{
-            margin-top:.5em;
+            margin-top:1em;
             padding:1em;
             background-color:white;
             display:flex;
             flex-direction:column;
+            border-radius: 5px;
         }
         #container-title{
             font-weight: 400;
             border-bottom:1px solid #dedede;
             color:#323468;
+        }
+        #post{
+            width:11em;
+            height:2em;
+            padding: .2rem;
+            font-size:1.2rem;
+            letter-spacing: 1px;
+            color:white;
+            background-color:#323468;
+            border:none;
+            border-radius:15px;
+            opacity:100%;
+            transition:opacity 150ms ease-in-out;
+        }
+        #post:hover{
+            opacity:75%;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -49,7 +67,7 @@
                 <span class="tooltip">Home</span>
             </li>
             <li>
-                <a href = "/employees/user-info">
+                <a href = "/employees/User-Info">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-item">User</span>
                 </a>
@@ -95,18 +113,15 @@
             </li>
         </ul>
     </div>
-
+    <div class="modal-mask">
+        
+    </div>
     <div class="main-content">
-        <h1>Announcement</h1>
+        <h1>Announcements</h1>
+        <button id="post">+ Add Annoucement</button>
         <div class="container">
-            <h3 id=container-title>Employee Details</h3>
-            <div class="field-group">
-                <input type="text">
-                <input type="text">
-                <input type="text">
-            </div>
-            <div class="field-group">
-
+            <div class="post-header">
+                <h3 id=container-title>Annoucement Logs</h3>
             </div>
         </div>
     </div>
