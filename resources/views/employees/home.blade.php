@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "icon" href = "/assets/Oikos Logo.png">
-    <link rel="stylesheet" href = "/CSS/student.css">
-    
+    <link rel="stylesheet" href = "/CSS/employee.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Oikos Student: Home</title>
-
-
+    <title>Oikos Student: User Info</title>
     <style>
         .container{
             display:flex;
@@ -133,19 +128,13 @@
         width: 180%;
         font-size: 2rem;
         border:none;
-        background-color: #ffffff;
-        
-    }
-    .box .opt:not(.active):hover {
-    background: linear-gradient(to right, #51558F 10%, #ffffff 10%);
-    cursor: pointer;
-}
-
-.box .opt.active {
-    background-color: #51558F !important;
+  
+        background-color: #51558F !important;
     color: white !important;
     cursor: default;
-}
+        
+    }
+   
     h1{
         
         font-size:0.9em;
@@ -158,10 +147,8 @@
     p{
         display:inline;
     }
-
-    
-</style>
-   
+        
+    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -181,35 +168,44 @@
         </div>
         <ul>
             <li>
-                <a href = "/students/Home">
+                <a href = "/employees/Home">
                     <i class="fa-solid fa-house"></i>
                     <span class="nav-item">Home</span>
                 </a>
                 <span class="tooltip">Home</span>
             </li>
             <li>
-                <a href = "/students/User-Info">
+                <a href = "/employees/User-Info">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-item">User</span>
                 </a>
-                <span class="tooltip">User</span>
+                <span class="tooltip">User Info</span>
             </li>
             <li>
-                <a href = "/students/Announcement">
+                <a href = "/employees/Announcement">
                     <i class="fa-solid fa-bullhorn"></i>
                     <span class="nav-item">Announcement</span>
                 </a>
                 <span class="tooltip">Announcement</span>
             </li>
+
             <li>
-                <a href = "/students/Calendar">
+                <a href = "/employees/Document-Request">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span class="nav-item" >Document Request</span>
+                </a>
+                <span class="tooltip" style="white-space:nowrap;">Document Request</span>
+            </li>
+
+            <li>
+                <a href = "/employees/Calendar">
                     <i class="fa-solid fa-calendar"></i>
                     <span class="nav-item">Calendar</span>
                 </a>
                 <span class="tooltip">Calendar</span>
             </li>
             <li>
-                <a href = "/students/Time-Logs">
+                <a href = "/employees/Time-Record">
                     <i class="fa-solid fa-clock"></i>
                     <span class="nav-item" style="height:50px;">Time Record</span>
                 </a>
@@ -217,168 +213,88 @@
             </li>
             
             <li>
-                <a onclick="logout()">
+                <a href = "/employees/logout">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <span class="nav-item">Logout</span>
                 </a>
+                <span class="tooltip">Logout</span>
             </li>
         </ul>
     </div>
 
     <div class="main-content">
+
         <h1 style="float:left; font-size:25px; margin:1rem;  letter-spacing:5px;" >HOME</h1>
         <div class="container">
             <div class="boxcont">
                 <div class="box">
-                    <img src="/assets/pfp.jpg">
+                    <img src="/assets/emp_ph.jpg">
                     <div class="txt">
-                    <p>(Student Name) <br> (Student Number)</p>
+                    <p>(Employee Name) <br> (Employee Number)</p>
 
                     </div>
-                    <button id="student_btn" class="opt" onclick="student_info()">
-                        <p>Student Information</p>
-                    </button>
-                    <button id="parent_btn" class="opt" style="margin-top: 0vh;" onclick="parent_info()">
-                        <p>Parent Information</p>
+                    <button class="opt">
+                        <p>Employee Information</p>
                     </button>
                 </div>
-                
-
-                
-            </div>
-            
-
-            
+            </div>    
         </div>
-        <!--Student Information-->
+        
+
         <div class="boxcont2">
             <div id="box2">
-                <h1>Student Information</h1>
+                <h1>Employee Information</h1>
                 <br>
                 <br>
                 <h2>Name</h2>
-                <h2 style="margin-left:20em;">Year Level</h2>
                 <br><br>
-                <div class="cont3">
+                <div class="cont3" style="margin-top:-2vh; width:108.5vh;">
                 <p>Beatrice Field</p>
                 </div>
-                <div class="cont4">
-                <p> 1st Year High</p>
-                </div>
                 <br>
-                <h2>Enrollment Status</h1>
-                <h2 style="margin-left:14.4em;">Fetcher</h2>
-                    <div class="cont4" style="margin-top:1vh;">
-                    <p ><u>Service</u></p>
+                <h2>Employment Status</h1>
+                <h2 style="margin-left:13.5em;">Role</h2>
+                    <div class="cont4" style="margin-top:0vh;">
+                    <p ><u>Teacher</u></p>
                     </div>
                     <div class="cont3" style="margin-top:-4.6vh;">
-                    <p ><u>Service</u></p>
+                    <p ><u>Employed</u></p>
                     </div>
-                    <br><br>
-                    
-                <h2>Student Number</h2><br>
-                <div class="cont3" style="margin-top:1vh;">
-                <p><u>202010921</u></p><br><br>
-                </div>
-            </div>
-
-
-            <!--Parent Information-->
-            <div id="box3">
-                <h1>Parent Information</h1>
-                <br>
-                <br>
-                <h2>Name</h2>
-                <h2 style="margin-left:20em;">Cellphone Number</h2>
-                <br><br>
-                <div class="cont3">
-                <p>Everest Field</p>
-                </div>
-                <div class="cont4">
-                <p> 09155885321</p>
-                </div>
-                <br>
-                <h2>Telephone Number</h1>
                     <br>
-                <div class="cont3">
-                    <p><u>N/A</u></p>
-                </div>
-            </div>
-        </div>
-    </div>
+                    
+                <h2>Employee ID</h2><br>
+                <div class="cont3" style="margin-top:0vh;">
+                <p><u>202010921</u></p><br><br>
+                </div><br><br><br>
 
-   
+
+                <h1 style="margin-left:5vh;">Personal Information</h1>
+                <h2>Email</h1>
+                    <h2 style="margin-left:20em;">Cellphone Number</h2>
+                        <div class="cont4" style="margin-top:0vh;">
+                        <p ><u>0925566581</u></p>
+                        </div>
+                        <div class="cont3" style="margin-top:-4.6vh;">
+                        <p ><u>Employee@gmail.com</u></p>
+                        </div>
+                        <br>
+                        
+                    <h2>Telephone ID</h2><br>
+                    <div class="cont3" style="margin-top:0vh;">
+                    <p><u>N/A</u></p><br><br>
+
+            </div>
+    </div>
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Set initial state when the page loads
-            document.getElementById('box2').style.display = 'block';
-            document.getElementById('box3').style.display = 'none';
-    
-            // Highlight the "Student Information" button as active
-            document.getElementById('student_btn').classList.add('active');
-            document.getElementById('parent_btn').classList.remove('active');
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-    const optButtons = document.querySelectorAll(".box .opt");
-
-    optButtons.forEach(function (button) {
-      button.addEventListener("click", function () {
-        // Remove active class from all buttons
-        optButtons.forEach(function (btn) {
-          btn.classList.remove("active");
-        });
-
-        // Add active class to the clicked button
-        button.classList.add("active");
-      });
-    });
-  });
-    
-        // Logout
-        function logout() {
-            Swal.fire({
-                title: "Are you sure you want to logout??",
-                showCancelButton: true,
-                confirmButtonText: "Logout",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = '/student/logout';
-                }
-            });
-        }
-    
-        
-        function student_info() {
-            document.getElementById('box2').style.display = 'block';
-            document.getElementById('box3').style.display = 'none';
-    
-            
-            document.getElementById('student_btn').classList.add('active');
-            document.getElementById('parent_btn').classList.remove('active');
-        }
-    
-       
-        function parent_info() {
-            document.getElementById('box2').style.display = 'none';
-            document.getElementById('box3').style.display = 'block';
-    
-           
-            document.getElementById('parent_btn').classList.add('active');
-            document.getElementById('student_btn').classList.remove('active');
-        }
-    
-        // end of logout
         let btn = document.querySelector('#btn');
         let sidebar = document.querySelector('.sidebar');
-    
+
         btn.onclick = function () {
             sidebar.classList.toggle('active');
         }
     </script>
-    
-    
 
 
 </body>

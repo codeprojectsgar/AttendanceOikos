@@ -18,7 +18,7 @@
 				<input type="text" id="EI" class="input-group"/>
 			<label for="PI">Verification Code:</label>
 				<input type="text" id="PI" class="input-group"/>
-        <button onclick="submitForm()" class="button sbutton">SUBMIT</button>
+        <button onclick="window.location.href='/reset'" class="button sbutton">SUBMIT</button>
     </div>
     <div class="bgbox">
         <img src = "/assets/Oikos BG.png" alt = "Image">
