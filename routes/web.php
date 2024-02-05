@@ -46,10 +46,16 @@ Route::get('/reset',[Pages::class,'resetpassword']);
 
 
 //Routes for admins
-Route::get('/admin/dashboard',function(){
-    return view('admin.dashboard');
-});
+Route::get('/admin/Dashboard',[Pages::class,'a_dashboard']);
+Route::get('/admin/Announcement',[Pages::class,'a_announcement']);
+Route::get('/admin/Document_Request',[Pages::class,'a_Document_Request']);
+Route::get('/admin/Calendar',[Pages::class,'a_calendar']);
+Route::get('/admin/Time_Record',[Pages::class,'a_time_record']);
+Route::get('/admin/Privileges',[Pages::class,'a_Privileges']);
 Route::get('/admin/logout',[LoginController::class,'logout']);
+Route::get('/admin/Student_Masterlist',[Pages::class,'a_smasterlist']);
+Route::get('/admin/Employee_Masterlist',[Pages::class,'a_emasterlist']);
+
 
 
 Route::get('/reset', [Pages::class,'resetpassword']);
@@ -70,4 +76,5 @@ Route::get('/employees/Document-Request/Approval',[Pages::class,'e_approvalpage'
 Route::get('/employees/Time-Record',[Pages::class,'e_time_record']);
 Route::get('/employees/Home',[Pages::class,'e_home']);
 Route::get('/employees/Document-Request/Approval',[Pages::class,'e_approval']);
+
 
