@@ -65,6 +65,10 @@ class Pages extends Controller
         return view("employees.document_request");
     }
 
+    public function e_approvalpage(){
+        return view("employees.approval");
+    }
+
     public function e_approval(){
         return view("employees.approval");
     }

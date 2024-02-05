@@ -66,7 +66,8 @@ Route::get('/employees/User-Info',[Pages::class,'e_userInfo']);
 Route::get('/employees/Announcement',[Pages::class,'e_announcement']);
 Route::get('/employees/Calendar',[Pages::class,'e_calendar']);
 Route::get('/employees/Document-Request',[Pages::class,'e_document_request']);
-Route::get('/employees/time_record',[Pages::class,'e_time_record']);
+Route::get('/employees/Document-Request/Approval',[Pages::class,'e_approvalpage']);
+Route::get('/employees/Time-Record',[Pages::class,'e_time_record']);
 Route::get('/employees/Home',[Pages::class,'e_home']);
 Route::get('/employees/Document-Request/Approval',[Pages::class,'e_approval']);
 
