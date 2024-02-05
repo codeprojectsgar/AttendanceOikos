@@ -111,6 +111,7 @@
             </li>
             <li>
                 <a href = "user">
+                <a href = "/employees/User-Info">
                     <i class="fa-solid fa-user"></i>
                     <span class="nav-item">User</span>
                 </a>
