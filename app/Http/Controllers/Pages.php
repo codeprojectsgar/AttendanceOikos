@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Students;
+
 class Pages extends Controller
 {
     public function forgotpassword () {
@@ -30,7 +32,9 @@ class Pages extends Controller
     }
 
     public function s_home () {
-        return view("student.home");
+
+        $student_info=Students::where("student_id",202000000)->get();
+        return view("student.home",["student_info" => $student_info]);
     }
 
     public function s_userInfo () {
