@@ -214,8 +214,10 @@
                 <td>Jan 01, 2024 </td>
                 <td>
                     Pending
-                    <i class="fa-solid fa-file-text"></i>
-                    <i class="fa-solid fa-download"></i>
+                    <a href = "/employees/Document-Request/Approval">
+                        <i class="fa-solid fa-file-text"></i>
+                    </a>
+                        <i class="fa-solid fa-download"></i>
                 </td>
             </tr>
             
