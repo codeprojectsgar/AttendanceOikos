@@ -44,7 +44,6 @@ Route::get('/student/calendar',function(){
 Route::get('/forgot',[Pages::class,'forgotpassword']);
 Route::get('/reset',[Pages::class,'resetpassword']); 
 
-Route::get('/students/calendar',[Pages::class,'calendar']);
 
 //Routes for admins
 Route::get('/admin/dashboard',function(){
