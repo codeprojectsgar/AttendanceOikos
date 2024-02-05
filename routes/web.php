@@ -33,7 +33,7 @@ Route::get('/student/user',function(){
     return view('student.user');
 });
 Route::get('/student/time_record',function(){
-    return view('student.dashboard');
+    return view('student.time_record');
 });
 Route::get('/student/calendar',function(){
     return view('student.calendar');
