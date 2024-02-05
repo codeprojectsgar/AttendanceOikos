@@ -13,9 +13,30 @@ class Employees extends Model
         'employee_id',
         'email',
         'password',
-        'name',
-        'role',
-        'status'
+        'fname',
+        'lname',
+        'minitial',
+        'extension',
+        'bday',
+        'phone_number',
+        'telephone_number',
+        'address',
+        'city',
+        'region',
+        'postal_code',
+        'country',
+        'nationality',
+        'sex',
+        
+
+
+    
+           
+
+
+        
+
+
     ];
     public $timestamps=false;
 }

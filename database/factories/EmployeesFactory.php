@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Employees>
  */
 use \App\Models\Employees;
+
 class EmployeesFactory extends Factory
 {
     /**
@@ -19,11 +20,27 @@ class EmployeesFactory extends Factory
     {
         return [
             //
-            'email'=>fake()->email(),
-            'password'=>bcrypt('1234'),
-            'name'=>fake()->name(),
-            'role'=>mt_rand(1,3),
-            'status'=>'inactive'
+            'employee_id'=>"202010000",
+            'email'=>"employee@email.com",
+            'password'=>bcrypt("1234"),
+            'fname'=>"employee firstname",
+            'lname'=>"employee lastname",
+            'minitial'=>"employee middleinitial",
+            'extension'=>"number name",
+            'bday'=>"08/21/2001",
+            'phone_number'=>"0915544321",
+            'telephone_number'=>"N/A",
+            'address'=>"420#urelostST.",
+            'city'=>"Quezon City",
+            'region'=>"NCR",
+            'postal_code'=>124,
+            'country'=>"Bangladesh",
+            'nationality'=>"Filipino",
+            'sex'=>"Male/Female",
+            
+                
+                
+                
         ];
     }
 }

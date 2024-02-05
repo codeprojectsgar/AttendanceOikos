@@ -114,6 +114,76 @@
             margin-right: 1em;
             cursor: pointer;
         }
+        .far{
+            transform:translateX(1em);
+        }
+        .modal-mask{
+            position:absolute;
+            top:0;
+            left:0;
+            height:100vh;
+            width:100%;
+            z-index:100;
+            background-color:rgba(0, 0, 0, 0.534);
+            opacity:1;
+            transition:opacity 200ms ease-in-out;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+        }
+        .form-container{
+            background-color:white;
+            border-radius:5px;
+            width:50em;
+            display:flex;
+            flex-direction:column;
+            padding:2em;
+        }
+        .form-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        #form-content{
+            display:flex;
+            flex-direction:column;
+            margin-top:1em;
+        }
+        #form-content .form-group{
+            display:flex;
+            flex-direction:column;
+        }
+        .select-input{
+            height:2.5em;
+            font-size:1rem;
+            border:1px solid #dedede;
+            border-radius: 5px;
+        }
+        .btn-submit{
+            padding:1em;
+            background-color:#13c36b;
+            font-size:.8rem;
+            font-weight:bold;
+            color:white;
+            border:none;
+            border-radius: 15px;
+            transition:opacity 150ms ease-in-out;
+        }
+        .btn-submit:hover{
+            cursor: pointer;
+            opacity:75%;
+        }
+        textarea{
+            resize:none;
+            font-family:sans-serif;
+            font-size:1rem;
+            padding:.5rem;
+            border:1px solid #dedede;
+        }
+        .hidden{
+            visibility:hidden;
+            opacity:0;
+        }
     </style>
 </head>
 <body>
@@ -195,6 +265,61 @@
             <input type="text" placeholder="Search...">
             <button class="search-btn">&#128269;</button>
         </div>
+    <div class="modal-mask hidden">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Request For a Document</h2>
+                <i class="far fa-times-circle" style="font-size:1.3rem;cursor:pointer;"></i>
+            </div>
+            <form id="form-content">
+                <div class="form-group">
+                    <label for="document-for">Document For</label>
+                    <select id="document-for" class="select-input">
+                        <option value="Certificate of Good Moral Character">
+                            Certificate of Good Moral Character
+                        </option>
+                        <option value="Certificate of No Leave Without Pay - GSIS">
+                            Certificate of No Leave Without Pay - GSIS
+                        </option>
+                        <option value="Certificate of One and the Same Person">
+                            Certification of One and the Same Person
+                        </option>
+                        <option value="Service Record">
+                            Service Record
+                        </option>
+                        <option value="Service Record w/ No Leave Without Pay - GSIS">
+                            Service Record w/ No Leave Without Pay - GSIS
+                        </option>
+                        <option value="Certificate of Contribution - Philhealth (Hospitalization)">
+                            Certificate of Contribution - Philhealth (Hospitalized)
+                        </option>
+                        <option value="Payslip with Signature">
+                            Payslip with Signature
+                        </option>
+                        <option value="Certificate of Employment">
+                            Certificate of Employment
+                        </option>
+                        <option value="Certificate of Employment with Compensation and Benefits">
+                            Certificate of Employment with Compenstaion and Benefit
+                        </option>
+                        <option value="Certificate of Employment with Duties and Responsibilities">
+                            Certificate of Employment With Duties and Responisibilities
+                        </option>
+                        <option value="Leave">
+                            Leave
+                        </option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="reason">Reason</label>
+                    <textarea id="reason" cols="30" rows="10"></textarea>
+                </div>
+                <br><br>
+                <button class="btn-submit">Save</button>
+            </form>
+        </div>
+    </div>
     <div class="container">
         <table style = "width: 100%;" class="attendance-type">
         <thead>
@@ -214,8 +339,10 @@
                 <td>Jan 01, 2024 </td>
                 <td>
                     Pending
-                    <i class="fa-solid fa-file-text"></i>
-                    <i class="fa-solid fa-download"></i>
+                    <a href = "/employees/Document-Request/Approval">
+                        <i class="fa-solid fa-file-text"></i>
+                    </a>
+                        <i class="fa-solid fa-download"></i>
                 </td>
             </tr>
             
@@ -248,9 +375,21 @@
     <script>
         let btn = document.querySelector('#btn');
         let sidebar = document.querySelector('.sidebar');
-
+        let toggleModal=document.querySelector('.add-document-request-btn');
+        let showModal=document.querySelector('.modal-mask');
+        let closeModal=document.querySelector('.far');
+        let textArea=document.querySelector('textarea');
+        let select=document.querySelector('select');
         btn.onclick = function () {
             sidebar.classList.toggle('active');
+        }
+        toggleModal.onclick=()=>{
+            showModal.classList.remove('hidden');
+        }
+        closeModal.onclick=()=>{
+            showModal.classList.toggle('hidden');
+            select.value="Certificate of Good Moral Character";
+            textArea.value="";
         }
     </script>
 
