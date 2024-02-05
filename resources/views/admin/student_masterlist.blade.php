@@ -9,14 +9,14 @@
     <!-- implemented sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Oikos Admin: Calendar</title>
+    <title>Oikos Admin: Student Masterlist</title>
 </head>
 <body>
     @include('component.admin.sidenav')
    
 
     <div class="main-content">
-        <h1>Calendar</h1>
+        <h1>Student Masterlist</h1>
         <div class="container">
         </div>
     </div>

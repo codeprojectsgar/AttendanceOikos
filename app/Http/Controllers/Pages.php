@@ -77,4 +77,37 @@ class Pages extends Controller
         return view("employees.approval");
     }
 
+    //Admin Navigation
+    public function a_dashboard(){
+        return view("admin.dashboard");
+    }
+    
+    public function a_announcement(){
+        return view("admin.announcement");
+    }
+    public function a_calendar(){
+        return view("admin.calendar");
+    }
+
+    public function a_time_record(){
+        return view("admin.time_record");
+    }
+    public function a_privileges(){
+        return view("admin.privileges");
+    }
+
+    public function a_document_request(){
+        return view("admin.document_request");
+    }
+    public function a_smasterlist(){
+        return view("admin.student_masterlist");
+    }
+    public function a_emasterlist(){
+        return view("admin.employee_masterlist");
+    }
+
+
+
+
+
 }
