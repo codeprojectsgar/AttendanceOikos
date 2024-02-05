@@ -33,7 +33,7 @@ Route::get('/student/user',function(){
     return view('student.user');
 });
 Route::get('/student/time_record',function(){
-    return view('student.dashboard');
+    return view('student.time_record');
 });
 Route::get('/student/calendar',function(){
     return view('student.calendar');
@@ -66,7 +66,7 @@ Route::get('/employees/User-Info',[Pages::class,'e_userInfo']);
 Route::get('/employees/Announcement',[Pages::class,'e_announcement']);
 Route::get('/employees/Calendar',[Pages::class,'e_calendar']);
 Route::get('/employees/Document-Request',[Pages::class,'e_document_request']);
-Route::get('/employees/Time-Record',[Pages::class,'e_time_record']);
+Route::get('/employees/time_record',[Pages::class,'e_time_record']);
 Route::get('/employees/Home',[Pages::class,'e_home']);
 Route::get('/employees/Document-Request/Approval',[Pages::class,'e_approval']);
 
