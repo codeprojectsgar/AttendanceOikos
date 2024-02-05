@@ -252,6 +252,7 @@
         </div>
         <!--Student Information-->
         <div class="boxcont2">
+            @foreach($student_info as $info)
             <div id="box2">
                 <h1>Student Information</h1>
                 <br>
@@ -260,7 +261,7 @@
                 <h2 style="margin-left:20em;">Year Level</h2>
                 <br><br>
                 <div class="cont3">
-                <p>Beatrice Field</p>
+                <p>{{$info->fname}}</p>
                 </div>
                 <div class="cont4">
                 <p> 1st Year High</p>
@@ -281,6 +282,8 @@
                 <p><u>202010921</u></p><br><br>
                 </div>
             </div>
+            @endforeach
+           
 
 
             <!--Parent Information-->

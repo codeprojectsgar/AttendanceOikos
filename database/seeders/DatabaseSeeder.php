@@ -5,7 +5,10 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Employees;
-
+use App\Models\EBackg;
+use App\Models\EEducation;
+use App\Models\EExperience;
+use App\Models\Students;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -19,6 +22,9 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        Employees::factory(10)->create();
+        Employees::factory()->create();
+        EBackg::factory()->create();
+        EExperience::factory()->create();
+        EEducation::factory()->create();
     }
 }
