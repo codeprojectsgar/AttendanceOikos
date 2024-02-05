@@ -21,9 +21,6 @@ class Pages extends Controller
 
     //Student navigation
 
-    public function calendar () {
-        return view("student.calendar");
-    }
   
     public function s_timerecord () {
         return view("student.time_record");
