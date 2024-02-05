@@ -50,11 +50,7 @@
     <div class="main-content">
         <h1>Announcements</h1>
         <button id="post">+ Add Annoucement</button>
-        <div class="container">
-            <div class="post-header">
-                <h3 id=container-title>Annoucement Logs</h3>
-            </div>
-        </div>
+        @include('component.employee.annoucement_component')
     </div>
 
 
