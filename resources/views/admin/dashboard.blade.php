@@ -12,73 +12,8 @@
     <title>Oikos Admin: Dashboard</title>
 </head>
 <body>
-    <div class="sidebar">
-        <div class="top">
-            <div class="logo">
-                <i class="fa-solid fa-user-secret"></i>
-                <span>Oikos Admin</span>
-            </div>
-            <i class="fa-solid fa-bars" id = "btn"></i>
-        </div>
-        <div class="user">
-            <img src ="" alt="secret-user" class = "user-img">
-            <div class="">
-                <p class = "bold">Kafelnikov Dela Rosa</p>
-                <p>Admin</p>
-            </div>
-        </div>
-        <ul>
-            <li>
-                <a href = "/admindashboard">
-                    <i class="fa-solid fa-grip"></i>
-                    <span class="nav-item">Dashboard</span>
-                </a>
-                <span class="tooltip">Dashboard</span>
-            </li>
-            <li>
-                <a href = "/adminchallenges">
-                    <i class="fa-solid fa-font-awesome"></i>
-                    <span class="nav-item">Challenges</span>
-                </a>
-                <span class="tooltip">Challenges</span>
-            </li>
-            <li>
-                <a href = "/adminsubmissions">
-                    <i class="fa-solid fa-file-code"></i>
-                    <span class="nav-item">Submissions</span>
-                </a>
-                <span class="tooltip">Submissions</span>
-            </li>
-            <li>
-                <a href = "/adminnews">
-                    <i class="fa-solid fa-newspaper"></i>
-                    <span class="nav-item">News</span>
-                </a>
-                <span class="tooltip">News</span>
-            </li>
-            <li>
-                <a href = "/adminusers">
-                    <i class="fa-solid fa-users"></i>
-                    <span class="nav-item">Users</span>
-                </a>
-                <span class="tooltip">Users</span>
-            </li>
-            <li>
-                <a href = "/adminadmins">
-                    <i class="fa-solid fa-user-secret"></i>
-                    <span class="nav-item">Admins</span>
-                </a>
-                <span class="tooltip">Admins</span>
-            </li>
-            <li>
-                <a onclick="logout()">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span class="nav-item">Logout</span>
-                </a>
-                <span class="tooltip">Logout</span>
-            </li>
-        </ul>
-    </div>
+    @include('component.admin.sidenav')
+   
 
     <div class="main-content">
         <h1>Dashboard</h1>
