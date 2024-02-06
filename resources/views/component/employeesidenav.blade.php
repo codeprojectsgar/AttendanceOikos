@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "icon" href = "/assets/Oikos Logo.png">
-    <link rel="stylesheet" href = "/CSS/employee.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Oikos Student: Announcement</title>
-</head>
-<body>
-    <div class="sidebar">
+<div class="sidebar">
         <div class="top">
             <div class="logo">
                 <i class="fa-solid fa-user-secret"></i>
@@ -23,7 +10,7 @@
             <img src ="" alt="secret-user" class = "user-img">
             <div class="">
                 <p class = "bold">Kafelnikov Dela Rosa</p>
-                <p>(Employee)</p>
+                <p>(Student)</p>
             </div>
         </div>
         <ul>
@@ -80,26 +67,4 @@
                 <span class="tooltip">Logout</span>
             </li>
         </ul>
-    </div>
-    <div class="modal-mask">
-        
-    </div>
-    <div class="main-content">
-        <h1>Announcements</h1>
-        <button id="post">+ Add Annoucement</button>
-        @include('component.employee.annoucement_component')
-    </div>
-
-
-    <script>
-        let btn = document.querySelector('#btn');
-        let sidebar = document.querySelector('.sidebar');
-
-        btn.onclick = function () {
-            sidebar.classList.toggle('active');
-        }
-    </script>
-
-
-</body>
-</html>
+</div>
