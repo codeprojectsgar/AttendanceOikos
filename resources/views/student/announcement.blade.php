@@ -15,7 +15,7 @@
 <body>
         @include('component.student.sidenav')
         <div class="main-content">
-        <h1>Announcement</h1>
+        <h1>Announcements</h1>
         @include('component.student.announcement_component')
         </div>
     </div>

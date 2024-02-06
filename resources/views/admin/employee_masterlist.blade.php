@@ -17,8 +17,7 @@
 
     <div class="main-content">
         <h1>Employee Master List</h1>
-        <div class="container">
-        </div>
+        @include('component.admin.emp_masterlist_component')
     </div>
 
 
