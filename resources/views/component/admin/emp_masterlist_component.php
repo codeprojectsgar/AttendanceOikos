@@ -23,7 +23,7 @@
                                 <td>Amy Wulfhardt</td>
                                 <td>Teacher</td>
                                 <td>03/23/2024</td>
-                                <td>Active</td>
+                                <td style="color: green">Active</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -32,7 +32,7 @@
                                 <td>Ryan Gosling</td>
                                 <td>Teacher</td>
                                 <td>02/21/2024</td>
-                                <td>Inactive</td>
+                                <td style="color: red">Inactive</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -41,7 +41,7 @@
                                 <td>Gawr Gura</td>
                                 <td>IT</td>
                                 <td>02/04/2024</td>
-                                <td>Active</td>
+                                <td style="color: green">Active</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -50,7 +50,7 @@
                                 <td>Amelia Watson</td>
                                 <td>Admin</td>
                                 <td>02/03/2024</td>
-                                <td>Inactive</td>
+                                <td style="color: red">Inactive</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -59,7 +59,7 @@
                                 <td>Mori Calliope</td>
                                 <td>IT</td>
                                 <td>03/23/2024</td>
-                                <td>Active</td>
+                                <td style="color: green">Active</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -68,7 +68,7 @@
                                 <td>Usada Pekora</td>
                                 <td>Teacher</td>
                                 <td>02/21/2024</td>
-                                <td>Inactive</td>
+                                <td style="color: red">Inactive</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -77,7 +77,7 @@
                                 <td>Shirokami Fubuki</td>
                                 <td>Teacher</td>
                                 <td>02/04/2024</td>
-                                <td>Active</td>
+                                <td style="color: green">Active</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -86,7 +86,7 @@
                                 <td>Rin Penrose</td>
                                 <td>Admin</td>
                                 <td>02/03/2024</td>
-                                <td>Inactive</td>
+                                <td style="color: red">Inactive</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -95,7 +95,7 @@
                                 <td>Gin Penrose</td>
                                 <td>IT</td>
                                 <td>03/23/2024</td>
-                                <td>Active</td>
+                                <td style="color: green">Active</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -104,7 +104,7 @@
                                 <td>Amano Pikamee</td>
                                 <td>IT</td>
                                 <td>02/21/2024</td>
-                                <td>Inactive</td>
+                                <td style="color: red">Inactive</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -113,7 +113,7 @@
                                 <td>Uruha Rusia</td>
                                 <td>Teacher</td>
                                 <td>02/04/2024</td>
-                                <td>Active</td>
+                                <td style="color: green">Active</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -122,7 +122,7 @@
                                 <td>Asa Coco</td>
                                 <td>Teacher</td>
                                 <td>02/03/2024</td>
-                                <td>Inactive</td>
+                                <td style="color: red">Inactive</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                             <tr>
@@ -131,7 +131,7 @@
                                 <td>Tokino Sora</td>
                                 <td>Admin</td>
                                 <td>02/03/2024</td>
-                                <td>Inactive</td>
+                                <td style="color: red">Inactive</td>
                                 <td><button><i class="fa-solid fa-pencil"></i></button></td>
                             </tr>
                         </tbody>
