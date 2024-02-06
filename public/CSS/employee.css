@@ -173,11 +173,6 @@ body {
     padding: 1rem;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-}
-
 .container-annoucement {
     display: flex;
     justify-content: space-between;
