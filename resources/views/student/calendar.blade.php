@@ -24,6 +24,8 @@
     <!-- JavaScript From Pareng GPT -->
 
     <script>
+        var datePicked="";
+        var dateCellSelector="";
         let btn = document.querySelector('#btn');
         let sidebar = document.querySelector('.sidebar');
 
@@ -32,13 +34,17 @@
         }
         const calendar = document.querySelector('.Calendar1');
         let fullCalendar= new FullCalendar.Calendar(calendar,{
+            timeZone:'local',
             intialView:'timeGridWeek',
             selectable:true,
             dateClick:function (info){
-                console.log(info);
+                console.log(info.date);
             }
         });
         fullCalendar.render();
+        console.log(fullCalendar.getDate());
+        //let calendarCell=document.querySelector();
+        //calendarCell.textContent="Why are you gae";
     </script>
 
 
