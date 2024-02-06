@@ -266,7 +266,7 @@
             <tr>
                 <td>CPE-2024- 01-00001</td>
                 <td>Certificate of Good Moral Character</td>
-                <td>Jan 01, 2024 </td>
+                <td>Jan 01, 2024</td>
                 <td>
                     Pending
                     <a href = "/employees/Document-Request/Approval">
