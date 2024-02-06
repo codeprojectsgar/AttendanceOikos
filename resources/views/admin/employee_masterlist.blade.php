@@ -16,7 +16,7 @@
    
 
     <div class="main-content">
-        <h1>Employee Master List</h1>
+        <h1>Employee Masterlist</h1>
         <div class="container">
         </div>
     </div>
