@@ -90,7 +90,7 @@
                         <li class="announcement">
                             <div class="sender-icon"><img src="../assets/emp_ph.jpg" alt="user icon" class="sender-img"></div>
                             <div class="announcement-header"><h3>Welcome</h3><br>Announcement to New Students</div>
-                            <div class="announcement-details">19/01/23<br>By: Amalee</div>
+                            <div class="announcement-details">19/01/23<br>By: Anna</div>
                         </li>
                     </a>
                     <a href="">
@@ -111,7 +111,7 @@
                         <li class="announcement">
                             <div class="sender-icon"><img src="../assets/emp_ph.jpg" alt="user icon" class="sender-img"></div>
                             <div class="announcement-header"><h3>Short Quiz</h3><br>Purposive Communication</div>
-                            <div class="announcement-details">03/01/23<br>By: Amalee</div>
+                            <div class="announcement-details">03/01/23<br>By: Anna</div>
                         </li>
                     </a>
                 </ul>

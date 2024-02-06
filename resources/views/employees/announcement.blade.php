@@ -9,38 +9,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Oikos Student: Announcement</title>
-    <style>
-        .container{
-            margin-top:1em;
-            padding:1em;
-            background-color:white;
-            display:flex;
-            flex-direction:column;
-            border-radius: 5px;
-        }
-        #container-title{
-            font-weight: 400;
-            border-bottom:1px solid #dedede;
-            color:#323468;
-        }
-        #post{
-            width:11em;
-            height:2em;
-            padding: .2rem;
-            font-size:1.2rem;
-            letter-spacing: 1px;
-            color:white;
-            background-color:#323468;
-            border:none;
-            border-radius:15px;
-            opacity:100%;
-            transition:opacity 150ms ease-in-out;
-        }
-        #post:hover{
-            opacity:75%;
-            cursor: pointer;
-        }
-    </style>
 </head>
 <body>
     <div class="sidebar">
@@ -55,7 +23,7 @@
             <img src ="" alt="secret-user" class = "user-img">
             <div class="">
                 <p class = "bold">Kafelnikov Dela Rosa</p>
-                <p>(Student)</p>
+                <p>(Employee)</p>
             </div>
         </div>
         <ul>
@@ -117,11 +85,51 @@
         
     </div>
     <div class="main-content">
-        <h1>Announcements</h1>
-        <button id="post">+ Add Annoucement</button>
+        <h1>Announcement</h1>
         <div class="container">
-            <div class="post-header">
-                <h3 id=container-title>Annoucement Logs</h3>
+            <div class="announcement-logs">
+                <div class="header">Announcement Logs
+                    <div class="search">
+                        <input type="text" id="search-bar" size="30" placeholder="Search...">
+                    </div>
+                </div>
+                <ul id="announcement-list">
+                    <a href="">
+                        <li class="announcement">
+                            <div class="sender-icon"><img src="../assets/female_emp1.jpg" alt="user icon" class="sender-img"></div>
+                            <div class="announcement-header"><h3>Welcome</h3><br>Announcement to New Employees</div>
+                            <div class="announcement-details">19/01/23<br>By: Amalee</div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li class="announcement">
+                            <div class="sender-icon"><img src="../assets/male_emp1.jpg" alt="user icon" class="sender-img"></div>
+                            <div class="announcement-header"><h3>Maintenance Report</h3><br>Version 1.23</div>
+                            <div class="announcement-details">05/01/23<br>By: David</div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li class="announcement">
+                            <div class="sender-icon"><img src="../assets/emp_ph.jpg" alt="user icon" class="sender-img"></div>
+                            <div class="announcement-header"><h3>Website Update</h3><br>Version 1.22</div>
+                            <div class="announcement-details">03/01/23<br>By: Kaela</div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li class="announcement">
+                            <div class="sender-icon"><img src="../assets/female_emp1.jpg" alt="user icon" class="sender-img"></div>
+                            <div class="announcement-header"><h3>New Management</h3><br>New System and Conditions</div>
+                            <div class="announcement-details">03/01/23<br>By: Amalee</div>
+                        </li>
+                    </a>
+                    <a href="">
+                        <li class="announcement">
+                            <div class="sender-icon"><img src="../assets/male_emp1.jpg" alt="user icon" class="sender-img"></div>
+                            <div class="announcement-header"><h3>Team Meeting</h3><br>Discuss System Overview</div>
+                            <div class="announcement-details">03/05/23<br>By: David</div>
+                        </li>
+                    </a>
+                </ul>
             </div>
         </div>
     </div>
