@@ -23,7 +23,6 @@ class Pages extends Controller
 
     //Student navigation
 
-  
     public function s_timerecord () {
         return view("student.time_record");
     }
@@ -81,7 +80,6 @@ class Pages extends Controller
     public function a_dashboard(){
         return view("admin.dashboard");
     }
-    
     public function a_announcement(){
         return view("admin.announcement");
     }
@@ -92,10 +90,18 @@ class Pages extends Controller
     public function a_time_record(){
         return view("admin.time_record");
     }
+    public function a_tr_student(){
+        return view("admin.tr_student");
+    }
+    public function a_tr_employee(){
+        return view("admin.tr_employee");
+    }
+    public function a_tr_deped(){
+        return view("admin.tr_deped");
+    }
     public function a_privileges(){
         return view("admin.privileges");
     }
-
     public function a_document_request(){
         return view("admin.document_request");
     }
@@ -105,9 +111,4 @@ class Pages extends Controller
     public function a_emasterlist(){
         return view("admin.employee_masterlist");
     }
-
-
-
-
-
 }

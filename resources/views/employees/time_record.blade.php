@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "icon" href = "/assets/Oikos Logo.png">
-    <link rel="stylesheet" href = "/CSS/student.css">
+    <link rel="stylesheet" href = "/CSS/employee.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -28,16 +28,17 @@
         }
 
         .filter-container {
-            background-color: #f2f2f2;
-            color: black;
+            background-color: #323468;
+            color: #fff;
             padding: 15px;
             text-align: left;
+            display: flex;
+            flex-direction: row-reverse;
 
         }
 
         .filter-container label {
             margin-right: 10px;
-            cursor: pointer;
         }
 
         .filter-container input[type="date"] {
@@ -45,12 +46,9 @@
         }
 
         .filter-container button {
-            margin-top: 10px;
-            margin-left: 60%;
-            border-radius: 4px;
-            background-color: #323468;
-            color: white;
-            padding: 8px 16px;
+            border-radius: 5px;
+            padding: 3px;
+            margin-right: 10px;
             cursor: pointer;
         }
 
@@ -94,14 +92,13 @@
         <div class="log-body">
             <div style = "z-index:1;" class="log-container">
                 <div class="filter-container">
-                    <label for="startDate">Start Date:</label>
-                    <input type="date" id="startDate" class="date-input">
-                    <label for="endDate">End Date:</label>
-                    <input type="date" id="endDate" class="date-input">
-                    <button onclick="applyFilter()">Apply Filter</button>
                     <button onclick="clearFilter()">Clear Filter</button>
+                    <button onclick="applyFilter()">Apply Filter</button>
+                    <input type="date" id="endDate" class="date-input">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="startDate" class="date-input">
+                    <label for="startDate">Start Date:</label>
                 </div>
-                <h2>Employee Logs</h2>
                 <table style = "width: 100%;" class="attendance-type">
                     <thead>
                         <tr>

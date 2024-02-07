@@ -9,15 +9,21 @@
     <!-- implemented sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Oikos Admin: Employee Masterlist</title>
+    <title>Oikos Admin: Student Time Record</title>
+    <style>
+        .time-record,
+        .tr-label {
+            display: inline;
+        }
+    </style>
 </head>
 <body>
     @include('component.admin.sidenav')
    
 
     <div class="main-content">
-        <h1>Employee Master List</h1>
-        @include('component.admin.emp_masterlist_component')
+        <h1 class="time-record"><a href = "/admin/Time_Record"  style = "color: rgba(100, 100, 100, 0.700); text-decoration: none;">Time Record ></a></h1>
+        <h1 class="tr-label" style = "margin-left: 0.3em;">Student Logs</h1>
         <div class="container">
         </div>
     </div>

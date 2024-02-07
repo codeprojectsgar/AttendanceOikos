@@ -55,8 +55,9 @@ Route::get('/admin/Privileges',[Pages::class,'a_Privileges']);
 Route::get('/admin/logout',[LoginController::class,'logout']);
 Route::get('/admin/Student_Masterlist',[Pages::class,'a_smasterlist']);
 Route::get('/admin/Employee_Masterlist',[Pages::class,'a_emasterlist']);
-
-
+Route::get('/admin/Time_Record/Student',[Pages::class,'a_tr_student']);
+Route::get('/admin/Time_Record/Employee',[Pages::class,'a_tr_employee']);
+Route::get('/admin/Time_Record/DepEd',[Pages::class,'a_tr_deped']);
 
 Route::get('/reset', [Pages::class,'resetpassword']);
 

@@ -258,5 +258,209 @@ body {
     text-decoration: none;
 }
 
+.container-emp-list {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem;
+}
+
+.employee-list {
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    max-width: 1500px;
+    width: 100%;
+    padding: 20px;
+}
+
+.header-emp-list h3 {
+    padding: 3px;
+    display: inline-block;
+}
+
+.search-emp-list {
+    display: inline-block;
+    justify-content: space-between; 
+    margin-bottom: 15px;
+    float: right;
+    padding: 3px;
+}
+
+.search-emp-list #search-bar {
+    border-radius: 5px;
+    padding: 3px;
+    border: 1px solid;
+}
+
+.emp-masterlist {
+    border-collapse: collapse;
+    border: 2px solid #f2f2f2;
+}
+
+.emp-masterlist th {
+    border: 2px solid #f2f2f2;
+    padding: 3px;
+    color: #fff;
+    background-color: #323468;
+}
+
+.emp-masterlist td {
+    text-align: center;
+    padding: 2px;
+    border-left: 2px solid #f2f2f2;
+    border-right: 2px solid #f2f2f2;
+}
+
+.emp-masterlist button {
+    border: none;
+    color: #fff;
+    background-color: #323468;
+    opacity: 50%;
+    cursor: pointer;
+}
+
+.emp-masterlist tbody button {
+    border: none;
+    color: #000;
+    background-color: #fff;
+    opacity: 50%;
+}
+
+.emp-masterlist button:hover{
+    opacity: 100%;
+}
+
+.emp-masterlist #emp-masterlist-body tr:hover {
+    background-color: #f2f2f2;
+}
+
+.emp-masterlist #emp-masterlist-body tr:hover button{
+    background-color: #f2f2f2;
+}
+
+.emp-masterlist-nextp {
+    padding: 10px;
+}
+
+.emp-masterlist-nextp button {
+    border: none;
+    cursor: pointer;
+}
+
+.std-log-body{
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    max-width: 1500px;
+    width: 100%;
+    padding: 20px;
+
+}
+.std-log-container {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.std-filter-container {
+    background-color: #f2f2f2;
+    color: black;
+    padding: 15px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.std-qr-table-container {
+margin-top: 20px;
+position: relative;
+}
+.std-filter-container h2{
+    padding: 3px;
+    display: inline-block;
+}
+.std-filter-container label {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.std-filter-container input[type="text"] {
+    margin-right: 10px;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 6px;
+}
+
+.std-filter-container button {
+
+    border-radius: 4px;
+    background-color: #323468;
+    color: white;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.std-attendance-type {
+    border-collapse: collapse;
+    border: 2px solid #f2f2f2;
+}
+
+
+.std-attendance-type td {
+    text-align: center;
+    padding: 2px;
+    border-left: 2px solid #f2f2f2;
+    border-right: 2px solid #f2f2f2;
+}
+
+.std-attendance-type th {
+    border: 2px solid #f2f2f2;
+    padding: 3px;
+    color: #fff;
+    background-color: #323468;
+    
+}
+
+.std-attendance-type tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.std-attendance-type tr:hover {
+    background-color: #f1f1f1;
+}
+.std-filter-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #323468;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.std-search-container {
+    position: relative;
+}
+.std-search-container input[type="text"] {
+    padding-left: 30px;
+}
+
+.std-search-container i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+}
+
+
+
 
 

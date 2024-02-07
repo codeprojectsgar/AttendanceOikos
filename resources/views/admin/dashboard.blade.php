@@ -182,9 +182,6 @@
                             <a href="/admin/Employee_Masterlist">View Details</a>
                         </div>
                     </div>
-                    <div class="right-hand">
-                        <p id="count">5</p>
-                    </div>
                 </div>
                 <div class="card">
                     <div class="left-hand">
