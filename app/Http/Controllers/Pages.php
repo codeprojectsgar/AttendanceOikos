@@ -93,7 +93,7 @@ class Pages extends Controller
     public function a_tr_student(){
         return view("admin.tr_student");
     }
-    public function a_tr_employeee(){
+    public function a_tr_employee(){
         return view("admin.tr_employee");
     }
     public function a_tr_deped(){
