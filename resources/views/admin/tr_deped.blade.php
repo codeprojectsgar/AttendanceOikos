@@ -70,9 +70,8 @@
 </head>
 <body>
     @include('component.admin.sidenav')
-
     <div class="main-content">
-        <h1><a href="/admin/Time_Record">Time Record > </a> DepEd</h1>
+        <h1><a href="/admin/Time_Record">Time Record > </a> DepEd SF2</h1>
         <div class="container">
             <div class="lists">
                 <!--Create a drop down-->
