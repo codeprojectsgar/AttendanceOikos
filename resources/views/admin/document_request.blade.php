@@ -229,7 +229,7 @@
                 <br>
                 <div class="form-group">
                     <label for="reason">Reason</label>
-                    <textarea id="reason" cols="30" rows="10"></textarea>
+                    <textarea id="reason" cols="30" rows="10" readonly></textarea>
                 </div>
                 <br>
                 <div class="form-group-file">

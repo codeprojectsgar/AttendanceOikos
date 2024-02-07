@@ -86,7 +86,6 @@
     </div>
     <div class="main-content">
         <h1>Announcements</h1>
-        <button id="post">+ Add Annoucement</button>
         @include('component.employee.annoucement_component')
     </div>
 
