@@ -31,6 +31,8 @@
             color: #fff;
             padding: 15px;
             text-align: left;
+            display: flex;
+            flex-direction: row-reverse;
         }
 
         .filter-container label {
@@ -42,7 +44,10 @@
         }
 
         .filter-container button {
-            margin-top: 10px;
+            border-radius: 5px;
+            padding: 3px;
+            margin-right: 10px;
+            cursor: pointer;
         }
 
         .attendance-type {
@@ -80,11 +85,12 @@
         <div class="log-body">
             <div style = "z-index:1;" class="log-container">
                 <div class="filter-container">
-                    <label for="startDate">Start Date:</label>
-                    <input type="date" id="startDate">
+                    <button onclick="clearFilter()">Clear Filter</button>
+                    <button onclick="applyFilter()">Apply Filter</button>
+                    <input type="date" id="endDate" class="date-input">
                     <label for="endDate">End Date:</label>
-                    <input type="date" id="endDate">
-                    <button>Apply</button>
+                    <input type="date" id="startDate" class="date-input">
+                    <label for="startDate">Start Date:</label>
                 </div>
         
                 <table style = "width: 100%;" class="attendance-type">
@@ -107,7 +113,7 @@
                             <th>Out</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="logTableBody">
                         <tr>
                             <td>John Doe</td>
                             <td>Student</td>
@@ -128,6 +134,53 @@
         btn.onclick = function () {
             sidebar.classList.toggle('active');
         }
+        function applyFilter() {
+        // Get start and end dates from the input fields
+        var startDate = document.getElementById('startDate').value;
+        var endDate = document.getElementById('endDate').value;
+
+        // Get the table body
+        var tableBody = document.getElementById('logTableBody');
+
+        // Get all rows in the table
+        var rows = tableBody.getElementsByTagName('tr');
+
+        // Loop through each row and hide/show based on the date range
+        for (var i = 0; i < rows.length; i++) {
+            var dateCell = rows[i].getElementsByTagName('td')[2]; // Assuming date is in the third column
+
+            if (dateCell) {
+                var currentDate = dateCell.textContent || dateCell.innerText;
+
+                // Check if the date is within the specified range
+                if (currentDate >= startDate && currentDate <= endDate) {
+                    rows[i].style.display = ''; // Show the row
+                } else {
+                    rows[i].style.display = 'none'; // Hide the row
+                }
+            }
+        }
+    }
+    function clearFilter() {
+        // Get the start and end date input fields
+        var startDateInput = document.getElementById('startDate');
+        var endDateInput = document.getElementById('endDate');
+
+        // Set their values to empty strings to clear the filter
+        startDateInput.value = '';
+        endDateInput.value = '';
+
+        // Get the table body
+        var tableBody = document.getElementById('logTableBody');
+
+        // Get all rows in the table
+        var rows = tableBody.getElementsByTagName('tr');
+
+        // Loop through each row and show it
+        for (var i = 0; i < rows.length; i++) {
+            rows[i].style.display = '';
+        }
+    }
     </script>
 
 
