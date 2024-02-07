@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "icon" href = "/assets/Oikos Logo.png">
-    <link rel="stylesheet" href = "/CSS/student.css">
+    <link rel="stylesheet" href = "/CSS/admin.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -124,8 +124,8 @@
     @include('component.admin.sidenav')
     <div class="main-content">
         <h1>Students Masterlist</h1>
-        <div class="container"></div>
-        <div class="log-body">
+        <div class="container">
+            <div class="log-body">
             <div style="z-index:1;" class="log-container">
                 <div class="filter-container">
                     <h2>Filtered List</h2>
@@ -234,6 +234,7 @@
                     </tbody>
                 </table>
             </div>
+        </div>
         </div> 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
@@ -280,7 +281,6 @@
             }
             let sortDirectionID = 1;
             let sortDirectionName = 1;
-             
             let sortDirectionDate = 1;
             let sortDirectionLevel = 1; 
             let sortDirectionSection = 1; 
