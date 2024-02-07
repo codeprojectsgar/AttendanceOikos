@@ -9,7 +9,7 @@
     <!-- implemented sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Oikos Admin: Employee Time Record</title>
+    <title>Oikos Admin: DepEd Form</title>
 </head>
 <body>
     @include('component.admin.sidenav')
