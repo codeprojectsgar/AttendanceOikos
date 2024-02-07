@@ -149,7 +149,7 @@
     @include('component.employee.sidenav')
     <div class="main-content">
         <div class="header-content">
-            <h1 class="document-request" style = "color: rgba(100, 100, 100, 0.700)">Document Request > </h1>
+            <h1 class="document-request"><a href = "/employees/Document-Request"  style = "color: rgba(100, 100, 100, 0.700); text-decoration: none;">Document Request ></a> </h1>
             <h1 class="approval" style = "margin-left: 0.3em;">Approval</h1>
         </div>
         

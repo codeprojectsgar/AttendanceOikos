@@ -18,6 +18,8 @@
     <div class="main-content">
         <h1>Employee Master List</h1>
         @include('component.admin.emp_masterlist_component')
+        <div class="container">
+        </div>
     </div>
 
 

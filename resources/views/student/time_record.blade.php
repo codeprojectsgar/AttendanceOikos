@@ -77,8 +77,6 @@
     @include('component.student.sidenav')
     <div class="main-content">
         <h1>Time Record</h1>
-        <div class="container">
-        </div>
         <div class="log-body">
             <div style = "z-index:1;" class="log-container">
                 <div class="filter-container">
