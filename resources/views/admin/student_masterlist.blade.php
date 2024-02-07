@@ -10,168 +10,60 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        .log-body{
-            background-color: #f2f2f2;
-            margin: 1em;
-            padding: 0;
-            display: flex;
 
-        }
-        .log-container {
-            width: 100%;
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            
-        }
-
-        .filter-container {
-            background-color: #f2f2f2;
-            color: black;
-            padding: 15px;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .qr-table-container {
-        margin-top: 20px;
-        position: relative;
-        }
-        .filter-container h2{
-            margin: 0;
-        }
-        .filter-container label {
-            margin-right: 10px;
-            cursor: pointer;
-        }
-
-        .filter-container input[type="text"] {
-            margin-right: 10px;
-            border: 2px solid black;
-            border-radius: 15px;
-            padding: 6px;
-        }
-
-        .filter-container button {
-
-            border-radius: 4px;
-            background-color: #323468;
-            color: white;
-            padding: 8px 16px;
-            cursor: pointer;
-        }
-
-        .attendance-type {
-            background-color: #f2f2f2;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .attendance-type th,
-        .attendance-type td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: center;
-        }
-
-        .attendance-type th {
-            background-color: #323468;
-            color: #fff;
-            
-        }
-
-        .attendance-type tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .attendance-type tr:hover {
-            background-color: #f1f1f1;
-        }
-        .filter-button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: #323468;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-        .search-container {
-            position: relative;
-        }
-        .search-container input[type="text"] {
-            padding-left: 30px;
-        }
-
-        .search-container i {
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #666;
-            cursor: pointer;
-        }
-
-    </style>
-    <title>Oikos Student: Time Record</title>
+    <title>Oikos Admin: Student Master List</title>
 </head>
 <body>
     @include('component.admin.sidenav')
     <div class="main-content">
-        <h1>Students Masterlist</h1>
-        <div class="container">
-            <div class="log-body">
-            <div style="z-index:1;" class="log-container">
-                <div class="filter-container">
+        <h1>Students Master List</h1>
+        <div class="std-log-body">
+            <div style="z-index:1;" class="std-log-container">
+                <div class="std-filter-container">
                     <h2>Filtered List</h2>
                     <label for="search"></label>
-                    <div class="search-container">
+                    <div class="std-search-container">
                         <input type="text" id="search" oninput="applyFilter()">
                         <i class="fas fa-search" id="search-icon"></i>
                     </div>
                 </div>
-                <table style="width: 100%;" class="attendance-type">
+                <table style="width: 100%;" class="std-attendance-type">
                     <thead>
                         <tr>
                             <th>QR</th>
                             <th>
                                 <button class="sort-button" onclick="sortColumnByID()">
-                                    <i class="fa fa-sort-numeric-asc"></i>
+                                    <i class="fa-solid fa-arrow-down-wide-short"></i>
                                 </button>
                                 ID
                             </th>
                             <th>
                                 <button class="sort-button" onclick="sortColumnByName()">
-                                    <i class="fas fa-sort-alpha-down" id="sort-icon-name"></i>
+                                    <i class="fa-solid fa-arrow-down-wide-short" id="sort-icon-name"></i>
                                 </button>
                                 Name
                             </th>
                             <th>
                                 <button class="sort-button" onclick="sortColumnByDate()">
-                                    <i class="fas fa-sort-alpha-down"></i>
+                                    <i class="fa-solid fa-arrow-down-wide-short"></i>
                                 </button>
                                 Date
                             </th>
                             <th>
                                 <button class="sort-button" onclick="sortColumnByLevel()">
-                                    <i class="fas fa-sort-alpha-down"></i>
+                                    <i class="fa-solid fa-filter"></i>
                                 </button>
                                 Level
                             </th>
                             <th>
                                 <button class="sort-button" onclick="sortColumnBySection()">
-                                    <i class="fas fa-sort-alpha-down"></i>
+                                    <i class="fa-solid fa-arrow-down-wide-short"></i>
                                 </button>
                                 Section
                             </th>
                             <th>
                                 <button class="sort-button" onclick="sortColumnByStatus()">
-                                <i class="fas fa-sort-alpha-down"></i>
+                                <i class="fa-solid fa-filter"></i>
                             </button>
                             Status
                             </th>
@@ -189,7 +81,7 @@
                             <td>Grade 3</td>
                             <td>Neitzche</td>
                             <td>Pending</td>
-                            <td><i class="fas fa-edit"></i></td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
                         </tr>
                         <tr>
                             <td>PR1ME</td>
@@ -199,7 +91,7 @@
                             <td>Grade 10</td>
                             <td>Plato</td>
                             <td>Enrolled</td>
-                            <td><i class="fas fa-edit"></i></td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
                         </tr>
                         <tr>
                             <td>C021</td>
@@ -209,7 +101,7 @@
                             <td>Grade 4</td>
                             <td>Aristotle</td>
                             <td>Enrolled</td>
-                            <td><i class="fas fa-edit"></i></td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
                         </tr>
                         <tr>
                             <td>C022</td>
@@ -219,7 +111,7 @@
                             <td>Grade 5</td>
                             <td>Paloma</td>
                             <td>Pending</td>
-                            <td><i class="fas fa-edit"></i></td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
                         </tr>
                         <tr>
                             <td>C023</td>
@@ -229,13 +121,12 @@
                             <td>Grade 1</td>
                             <td>Democritus</td>
                             <td>Pending</td>
-                            <td><i class="fas fa-edit"></i></td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-        </div> 
+            <div class="container"></div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var tableBody = document.getElementById('logTableBody');
@@ -281,6 +172,7 @@
             }
             let sortDirectionID = 1;
             let sortDirectionName = 1;
+             
             let sortDirectionDate = 1;
             let sortDirectionLevel = 1; 
             let sortDirectionSection = 1; 
