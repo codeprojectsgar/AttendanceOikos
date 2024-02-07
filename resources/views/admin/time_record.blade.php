@@ -13,7 +13,6 @@
 </head>
 <body>
     @include('component.admin.sidenav')
-   
 
     <div class="main-content">
         <h1>Time Record</h1>
