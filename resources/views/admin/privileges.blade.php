@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/Oikos Logo.png">
     <link rel="stylesheet" href="/CSS/admin.css">
+    <link rel="stylesheet" href = "/CSS/Admin_Privileges.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- implemented sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -16,259 +17,7 @@
     <title>Oikos Admin: Privileges</title>
 
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .container {
-            display: flex;
-            height: 100vh;
-        }
-
-        .tabs {
-            width: 20%;
-            border-radius: 2%;
-            background-color: #23195a;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 10px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-            position: absolute;
-            top: 30%;
-            left: 10%;
-        }
-
-        #header {
-            z-index: 0;
-            position: absolute;
-            top: 1%;
-            left: 1%;
-            color: rgba(0, 0, 0, 0.479);
-        }
-
-        .TBG {
-            height: 120%;
-            width: 100%;
-            background-color: #000000; 
-            position: absolute;
-            left: center;
-            z-index: 1; 
-            opacity: 0.15;        
-        }
-
-        .PBG {
-            height: 70%;
-            width: 70%;
-            border-radius: 2%;
-            background-color: #ffffff;
-            color: #23195a;
-            padding: 20px 10px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-            position: relative; 
-            top: 10%;
-            z-index: 2; 
-            text-align: center;
-        }
-
-        .user-pic {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            overflow: hidden;
-            position: absolute;
-            top: 10%;
-            left: 8%;
-        }
-
-        .user-pic img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .buttons-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: absolute; 
-            top: 60%; 
-            left: 6%; 
-        }
-
-        .button {
-            padding: 10%;
-            width: 190%;
-            background-color: #ffffff;
-            color: rgb(0, 0, 0);
-            text-align: center;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .button:hover {
-            background-color: #7723d8;
-            color: rgb(255, 255, 255);
-            border-radius: 20px;
-        }
-
-        #UN1{
-            position: absolute;
-            top: 30%;
-            left: 9.5%;
-            font-weight: bold; 
-        }
-
-        #UNRole{
-            position: absolute;
-            top: 35%;
-            left: 9%;
-        }
-
-        .vertical-line {
-            width: 2px;
-            height: 100%;
-            background-color: #23195a;
-            position: absolute;
-            top: 0;
-            left: 25%;
-            transform: translateX(-50%);
-            opacity: 0.15;
-        }
-
-        .upload-button-container {
-            position: absolute; 
-            top: 2%; 
-            left: 28%; 
-        }
-
-        .upload-button {
-            display: inline-block;
-            position: relative;
-            cursor: pointer;
-            overflow: hidden;
-            margin-top: 20px;
-        }
-
-        .upload-button input {
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 0;
-            padding: 0;
-            font-size: 300%;
-            cursor: pointer;
-            opacity: 0;
-        }
-
-        .upload-button i {
-            font-size: 500%;
-            color: #23195a;
-        }
-
-        #Tab1Header{
-            position: absolute;
-            top: 5%;
-            left: 55%;
-            font-weight: bold;
-        }
-
-        #AddPicText{
-            position: absolute;
-            top: 3%;
-            left: 26%;
-            font-weight: bold;
-            font-size: 50%;
-        }
-
-        .input-field {
-            margin-bottom: 1%;   
-        }
-
-        .input-field label {
-            display: inline-block;
-            width: 12%;
-            text-align: right;
-        }
-
-        .input-field input {
-            width: 25%;  /* Adjust the width as needed */
-            padding: 12px;
-            border: 2px solid #23195a;
-            border-radius: 12px;
-            box-sizing: border-box;
-            margin-top: 8px;  /* Adjust the margin-top as needed */
-        }
-
-        .create-inputs{
-            margin-top: 10%;
-            margin-left: -6%;
-            height: 100%;
-            width: 100%;
-            font-weight: bold;
-        }
-
-        .create-inputs2{
-            margin-top: -28.5%;
-            margin-left: 30%;
-            height: 100%;
-            width: 100%;
-            font-weight: bold;
-        }
-
-        .input-field select {
-            width: 25%;  /* Adjust the width as needed */
-            padding: 12px;
-            border: 2px solid #23195a;
-            border-radius: 12px;
-            box-sizing: border-box;
-            margin-top: 8px;  /* Adjust the margin-top as needed */
-            flex: 1;
-            font-weight: bold;
-        }
-
-        button {
-            background-color: #140d75;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin-top: 1%;
-            margin-left: 12%;
-            cursor: pointer;
-            border-radius: 12px;            
-        }
-
-        button:hover {
-            background-color: #0a0735;
-        }
-
-        #cancelButton {
-            background-color: rgb(168, 14, 14);
-        }
-
-        #cancelButton:Hover {
-            background-color: rgb(97, 17, 17);
-        }
-
-        #createAccountButton{
-            background-color: rgb(11, 156, 84);
-            margin-left: 5%;
-            margin-top: 10%;
-        }
-
-        #createAccountButton:Hover{
-            background-color: rgb(16, 90, 53);
-        }
-        
+       
     </style>
 </head>
 <body>
@@ -290,9 +39,9 @@
                     <div class="button" onclick="openTab('Tab3')">Update</div>
                     <div class="button" onclick="openTab('Tab4')">Remove Account</div>
                 </div>
-                <div class="vertical-line"></div>
-                <p id = "AddPicText">Upload a Profile Picture:</p>
+                <div class="vertical-line"></div>                
                 <div id="Tab1" class="tab-content">
+                    <p id = "AddPicText">Upload a Profile Picture:</p>
                     <div class="upload-button-container">
                         <label for="file-upload" class="upload-button">
                             <input type="file" id="file-upload" accept="image/*" onchange="displayUserPic(this)">
@@ -342,7 +91,67 @@
                             <div id="qrcode" style="margin-top: 20px;"></div>     
                             <button id="cancelButton">Cancel</button>
                             <button id="createAccountButton" onclick="submitCreateAccount()">Create Account</button>               
-                    </div>                
+                    </div>              
+                </div>
+                <div id="Tab2" class="tab-content tab2">
+                    <p id = "Tab2Header">Add a Role</p>
+                    <div id="searchContainer">
+                        <label for="search">Search:</label>
+                        <input type="text" id="search" oninput="filterAccounts()" placeholder="Enter Employee Name">
+                    </div>
+                    <div class="input-field">
+                        <label for="Jtitle">Job Title:</label>
+                        <select id="Jtitle" name="Jtitle" required>
+                            <option value="pos1">Position1</option>
+                            <option value="pos2">Postion2</option>
+                        </select>
+                    </div>
+                    <div id="employeeIdContainer">
+                        <label for="employeeId">Employee ID:</label>
+                        <input id="employeeId" type="text" placeholder="Employee ID" readonly>
+                        <button type="submit" id="submitID" onclick="submitForm()">Submit</button>
+                    </div>
+                </div>
+                <div id="Tab3" class="tab-content tab3">
+                    <p id = "Tab3Header">Update Account Details</p>
+                    <div id="searchContainerTab3">
+                        <label for="searchTab3">Search by Name:</label>
+                        <input type="text" id="searchTab3" oninput="filterAccountsTab3()" placeholder="Enter Employee Name">
+                    </div>
+                    <div class="input-field">
+                        <label for="lastNameTab3">Last Name:</label>
+                        <input type="text" id="lastNameTab3" name="lastNameTab3">
+                    </div>
+                    <div class="input-field">
+                        <label for="firstNameTab3">First Name:</label>
+                        <input type="text" id="firstNameTab3" name="firstNameTab3">
+                    </div>
+                    <div class="input-field">
+                        <label for="middleNameTab3">Middle Name:</label>
+                        <input type="text" id="middleNameTab3" name="middleNameTab3">
+                    </div>
+                    <div class="input-field">
+                        <label for="idTab3">ID:</label>
+                        <input type="text" id="idTab3" name="idTab3">
+                    </div>
+                    <button onclick="updateAccountInfo()">Update Account Info</button>
+                </div>
+                <div id="Tab4" class="tab-content tab4">
+                    <p id = "Tab4Header">Remove an Account</p>
+                    <div class="input-field">
+                        <label for="employeeIdTab4">Employee ID:</label>
+                        <input id="employeeIdTab4" type="text" placeholder="Employee ID">
+                    </div>
+                    <div class="input-field">
+                        <label for="roleTab4">Role:</label>
+                        <select id="roleTab4" name="roleTab4" required>
+                            <!-- Add your role options here -->
+                            <option value="role1">Position1</option>
+                            <option value="role2">Position2</option>
+                        </select>
+                    </div>
+                    <button id="removeButtonTab4" onclick="removeAccount()">Remove Account</button>
+                    <button id="cancelButtonTab4" onclick="cancelRemoval()">Cancel</button>
                 </div>
             </div>
         </div>
@@ -372,44 +181,6 @@
             });
         }
 
-        function generateQRCode() {
-            // Check if QR code is already generated
-            var qrGenerated = sessionStorage.getItem('qrGenerated');
-
-            if (!qrGenerated) {
-                // Generate QR code logic using qrious library
-                generateQR();
-
-                // Display a success message
-                Swal.fire({
-                    icon: 'success',
-                    title: 'QR Code Successfully Generated!',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-
-                // Update button text and disable the button
-                var generateQRButton = document.getElementById('generateQRButton');
-                generateQRButton.innerText = 'Generated';
-                generateQRButton.disabled = true;
-
-                // Save the QR generation status to sessionStorage
-                sessionStorage.setItem('qrGenerated', true);
-            }
-        }
-
-        // Function to generate QR code using qrious library
-        function generateQR() {
-            // Get the input data (you can customize this based on your form data)
-            var email = document.getElementById('email').value;
-
-            // Generate QR code using qrious
-            var qr = new QRious({
-                element: document.getElementById('qrcode'),
-                value: email,
-                size: 300
-            });
-        }
 
         function openTab(tabName) {
             // Hide all tab contents
@@ -427,44 +198,272 @@
 
 
         document.getElementById('createAccountButton').addEventListener('click', function () {
-            Swal.fire({
-                title: 'Are you sure you want to create this account?',
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonColor: 'green',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, create account'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Call the function to submit data to the database
-                    submitCreateAccount();
-                }
-            });
+    // Call the function to submit data to the database
+    submitCreateAccount();
+});
+
+function submitCreateAccount() {
+    // Retrieve the entered data
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    // ... (add other fields as needed)
+
+    // Create an object to store the data
+    const userData = {
+        firstName: firstName,
+        lastName: lastName,
+        // ... (add other fields as needed)
+    };
+
+    // Save the data to localStorage
+    localStorage.setItem('userData', JSON.stringify(userData));
+
+    // Show success popup
+    showSuccessPopup();
+}
+
+function showSuccessPopup() {
+    Swal.fire({
+        title: 'Account Created Successfully!',
+        icon: 'success',
+        confirmButtonColor: 'green',
+        confirmButtonText: 'OK'
+    });
+}
+
+//Tab 2
+//Tab 2
+//Tab 2
+//Tab 2
+
+document.getElementById('cancelButton').addEventListener('click', function () {
+    // Clear all input fields
+    document.querySelectorAll('.input-field input').forEach(input => {
+        input.value = '';
+    });
+});
+        document.addEventListener('DOMContentLoaded', function () {
+            openTab('Tab1'); // Set the default tab
+            // ... rest of your code
         });
 
-        function showSuccessPopup() {
-            Swal.fire({
-                title: 'Account Created Successfully!',
-                icon: 'success',
-                confirmButtonColor: 'green',
-                confirmButtonText: 'OK'
-            });
-        }
+    // Retrieve the last generated ID from local storage
+    let lastGeneratedId = localStorage.getItem('lastGeneratedId');
+    // Initialize the counter based on the last generated ID or start from 202400000
+    let employeeIdCounter = lastGeneratedId ? parseInt(lastGeneratedId.split('-')[1]) + 1 : 202400000;
 
-        function submitCreateAccount() {
-            // Implement logic to handle the submission of the create account form
-            // For demonstration purposes, let's show the success popup after a delay
-            setTimeout(function () {
-                showSuccessPopup();
-            }, 1000);
-        }
+    // Display the initial ID on page load
+    document.getElementById('employeeId').value = `EMP-${employeeIdCounter}`;
 
-        document.getElementById('cancelButton').addEventListener('click', function () {
-            // Clear all input fields
-            document.querySelectorAll('.input-field input').forEach(input => {
-                input.value = '';
-            });
+    // Handle form submission
+    document.getElementById('tab2Form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Get the selected Jtitle
+        const selectedJtitle = document.getElementById('Jtitle').value;
+
+        // Generate a unique employee ID
+        const employeeId = `EMP-${employeeIdCounter}`;
+
+        // Display the generated ID in the input field
+        document.getElementById('employeeId').value = employeeId;
+
+        // Save the generated ID to local storage
+        localStorage.setItem('lastGeneratedId', employeeId);
+
+        // Increment the counter for the next ID
+        employeeIdCounter++;
+
+        // Display success message using SweetAlert2
+        Swal.fire({
+            icon: 'success',
+            title: 'Successfully Submitted!',
+            showConfirmButton: false,
+            timer: 1500
         });
+
+        // TODO: Add logic to handle the submission of Jtitle and employee ID
+        // You can use selectedJtitle and employeeId in your submission logic
+    });
+    function submitForm() {
+        // Get the selected Jtitle
+        const selectedJtitle = document.getElementById('Jtitle').value;
+
+        // Generate a unique employee ID
+        const employeeId = `EMP-${employeeIdCounter}`;
+
+        // Display the generated ID in the input field
+        document.getElementById('employeeId').value = employeeId;
+
+        // Save the generated ID to local storage
+        localStorage.setItem('lastGeneratedId', employeeId);
+
+        // Increment the counter for the next ID
+        employeeIdCounter++;
+
+        // Display success message using SweetAlert2
+        Swal.fire({
+            icon: 'success',
+            title: 'Successfully Submitted!',
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+        // TODO: Add logic to handle the submission of Jtitle and employee ID
+        // You can use selectedJtitle and employeeId in your submission logic
+    }
+
+// Function to filter accounts by name
+function filterAccounts() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("employeeTable");  // Assuming there's a table to display employees
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];  // Assuming the name is in the first column
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+// Modify the function to submit Tab 2 to handle the filtered accounts
+function submitTab2() {
+    // Get the selected Jtitle
+    const selectedJtitle = document.getElementById('Jtitle').value;
+
+    // Get the filtered accounts
+    var accounts = document.querySelectorAll('.account-item');
+
+    // Loop through filtered accounts and perform actions (e.g., update Jtitle)
+    accounts.forEach(account => {
+        var accountId = account.querySelector('.employee-id').innerText;
+
+        // TODO: Add logic to handle the submission of Jtitle and employee ID
+        // You can use selectedJtitle and accountId in your submission logic
+    });
+
+    // Display success message using SweetAlert2
+    Swal.fire({
+        icon: 'success',
+        title: 'Successfully Submitted!',
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
+
+function loadDataFromLocalStorage() {
+    // Retrieve the data from localStorage
+    const storedData = localStorage.getItem('userData');
+
+    if (storedData) {
+        // Parse the stored data (assuming it's JSON)
+        const userData = JSON.parse(storedData);
+
+        // Populate fields in Tab2 with the retrieved data
+        document.getElementById('Jtitle').value = userData.Jtitle;
+        // ... (populate other fields as needed)
+    }
+}
+
+// Call this function when Tab2 is loaded or displayed
+loadDataFromLocalStorage();
+
+//Tab 3
+//Tab 3
+//Tab 3
+//Tab 3
+
+// Retrieve data from localStorage when accessing Tab3
+function loadDataForTab3() {
+    // Retrieve the data from localStorage
+    const storedData = localStorage.getItem('userData');
+
+    if (storedData) {
+        // Parse the stored data (assuming it's JSON)
+        const userData = JSON.parse(storedData);
+
+        // Populate fields in Tab3 with the retrieved data
+        document.getElementById('lastNameTab3').value = userData.lastName;
+        document.getElementById('firstNameTab3').value = userData.firstName;
+        document.getElementById('middleNameTab3').value = userData.middleName;
+        document.getElementById('idTab3').value = userData.id;
+    }
+}
+
+// Call this function when Tab3 is loaded or displayed
+loadDataForTab3();
+
+// Function to update account information
+function updateAccountInfo() {
+    // Implement logic to update the account information in your backend or storage
+
+    // For demonstration purposes, show a success message
+    Swal.fire({
+        icon: 'success',
+        title: 'Account Information Updated!',
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
+
+//Tab 4
+//Tab 4
+//Tab 4
+//Tab 4
+
+function filterAccountsTab4() {
+        // Implement logic to filter and display accounts in Tab4 based on the search input
+        // You can use the value of document.getElementById('searchTab4').value
+    }
+
+    function removeAccount() {
+        // Implement logic to remove the account and associated QR code from the database
+        // You can use the values of document.getElementById('employeeIdTab4').value and document.getElementById('roleTab4').value
+
+        // Display success message using SweetAlert2
+        Swal.fire({
+            icon: 'success',
+            title: 'Account Removed Successfully!',
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+        // Clear input fields after removal
+        document.getElementById('employeeIdTab4').value = '';
+        document.getElementById('roleTab4').value = '';
+    }
+
+    document.getElementById('cancelButtonTab4').addEventListener('click', function () {
+    // Show a confirmation popup
+    Swal.fire({
+        title: 'Cancelled Removal',
+        text: 'The removal process has been cancelled.',
+        icon: 'info',
+        confirmButtonColor: 'green',
+        confirmButtonText: 'OK'
+    });
+
+    // Clear all fields in Tab4
+    clearTab4Fields();
+});
+
+// Add this function to clear all fields in Tab4
+function clearTab4Fields() {
+    // Clear Employee ID and Role fields
+    document.getElementById('employeeIdTab4').value = '';
+    document.getElementById('roleTab4').value = '';
+
+    // Additional fields can be cleared in a similar manner if needed
+}
+
     </script>
 </body>
 </html>
