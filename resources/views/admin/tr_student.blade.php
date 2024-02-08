@@ -15,6 +15,217 @@
         .tr-label {
             display: inline;
         }
+
+        .section-header {
+			margin: 20px;
+			background-color: #323468;
+			border-radius: 5px;
+			height: 100px;
+
+			header {
+                padding-top: 25px;
+				margin: 20px;
+				display: flex;
+				justify-content: space-between;
+
+            }
+
+            header .searchbox {
+					display: flex;
+					padding: 10px;
+					background-color: #ffffff;
+                    border: 1px solid #bbc3c9;
+					border-radius: 5px;
+					width: 25%;
+
+                }
+					
+            .searchbox .icon {
+						color: #bbc3c9;
+						margin: 0 5px;
+					}
+
+					input.search-text {
+                        border: none;
+						background-color: inherit;
+						font-size: 1em;
+						font-weight: 600;
+						outline: none;						
+					}
+				
+			
+		}
+	
+.section-header {
+	header .app-list-options {
+		display: flex;
+		justify-items: center;
+		align-items: center;
+
+		.sort-dropdown {
+			display: flex;
+            background-color: #ffffff;
+			border-radius: 5px;
+			padding: 12px;
+			color: black;
+			font-size: 1em;
+			font-weight: 600;
+			.by,
+			i {
+				color: black;
+				margin-left: 5px;
+			}
+			.drop {
+				border-left: 1px solid #bbc3c9;
+				margin-left: 10px;
+			}
+		}
+
+		.icon {
+			margin: 0 10px;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
+			position: relative;
+			color:#bbc3c9;
+			
+			&:first-child {				
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			
+			&:last-child {				
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+			
+			&.selected {
+				background-color: lighten(#565d68, 50%);
+				color: lighten(#565d68, 20%);
+			}
+		}
+
+		.display-group {
+			display: flex;
+			.icon {
+				margin-right:0;
+				margin-left: 0;
+			}
+		}
+	}
+}
+
+.section-content{
+
+    margin: 20px;
+			background-color: #ffffff;
+			border-radius: 5px;
+			height: 500px;
+
+}
+
+.section-content .student-group{
+            display:flex;
+            flex-direction:column;
+            margin-top:2em;
+            padding:1em;
+            background-color:white;
+            width:100%;
+        }
+
+        .student-group .table-header{
+            display:flex;
+            justify-content: space-between;
+        }
+        .table-header .field-group{
+            display:flex;
+            justify-content: space-between;
+            padding:.3em;
+            width:15%;
+            border-radius:10px;
+            border:1px solid black;
+        }
+        .table-header .field-group{
+            display:flex;
+            justify-content: space-between;
+            width:15%;
+            border-radius:10px;
+            border:1px solid black;
+            transition:border 150ms ease-in-out;
+        }
+        .table-header .field-group input{
+            border:none;
+            width:90%;
+        }
+        .table-header .field-group input:focus{
+            outline:none;
+        } 
+        #count{
+            height:30px;
+            width:30px;
+            font-weight:lighter;
+            font-size:1rem;
+            color:white;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            border-radius:50%;
+            background-color:#ff3131;
+        }
+        .attendance-type {
+            padding: 10px;
+        }
+
+        .attendance-type th,
+        .attendance-type td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .attendance-type th {
+            background-color: #323468;
+            color: #fff;
+        }
+
+        .attendance-type tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .attendance-type tr:hover {
+            background-color: #f1f1f1;
+        }
+        .fc{
+            width:100%;
+            height:50em;
+        }
+        .list{
+            margin-top:1em;
+            display:flex;
+            flex-direction:column;
+        }
+        .list .data{
+            display:flex;
+            justify-content:flex-start;
+            align-items: center;
+            margin-top:.5em;
+        }
+        .list .data .point{
+            height:.8em;
+            width:.8em;
+            border-radius:50%;
+        }
+        .list .data .date{
+            margin-left:.5em;
+        }
+        .list .data .date{
+            margin-left:.5em;
+        }
+        .list .data .event{
+            margin-left:5em;
+            color:#606360;
+        }
+
     </style>
 </head>
 <body>
@@ -25,6 +236,97 @@
         <h1 class="time-record"><a href = "/admin/Time_Record"  style = "color: rgba(100, 100, 100, 0.700); text-decoration: none;">Time Record ></a></h1>
         <h1 class="tr-label" style = "margin-left: 0.3em;">Student Logs</h1>
         <div class="container">
+
+            <section class="section-header">
+
+					<header>
+                        
+						<div class="searchbox">
+							<input type="text" name="search" placeholder="Name of Student" class="search-text"> </input>
+						</div>
+
+						<div class="app-list-options">
+							<div class="sort-dropdown" style="margin-right:20px;"> By <span class="by"> Grade Level </span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+								<div class="drop"> <i class="fa fa-caret-down" aria-hidden="true"></i> </div>
+							</div>
+
+                            <div class="sort-dropdown" style="margin-right:20px;"> By <span class="by"> Section </span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+								<div class="drop"> <i class="fa fa-caret-down" aria-hidden="true"></i> </div>
+							</div>
+
+                            <div class="sort-dropdown" style="margin-right:20px;"> Date <span class="by"> From </span> <i class="fa fa-calendar" aria-hidden="true"></i>
+							</div>
+
+                            <div class="sort-dropdown" style="margin-right:20px;"> Date <span class="by"> To </span> <i class="fa fa-calendar" aria-hidden="true"></i>
+							</div>
+
+                            <div class="sort-dropdown" style="background-color:#5C5EB3; margin-right:20px; color:white;"> Apply Filter
+							</div>
+							
+						</div>
+
+					</header>
+
+            </section>
+
+            <section class="section-content">
+
+            <div class="student-group">
+                <div class="table-header">
+                   
+                </div>
+                <div class="log-body">
+                <table style = "width: 100%;" class="attendance-type">
+                    <thead>
+                        <tr>
+                            <th colspan="3"></th>
+                            <th colspan="2">Morning Attendance</th>
+                            <th colspan="2">Afternoon Attendance</th>
+                            <th colspan="2">Evening Attendance</th>
+                        </tr>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Role</th>
+                            <th>Date</th>
+                            <th>In</th>
+                            <th>Out</th>
+                            <th>In</th>
+                            <th>Out</th>
+                            <th>In</th>
+                            <th>Out</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Doe</td>
+                            <td>Teacher</td>
+                            <td>2024-01-30</td>
+                            <td>09:00 AM</td>
+                            <td>01:00 PM</td>
+                            <td>06:00 PM</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Miles Davis</td>
+                            <td>IT </td>
+                            <td>2024-01-30</td>
+                            <td>09:00 AM</td>
+                            <td>01:00 PM</td>
+                            <td>06:00 PM</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+
+            </section>
+
+        </div>
         </div>
     </div>
 
