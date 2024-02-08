@@ -45,6 +45,10 @@ class Pages extends Controller
         return view("student.announcement");
     }
 
+    public function s_view_announcement () {
+        return view("student.view-announcement");
+    }
+
 
     //Employee navigation
     public function e_userInfo(){
@@ -53,6 +57,9 @@ class Pages extends Controller
     
     public function e_announcement(){
         return view("employees.announcement");
+    }
+    public function e_view_announcement () {
+        return view("employees.view-announcement");
     }
     public function e_calendar(){
         return view("employees.calendar");

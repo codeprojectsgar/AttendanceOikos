@@ -15,11 +15,7 @@
 
 
     <style>
-        .container{
-            display:flex;
-
-        }
-        .boxcont {
+    .boxcont {
         margin-top: 4em;
         margin-left: 2em;
         background-color: #ffffff;
@@ -47,8 +43,7 @@
         box-shadow: 5px 10px #999999;
         border-top-right-radius:2em;
         border-bottom-right-radius:2em;
-}
-
+    }
     .box {
         padding: 4em;
         text-align: center;
@@ -139,13 +134,13 @@
     .box .opt:not(.active):hover {
     background: linear-gradient(to right, #51558F 10%, #ffffff 10%);
     cursor: pointer;
-}
 
-.box .opt.active {
+    }
+    .box .opt.active {
     background-color: #51558F !important;
     color: white !important;
     cursor: default;
-}
+    }
     h1{
         
         font-size:0.9em;
@@ -172,7 +167,6 @@
                     <img src="/assets/pfp.jpg">
                     <div class="txt">
                     <p>(Student Name) <br> (Student Number)</p>
-
                     </div>
                     <button id="student_btn" class="opt" onclick="student_info()">
                         <p>Student Information</p>
@@ -181,13 +175,7 @@
                         <p>Parent Information</p>
                     </button>
                 </div>
-                
-
-                
             </div>
-            
-
-            
         </div>
         <!--Student Information-->
         <div class="boxcont2">
