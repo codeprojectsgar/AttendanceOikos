@@ -282,7 +282,7 @@ body {
 }
 
 .search-emp-list {
-    display: inline-block;
+    display: block;
     justify-content: space-between; 
     margin-bottom: 15px;
     float: right;
@@ -302,14 +302,14 @@ body {
 
 .emp-masterlist th {
     border: 2px solid #f2f2f2;
-    padding: 3px;
+    padding: 8px;
     color: #fff;
     background-color: #323468;
 }
 
 .emp-masterlist td {
     text-align: center;
-    padding: 2px;
+    padding: 5px;
     border-left: 2px solid #f2f2f2;
     border-right: 2px solid #f2f2f2;
 }
@@ -461,6 +461,7 @@ position: relative;
     cursor: pointer;
 }
 
+
 #add-announcement-btn {
     background-color:#323468;
     color: white;
@@ -478,6 +479,144 @@ position: relative;
 }
 
 
+.eml-modal-mask {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    z-index:100;
+    background-color:rgba(0, 0, 0, 0.534);
+    opacity:1;
+    transition:opacity 200ms ease-in-out;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.eml-form-container {
+    position: relative;
+    background-color:white;
+    border-radius:5px;
+    width:50em;
+    height: 25em;
+    display:flex;
+    flex-direction: row;
+}
+
+.eml-details {
+    display: flex;
+    width: 10em;
+    flex-direction: column;
+    border-right: 2px solid #ccc;
+    align-items: center;
+    text-align: center;
+}
+
+.eml-details .emp-img {
+    aspect-ratio: auto;
+    object-fit: cover;
+    width: 9em;
+    height: 9em;
+    border-radius: 100%;
+}
+
+.emp-name {
+    padding: 10px;
+}
+
+.emp-name i {
+    opacity: 50%;
+}
+
+.emp-status {
+    width: 100%;
+}
+
+.emp-status .status-btn{
+    border: none;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.emp-role {
+    width: 100%;
+}
+
+.emp-role .role-btn {
+    border: none;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.emp-status .status-btn:hover {
+    color: #fff;
+    background-color: #8C52FF;
+    cursor: pointer;
+}
+
+.emp-role .role-btn:hover {
+    color: #fff;
+    background-color: #8C52FF;
+    cursor: pointer;
+}
+
+.eml-selection {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.eml-selection label {
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+
+
+.selection {
+    border-radius: 5px;
+    width: 500px;
+    height: 2.5em;
+    font-size: 1rem;
+}
+
+.eml-modal-close {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.eml-modal-close .far {
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+}
+
+.btn-save {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100px;
+    background-color:#13c36b;
+    font-size:.8rem;
+    color:white;
+    border:none;
+    border-radius: 15px;
+    transition:opacity 150ms ease-in-out;
+}
+
+.btn-save:hover {
+    cursor: pointer;
+    opacity:75%;
+}
+
+.hidden{
+    visibility:hidden;
+    opacity:0;
+}
 
 
 
