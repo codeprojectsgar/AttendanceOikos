@@ -19,7 +19,6 @@
 </head>
 <body>
     @include('component.admin.sidenav')
-   
 
     <div class="main-content">
         <h1 class="time-record"><a href = "/admin/Time_Record"  style = "color: rgba(100, 100, 100, 0.700); text-decoration: none;">Time Record ></a></h1>
