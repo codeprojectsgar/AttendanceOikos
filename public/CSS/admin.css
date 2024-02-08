@@ -173,10 +173,10 @@ body {
 
 
 .announcement-logs {
+    margin-top:1em;
     color: black;
     background-color: white;
     border-radius: 5px;
-    max-width: 1200px;
     width: 100%;
     padding: 20px;
 }
@@ -214,7 +214,7 @@ body {
     display: inline-block;
     justify-content: space-between; 
     margin-bottom: 10px;
-
+    float: right;
 }
 
 .search #search-bar {
@@ -225,7 +225,7 @@ body {
 
 .announcement .announcement-details {
     display: inline-block;
-
+    float: right;
     text-align: right;
 }
 
@@ -233,6 +233,7 @@ body {
     display: inline-block;
     margin-left: 10px;
 }
+
 
 .announcement h3 {
     display: inline;
@@ -458,6 +459,22 @@ position: relative;
     transform: translateY(-50%);
     color: #666;
     cursor: pointer;
+}
+
+#add-announcement-btn {
+    background-color:#323468;
+    color: white;
+    border: none;
+    padding: 15px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 100%;
+    margin-left: 1%;
+}
+
+#add-announcement-btn:hover {
+    background-color: #1f203f;
 }
 
 

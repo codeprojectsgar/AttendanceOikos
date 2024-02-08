@@ -34,10 +34,10 @@
                 <p id = "UN1">Admin</p>
                 <p id = "UNRole">IT Admin</p>
                 <div class="buttons-container">
-                    <div class="button" onclick="openTab('Tab1')">Create</div>
-                    <div class="button" onclick="openTab('Tab2')">Role</div>
-                    <div class="button" onclick="openTab('Tab3')">Update</div>
-                    <div class="button" onclick="openTab('Tab4')">Remove Account</div>
+                    <div class="button" onclick="openTab('Tab1')" data-tab="Tab1">Create</div>
+                    <div class="button" onclick="openTab('Tab2')" data-tab="Tab2">Role</div>
+                    <div class="button" onclick="openTab('Tab3')" data-tab="Tab3">Update</div>
+                    <div class="button" onclick="openTab('Tab4')" data-tab="Tab4">Remove Account</div>
                 </div>
                 <div class="vertical-line"></div>                
                 <div id="Tab1" class="tab-content">
@@ -145,7 +145,6 @@
                     <div class="input-field">
                         <label for="roleTab4">Role:</label>
                         <select id="roleTab4" name="roleTab4" required>
-                            <!-- Add your role options here -->
                             <option value="role1">Position1</option>
                             <option value="role2">Position2</option>
                         </select>
@@ -183,18 +182,30 @@
 
 
         function openTab(tabName) {
-            // Hide all tab contents
-            let tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(content => {
-                content.style.display = 'none';
-            });
+    // Remove 'active' class from all buttons
+    let buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
 
-            // Show the selected tab content
-            let selectedTab = document.getElementById(tabName);
-            if (selectedTab) {
-                selectedTab.style.display = 'block';
-            }
-        }
+    // Add 'active' class to the clicked button
+    let clickedButton = document.querySelector(`.button[data-tab="${tabName}"]`);
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+
+    // Hide all tab contents
+    let tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+        content.style.display = 'none';
+    });
+
+    // Show the selected tab content
+    let selectedTab = document.getElementById(tabName);
+    if (selectedTab) {
+        selectedTab.style.display = 'block';
+    }
+}
 
 
         document.getElementById('createAccountButton').addEventListener('click', function () {
