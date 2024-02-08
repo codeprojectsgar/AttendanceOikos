@@ -482,3 +482,9 @@ button:hover {
     background-color: #0a0735;
 }
 
+.button.active {
+    background-color: #7723d8;
+    color: #ffffff; 
+    border-radius: 20px;
+}
+

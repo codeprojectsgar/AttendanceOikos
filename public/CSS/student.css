@@ -169,7 +169,7 @@ body {
     padding: 1rem;
 }
 
-.container {
+.container-announcement {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
