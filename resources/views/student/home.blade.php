@@ -95,6 +95,7 @@
                 flex-direction:column;
             }
         }
+    </style>
 </head>
 <body>
     @include('component.student.sidenav')
