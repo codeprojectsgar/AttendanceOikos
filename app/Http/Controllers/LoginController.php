@@ -14,8 +14,8 @@ class LoginController extends Controller
             'email'=>'required',
             'password'=>'required',
         ]);
-        if(Auth::guard('employees')->attempt($credentials)){
-            $user_role=Auth::guard('employees')->user()->role;
+        if(Auth::guard('users')->attempt($credentials)){
+            $user_role=Auth::guard('users')->user()->role;
             switch($user_role){
                 case 1:
                     $request->session()->put('adminsuccess',true);
@@ -32,8 +32,18 @@ class LoginController extends Controller
         return response()->json(['success'=>false]);
     }
 
-    public function logout(Request $request){
+    public function logoutAdmin(){
         Session::forget('adminsuccess');
+        return redirect('/');
+    }
+
+    public function logoutEmployee(){
+        Session::forget('employeesuccess');
+        return redirect('/');
+    }
+
+    public function logoutStudent(){
+        Session::forget('studentsuccess');
         return redirect('/');
     }
 }

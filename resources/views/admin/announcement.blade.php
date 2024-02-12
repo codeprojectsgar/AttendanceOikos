@@ -18,6 +18,8 @@
     <div class="main-content">
         <h1>Announcement</h1>
         <div class="container">
+            <button id="add-announcement-btn">+ Add Announcement</button>
+            @include('component.admin.announcement_component')
         </div>
     </div>
 

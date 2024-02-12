@@ -21,26 +21,6 @@ Route::get('/', [Pages::class,'login']);
 Route::post('/login-user',[LoginController::class,'login']);
 Route::post('/submitcode', [ForgotPassword::class,'submit']);
 
-
-//routes for students
-Route::get('/student/home',function(){
-    return view('student.home');
-});
-Route::get('/student/announcement',function(){
-    return view('student.announcement');
-});
-Route::get('/student/user',function(){
-    return view('student.user');
-});
-Route::get('/student/time_record',function(){
-    return view('student.time_record');
-});
-Route::get('/student/calendar',function(){
-    return view('student.calendar');
-});
-
-
-
 Route::get('/forgot',[Pages::class,'forgotpassword']);
 Route::get('/reset',[Pages::class,'resetpassword']); 
 
@@ -52,7 +32,7 @@ Route::get('/admin/Document_Request',[Pages::class,'a_Document_Request']);
 Route::get('/admin/Calendar',[Pages::class,'a_calendar']);
 Route::get('/admin/Time_Record',[Pages::class,'a_time_record']);
 Route::get('/admin/Privileges',[Pages::class,'a_Privileges']);
-Route::get('/admin/logout',[LoginController::class,'logout']);
+Route::get('/admin/logout',[LoginController::class,'logoutAdmin']);
 Route::get('/admin/Student_Masterlist',[Pages::class,'a_smasterlist']);
 Route::get('/admin/Employee_Masterlist',[Pages::class,'a_emasterlist']);
 Route::get('/admin/Time_Record/Student',[Pages::class,'a_tr_student']);
@@ -67,6 +47,8 @@ Route::get('/students/Calendar', [Pages::class,'s_calendar']);
 Route::get('/students/Announcement', [Pages::class,'s_announcement']);
 Route::get('/students/User-Info', [Pages::class,'s_userInfo']);
 Route::get('/students/Time-Logs', [Pages::class,'s_timerecord']);
+Route::get('/students/Announcement/View', [Pages::class,'s_view_announcement']);
+Route::get('/students/logout',[LoginController::class,'logoutStudent']);
 
 //Routes for employees
 Route::get('/employees/User-Info',[Pages::class,'e_userInfo']);
@@ -77,5 +59,6 @@ Route::get('/employees/Document-Request/Approval',[Pages::class,'e_approvalpage'
 Route::get('/employees/Time-Record',[Pages::class,'e_time_record']);
 Route::get('/employees/Home',[Pages::class,'e_home']);
 Route::get('/employees/Document-Request/Approval',[Pages::class,'e_approval']);
-
+Route::get('/employees/Announcement/View', [Pages::class,'e_view_announcement']);
+Route::get('/employees/logout',[LoginController::class,'logoutEmployee']);
 
