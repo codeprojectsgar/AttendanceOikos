@@ -50,7 +50,7 @@
             font-size: 20px;
             cursor: pointer;
             border-radius: 50px;
-            border: 1px solid #000000; /* Add border style */
+            border: 1px solid #000000; 
             padding: 0.05% 1%
                 }
 
