@@ -90,6 +90,9 @@ class Pages extends Controller
     public function a_announcement(){
         return view("admin.announcement");
     }
+    public function a_view_announcement () {
+        return view("admin.view-announcement");
+    }
     public function a_calendar(){
         return view("admin.calendar");
     }
