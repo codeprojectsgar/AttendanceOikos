@@ -15,16 +15,15 @@
 
 
     <style>
-        .container{
-            display:flex;
 
-        }
+        
+        
         .boxcont {
         margin-top: 4em;
-        margin-left: 2em;
+        margin-left: -76em;
         background-color: #ffffff;
         height: 70vh;
-        display: flex;
+        
         flex-direction: column;
         align-items: center;
         border-right-style: solid;
@@ -36,7 +35,7 @@
         
     }
     .boxcont2 {
-        margin-top: -70vh;
+        margin-top: -78.5vh;
         margin-left: 33.1em;
         overflow:hidden;
         
@@ -52,6 +51,7 @@
     .box {
         padding: 4em;
         text-align: center;
+        float:left;
         overflow:hidden;
         width:23em;
 
@@ -186,10 +186,10 @@
                 
             </div>
             
+        
 
             
         </div>
-        <!--Student Information-->
         <div class="boxcont2">
             @foreach($student_info as $info)
             <div id="box2">
@@ -248,6 +248,8 @@
             </div>
         </div>
     </div>
+        <!--Student Information-->
+        
 
    
 
