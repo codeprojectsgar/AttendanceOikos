@@ -169,7 +169,7 @@ body {
     padding: 1rem;
 }
 
-.container {
+.container-announcement {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -218,7 +218,7 @@ body {
     display: inline-block;
     justify-content: space-between; 
     margin-bottom: 10px;
-    float: right;
+    float:right;
 }
 
 .search #search-bar {
@@ -229,7 +229,7 @@ body {
 
 .announcement .announcement-details {
     display: inline-block;
-    float: right;
+    float:right;
     text-align: right;
 }
 
@@ -262,5 +262,24 @@ body {
     text-decoration: none;
 }
 
-
-
+.toaster{
+    position:fixed;
+    bottom:0;
+    right:0;
+    padding:1.5rem;
+    z-index:2;
+    background-color:#323468;
+    margin-right:1rem;
+    margin-bottom:1rem;
+    border-radius:50%;
+    opacity:100%;
+    transition:opacity 150ms ease-in-out;
+}
+.toaster:hover{
+    opacity:75%;
+    cursor:pointer;
+}
+.toaster i {
+    font-size:1.3rem;
+    color:white;
+}

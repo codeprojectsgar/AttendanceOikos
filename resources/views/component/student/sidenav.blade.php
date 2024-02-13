@@ -1,3 +1,8 @@
+@if(!session('studentsuccess'))
+    <script>
+        window.location.href='/';
+    </script>
+@endif
 <div class="sidebar">
     <div class="top">
         <div class="logo">
@@ -51,7 +56,7 @@
         </li>
         
         <li>
-            <a href = "/studentlogout">
+            <a href = "/students/logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="nav-item">Logout</span>
             </a>

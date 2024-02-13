@@ -1,3 +1,8 @@
+@if(!session('adminsuccess'))
+    <script>
+        window.location.href='/';
+    </script>
+@endif
 <div class="sidebar">
     <div class="top">
         <div class="logo">
@@ -75,7 +80,6 @@
             <span class="tooltip">Employee Masterlist</span>
         </li>
 
-       
         
         <li>
             <a href = "/admin/logout">

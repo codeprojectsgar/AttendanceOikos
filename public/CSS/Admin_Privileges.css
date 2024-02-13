@@ -19,7 +19,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 10px;
+    padding: 20% 10%;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 30%;
@@ -50,7 +50,7 @@ body {
     border-radius: 2%;
     background-color: #ffffff;
     color: #23195a;
-    padding: 20px 10px;
+    padding: 5% 5%;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     position: relative; 
     top: 10%;
@@ -156,7 +156,7 @@ body {
 
 #Tab1Header{
     position: absolute;
-    top: 5%;
+    top: 1%;
     left: 50%;
     font-weight: bold;
     font-size: 200%;
@@ -199,7 +199,7 @@ body {
 }
 
 .create-inputs2{
-    margin-top: -26%;
+    margin-top: -29%;
     margin-left: 30%;
     height: 100%;
     width: 100%;
@@ -290,7 +290,7 @@ button:hover {
 }
 
 #employeeIdContainer {
-    margin-left: 2.5%;
+    margin-left: 3.5%;
     text-align: center;
     font-weight: bold;
 }
@@ -327,8 +327,8 @@ button:hover {
     margin-top: 20px;
     text-align: center;
     position: absolute;
-    left: 35%;
-    top: 28%;
+    left: 36%;
+    top: 33%;
     font-weight: bold;
 }
 
@@ -480,5 +480,11 @@ button:hover {
 
 #cancelButtonTab4:hover {
     background-color: #0a0735;
+}
+
+.button.active {
+    background-color: #7723d8;
+    color: #ffffff; 
+    border-radius: 20px;
 }
 

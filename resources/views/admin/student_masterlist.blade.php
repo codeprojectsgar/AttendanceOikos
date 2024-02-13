@@ -5,29 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "icon" href = "/assets/Oikos Logo.png">
     <link rel="stylesheet" href = "/CSS/admin.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <title>Oikos Admin: Student Master List</title>
+    <style>
+        .add-student-btn {
+            font-size: 1em;
+            font: sans-serif;
+            padding: 10px;
+            background-color: #323468;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        .far{
+            transform:translateX(1em);
+        }
+        .modal-mask{
+            position:absolute;
+            top:0;
+            left:0;
+            height:100vh;
+            width:100%;
+            z-index:100;
+            background-color:rgba(0, 0, 0, 0.534);
+            opacity:1;
+            transition:opacity 200ms ease-in-out;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+        }
+        .form-container{
+            background-color:white;
+            border-radius:5px;
+            width:65%;
+            display:flex;
+            flex-direction:column;
+            padding:2em;
+        }
+        .form-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        #form-content {
+            display:flex;
+            flex-direction:column;
+            margin-top:1em;
+        }
+        .form-group{
+            display: flex;
+            gap: 1rem;
+            margin-top: 1em;
+        }
+        .form-group-select{
+            display: flex;
+            flex-direction: column;
+        }
+        .select-input{
+            height:2em;
+            font-size:1rem;
+            border:1px solid #dedede;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .btn-submit{
+            padding:1em;
+            background-color:#13c36b;
+            font-size:.8rem;
+            font-weight:bold;
+            color:white;
+            border:none;
+            border-radius: 15px;
+            width: 30%;
+            transition:opacity 150ms ease-in-out;
+        }
+        .btn-submit:hover{
+            cursor: pointer;
+            opacity:75%;
+        }
+        .btn-cancel{
+            padding:1em;
+            background-color:#DE3A3B;
+            font-size:.8rem;
+            font-weight:bold;
+            color:white;
+            border:none;
+            border-radius: 15px;
+            width: 30%;
+            transition:opacity 150ms ease-in-out;
+        }
+        .btn-cancel:hover{
+            cursor: pointer;
+            opacity:75%;
+        }
+        .submit-group{
+            display: flex;
+            justify-content: center;
+        }
+        textarea{
+            resize:none;
+            font-family:sans-serif;
+            font-size:1rem;
+            padding:.5rem;
+            border:1px solid #dedede;
+        }
+        .hidden{
+            visibility:hidden;
+            opacity:0;
+        }
+        .input-group{
+            width:25%;
+            display:flex;
+            flex-direction:column;
+        }
+        .input-group-special{
+            width:50%;
+            display:flex;
+            flex-direction:column;
+        }
+        .input-field{
+            border:none; 
+            height:2em;
+            font-size:1rem;
+            border: 1px solid #dedede;
+        }
+    </style>
 </head>
 <body>
     @include('component.admin.sidenav')
     <div class="main-content">
-        <h1>Students Master List</h1>
-        <div class="std-log-body">
-            <div style="z-index:1;" class="std-log-container">
-                <div class="std-filter-container">
-                    <h2>Filtered List</h2>
-                    <label for="search"></label>
-                    <div class="std-search-container">
-                        <input type="text" id="search" oninput="applyFilter()">
-                        <i class="fas fa-search" id="search-icon"></i>
+        <h1>Student Master List</h1>
+        <button class="add-student-btn">+ Add a Student</button>
+            <div class="std-log-container">
+                <div class="header-std-list"><h2>Student List</h2>
+                    <div class="std-filter-container">
+                        <div class="search-table-container">
+                            <div class="std-search-container">
+                                <input type="text" id="search" size="30" placeholder="Search...">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <table style="width: 100%;" class="std-attendance-type">
+                <table class="std-attendance-type" style="width: 100%;">    
                     <thead>
                         <tr>
                             <th>QR</th>
@@ -123,11 +246,176 @@
                             <td>Pending</td>
                             <td><i class="fa-solid fa-pencil"></i></td>
                         </tr>
+                        <tr>
+                            <td>C024</td>
+                            <td>202017612</td>
+                            <td>Usada Pekora</td>
+                            <td>02/21/2020</td>
+                            <td>Grade 2</td>
+                            <td>Leonidas</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C025</td>
+                            <td>202065748</td>
+                            <td>Shirokami Fubuki</td>
+                            <td>02/24/2018</td>
+                            <td>Grade 3</td>
+                            <td>Xeres</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C026</td>
+                            <td>202010234</td>
+                            <td>Rin Penrose</td>
+                            <td>02/03/2020</td>
+                            <td>Grade 4</td>
+                            <td>Athena</td>
+                            <td>Pending</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C027</td>
+                            <td>202012903</td>
+                            <td>Gin Penrose</td>
+                            <td>02/23/2020</td>
+                            <td>Grade 7</td>
+                            <td>Atreus</td>
+                            <td>Pending</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C028</td>
+                            <td>202010164</td>
+                            <td>Amano Pikamee</td>
+                            <td>02/21/2020</td>
+                            <td>Grade 5</td>
+                            <td>Maximus</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C029</td>
+                            <td>202012394</td>
+                            <td>Uruha Rushia</td>
+                            <td>02/03/2020</td>
+                            <td>Grade 6</td>
+                            <td>Decimus</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C030</td>
+                            <td>202048625</td>
+                            <td>Asa Coco</td>
+                            <td>02/03/2020</td>
+                            <td>Grade 11</td>
+                            <td>Meridus</td>
+                            <td>Pending</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C031</td>
+                            <td>202008520</td>
+                            <td>Tokino Sora</td>
+                            <td>02/03/2020</td>
+                            <td>Grade 10</td>
+                            <td>Gradius</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="container"></div>
-        <script>
+    </div>
+    <div class="modal-mask hidden">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Add Student</h2>
+                <i class="far fa-times-circle" style="font-size:1.3rem;cursor:pointer;"></i>
+            </div>
+            <form id="form-content">
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="student-number">Student Number</label>
+                        <input type="text" class='input-field' id='student-number'>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group-special">
+                        <label for="first-name">First Name</label>
+                        <input type="text" class='input-field' id='first-name'>
+                    </div>
+                    <div class="input-group-special">
+                        <label for="middle-name">Middle Name</label>
+                        <input type="text" class='input-field' id='middle-name'>
+                    </div>
+                    <div class="input-group-special">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" class='input-field' id='last-name'>
+                    </div>
+                    <div class="input-group-special">
+                        <label for="extension">Extension</label>
+                        <input type="text" class='input-field' id='extension'>
+                    </div>
+                </div>
+                <div class="form-group-select">
+                        <label for="grade-level" style="margin-top: 1em;">Grade Level</label>
+                        <select id="grade-level" class="select-input">
+                        <option value="Grade 1">
+                            Grade 1
+                        </option>
+                        <option value="Grade 2">
+                            Grade 2
+                        </option>
+                        <option value="Grade 3">
+                            Grade 3
+                        </option>
+                        <option value="Grade 4">
+                            Grade 4
+                        </option>
+                        <option value="Grade 5">
+                            Grade 5
+                        </option>
+                        <option value="Grade 6">
+                            Grade 6
+                        </option>
+                        <option value="Grade 7">
+                            Grade 7
+                        </option>
+                        <option value="Grade 8">
+                            Grade 8
+                        </option>
+                        <option value="Grade 9">
+                            Grade 9
+                        </option>
+                        <option value="Grade 10">
+                            Grade 10
+                        </option>
+                        <option value="Grade 11">
+                            Grade 11
+                        </option>
+                        <option value="Grade 12">
+                            Grade 12
+                        </option>
+                    </select>
+                    <label for="section" style="margin-top: 1em;">Section</label>
+                    <select id="section" class="select-input">
+                    </select>
+                </div>
+                
+                <br><br>
+                <div class="submit-group">
+                    <button class="btn-submit">Add</button>
+                    <button class="btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var tableBody = document.getElementById('logTableBody');
                 var rows = tableBody.getElementsByTagName('tr');
@@ -147,14 +435,6 @@
                 applyFilter(); 
             });
             });
-        
-            let btn = document.querySelector('#btn');
-            let sidebar = document.querySelector('.sidebar');
-        
-            btn.onclick = function () {
-                sidebar.classList.toggle('active');
-            }
-        
             function applyFilter() {
                 var searchValue = document.getElementById('search').value.toLowerCase();
                 var tableBody = document.getElementById('logTableBody');
@@ -350,6 +630,24 @@
                 const matches = level.match(/\d+/);
                 return matches ? parseInt(matches[0]) : 0;
         }
-</script>
+        let btn = document.querySelector('#btn');
+        let sidebar = document.querySelector('.sidebar');
+        let toggleModal=document.querySelector('.add-student-btn');
+        let showModal=document.querySelector('.modal-mask');
+        let closeModal=document.querySelector('.far');
+        let textArea=document.querySelector('textarea');
+        let select=document.querySelector('select');
+        btn.onclick = function () {
+            sidebar.classList.toggle('active');
+        }
+        toggleModal.onclick=()=>{
+            showModal.classList.remove('hidden');
+        }
+        closeModal.onclick=()=>{
+            showModal.classList.toggle('hidden');
+            select.value="Certificate of Good Moral Character";
+            textArea.value="";
+        }
+    </script>
 </body>
 </html>

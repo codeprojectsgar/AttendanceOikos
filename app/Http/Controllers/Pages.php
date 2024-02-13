@@ -28,9 +28,7 @@ class Pages extends Controller
     }
 
     public function s_home () {
-
-        $student_info=Students::where("student_id",202000000)->get();
-        return view("student.home",["student_info" => $student_info]);
+        return view("student.home");
     }
 
     public function s_userInfo () {
@@ -45,6 +43,10 @@ class Pages extends Controller
         return view("student.announcement");
     }
 
+    public function s_view_announcement () {
+        return view("student.view-announcement");
+    }
+
 
     //Employee navigation
     public function e_userInfo(){
@@ -53,6 +55,9 @@ class Pages extends Controller
     
     public function e_announcement(){
         return view("employees.announcement");
+    }
+    public function e_view_announcement () {
+        return view("employees.view-announcement");
     }
     public function e_calendar(){
         return view("employees.calendar");
@@ -82,6 +87,9 @@ class Pages extends Controller
     }
     public function a_announcement(){
         return view("admin.announcement");
+    }
+    public function a_view_announcement () {
+        return view("admin.view-announcement");
     }
     public function a_calendar(){
         return view("admin.calendar");

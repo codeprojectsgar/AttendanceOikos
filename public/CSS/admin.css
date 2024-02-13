@@ -173,10 +173,10 @@ body {
 
 
 .announcement-logs {
+    margin-top:1em;
     color: black;
     background-color: white;
     border-radius: 5px;
-    max-width: 1200px;
     width: 100%;
     padding: 20px;
 }
@@ -214,7 +214,7 @@ body {
     display: inline-block;
     justify-content: space-between; 
     margin-bottom: 10px;
-
+    float: right;
 }
 
 .search #search-bar {
@@ -225,7 +225,7 @@ body {
 
 .announcement .announcement-details {
     display: inline-block;
-
+    float: right;
     text-align: right;
 }
 
@@ -233,6 +233,7 @@ body {
     display: inline-block;
     margin-left: 10px;
 }
+
 
 .announcement h3 {
     display: inline;
@@ -258,13 +259,6 @@ body {
     text-decoration: none;
 }
 
-.container-emp-list {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    padding: 5rem;
-}
 
 .employee-list {
     color: black;
@@ -281,7 +275,7 @@ body {
 }
 
 .search-emp-list {
-    display: inline-block;
+    display: block;
     justify-content: space-between; 
     margin-bottom: 15px;
     float: right;
@@ -297,11 +291,12 @@ body {
 .emp-masterlist {
     border-collapse: collapse;
     border: 2px solid #f2f2f2;
+    
 }
 
 .emp-masterlist th {
     border: 2px solid #f2f2f2;
-    padding: 3px;
+    padding: 8px;
     color: #fff;
     background-color: #323468;
 }
@@ -348,91 +343,23 @@ body {
     border: none;
     cursor: pointer;
 }
-
-.std-log-body{
+/*student masterlist*/
+.std-log-container {
     color: black;
     background-color: white;
     border-radius: 5px;
     max-width: 1500px;
     width: 100%;
     padding: 20px;
-
-}
-.std-log-container {
-    width: 100%;
-    background-color: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
 }
 
 .std-filter-container {
-    background-color: #f2f2f2;
-    color: black;
-    padding: 15px;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.std-qr-table-container {
-margin-top: 20px;
-position: relative;
-}
-.std-filter-container h2{
+    display: block;
+    justify-content: space-between; 
+    float: right;
     padding: 3px;
-    display: inline-block;
-}
-.std-filter-container label {
-    margin-right: 10px;
-    cursor: pointer;
 }
 
-.std-filter-container input[type="text"] {
-    margin-right: 10px;
-    border: 2px solid black;
-    border-radius: 15px;
-    padding: 6px;
-}
-
-.std-filter-container button {
-
-    border-radius: 4px;
-    background-color: #323468;
-    color: white;
-    padding: 8px 16px;
-    cursor: pointer;
-}
-
-.std-attendance-type {
-    border-collapse: collapse;
-    border: 2px solid #f2f2f2;
-}
-
-
-.std-attendance-type td {
-    text-align: center;
-    padding: 2px;
-    border-left: 2px solid #f2f2f2;
-    border-right: 2px solid #f2f2f2;
-}
-
-.std-attendance-type th {
-    border: 2px solid #f2f2f2;
-    padding: 3px;
-    color: #fff;
-    background-color: #323468;
-    
-}
-
-.std-attendance-type tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.std-attendance-type tr:hover {
-    background-color: #f1f1f1;
-}
 .std-filter-button {
     position: absolute;
     top: 0;
@@ -444,23 +371,211 @@ position: relative;
     cursor: pointer;
     margin-bottom: 10px;
 }
-.std-search-container {
-    position: relative;
-}
+
 .std-search-container input[type="text"] {
-    padding-left: 30px;
+    border-radius: 5px;
+    padding: 3px;
+    border: 1px solid;
+    padding-right: 30px;
+    margin-bottom: 15px;
+    display: block;
+    justify-content: space-between; 
+    margin-bottom: 15px;
+    float: right;
+    padding: 3px;
+}
+.header-std-list h2{
+    padding: 3px;
+    display: inline-block;
+    font-size: 18.5px;
 }
 
-.std-search-container i {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
+.std-qr-table-container {
+    margin-top: 20px;
+    position: relative;
+}
+
+.std-attendance-type {
+    border-collapse: collapse;
+    border: 3px solid #f2f2f2; 
+}
+
+.std-attendance-type td {
+    text-align: center;
+    padding: 2px;
+    border-left: 2px solid #f2f2f2;
+    border-right: 2px solid #f2f2f2;
+}
+
+.std-attendance-type th {
+    border: 2px solid #f2f2f2;
+    padding: 8px;
+    color: #fff;
+    background-color: #323468;
+}
+.sort-button {
+    padding: 1px; /* Adjust the padding as needed */
+}
+
+.sort-button i {
+    font-size: 12px; /* Adjust the font size as needed */
+}
+
+#add-announcement-btn {
+    background-color:#323468;
+    color: white;
+    border: none;
+    padding: 15px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 100%;
+    margin-left: 1%;
+}
+
+#add-announcement-btn:hover {
+    background-color: #1f203f;
+}
+
+
+.eml-modal-mask {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    z-index:100;
+    background-color:rgba(0, 0, 0, 0.534);
+    opacity:1;
+    transition:opacity 200ms ease-in-out;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.eml-form-container {
+    position: relative;
+    background-color:white;
+    border-radius:5px;
+    width:50em;
+    height: 25em;
+    display:flex;
+    flex-direction: row;
+}
+
+.eml-details {
+    display: flex;
+    width: 10em;
+    flex-direction: column;
+    border-right: 2px solid #ccc;
+    align-items: center;
+    text-align: center;
+}
+
+.eml-details .emp-img {
+    aspect-ratio: auto;
+    object-fit: cover;
+    width: 9em;
+    height: 9em;
+    border-radius: 100%;
+}
+
+.emp-name {
+    padding: 10px;
+}
+
+.emp-name i {
+    opacity: 50%;
+}
+
+.emp-status {
+    width: 100%;
+}
+
+.emp-status .status-btn{
+    border: none;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.emp-role {
+    width: 100%;
+}
+
+.emp-role .role-btn {
+    border: none;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.emp-status .status-btn:hover {
+    color: #fff;
+    background-color: #8C52FF;
     cursor: pointer;
 }
 
+.emp-role .role-btn:hover {
+    color: #fff;
+    background-color: #8C52FF;
+    cursor: pointer;
+}
 
+.eml-selection {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.eml-selection label {
+    padding-top: 20px;
+    padding-bottom: 8px;
+}
+
+
+.selection {
+    border-radius: 5px;
+    width: 500px;
+    height: 2.5em;
+    font-size: 1rem;
+}
+
+.eml-modal-close {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.eml-modal-close .far {
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+}
+
+.btn-save {
+    margin-top: 20px;
+    padding: 10px;
+    width: 100px;
+    background-color:#13c36b;
+    font-size:.8rem;
+    color:white;
+    border:none;
+    border-radius: 15px;
+    transition:opacity 150ms ease-in-out;
+}
+
+.btn-save:hover {
+    cursor: pointer;
+    opacity:75%;
+}
+
+.hidden{
+    visibility:hidden;
+    opacity:0;
+}
 
 
 

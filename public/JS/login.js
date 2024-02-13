@@ -11,7 +11,13 @@ function submitForm(email_data,pass_data){
     .then(response => response.json())
     .then(data => {
         if(data.success && data.role===1){
-            window.location.href='/admin/dashboard'
+            window.location.href='/admin/Dashboard';
+        }
+        else if(data.success && data.role==2){
+            window.location.href='/employees/Home';
+        }
+        else if(data.success && data.role==3){
+            window.location.href='/students/Home';
         }
         else{
             error.textContent="Incorrect Credentials!";

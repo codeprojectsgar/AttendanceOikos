@@ -229,13 +229,10 @@
             color:#606360;
         }
 
-
-
     </style>
 </head>
 <body>
     @include('component.admin.sidenav')
-   
 
     <div class="main-content">
         <h1 class="time-record"><a href = "/admin/Time_Record"  style = "color: rgba(100, 100, 100, 0.700); text-decoration: none;">Time Record ></a></h1>
@@ -306,7 +303,6 @@
 
             <div class="student-group">
                 <div class="table-header">
-                   
                 </div>
                 <div class="log-body">
                 <table id="dataTable" style = "width:100%;" class="attendance-type">
