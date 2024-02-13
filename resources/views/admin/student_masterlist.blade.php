@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchIcon = document.getElementById('search-icon');
 
     searchIcon.addEventListener('click', function () {
-        applyFilter(); // Call the function to apply search filter
+        applyFilter();
     });
 });
 

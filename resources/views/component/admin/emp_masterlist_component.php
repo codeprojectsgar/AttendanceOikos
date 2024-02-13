@@ -1,9 +1,9 @@
 <div class="container-emp-list">
         <div class="employee-list">
                 <div class="header-emp-list"><h3>Employee List</h3>
-                    <div class="search-emp-list">
+                <div class="search-emp-list">
                     <input type="text" id="search-bar" size="30" placeholder="Search..." oninput="applyFilter()">
-                    </div>
+                </div>
                     <table class="emp-masterlist" style="width: 100%;">
                         <thead>
                             <tr>
@@ -180,7 +180,7 @@
         </div>
 
         <script>
-function applyFilter() {
+            function applyFilter() {
     var searchValue = document.getElementById('search-bar').value.toLowerCase();
     var tableBody = document.getElementById('emp-masterlist-body');
     var rows = tableBody.getElementsByTagName('tr');
@@ -259,5 +259,3 @@ function applyFilter() {
         });
         
         </script>
-
-        
