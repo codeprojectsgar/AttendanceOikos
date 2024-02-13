@@ -75,7 +75,7 @@
         .document-type tr:hover {
             background-color: #e8e6e6;
         }
-        i {
+        .docreq-container i {
             font-size: 1.2em;
             float: right;
             margin-right: 2em;
