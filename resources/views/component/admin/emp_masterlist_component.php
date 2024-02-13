@@ -16,7 +16,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody id="emp-masterlist-body">
+                        <tbody id="emp-masterlist-body" >
                             <tr>
                                 <td>T570</td>
                                 <td>0570</td>
@@ -138,9 +138,7 @@
                     </table>
                 </div>
             </div>
-            <div class="emp-masterlist-nextp">
-            1<button>></button> <button>>></button>
-            </div>
+
 
         <div class="eml-modal-mask hidden">
             <div class="eml-form-container">

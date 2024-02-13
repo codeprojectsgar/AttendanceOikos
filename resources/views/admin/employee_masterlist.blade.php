@@ -13,8 +13,6 @@
 </head>
 <body>
     @include('component.admin.sidenav')
-   
-
     <div class="main-content">
         <h1>Employee Master List</h1>
         @include('component.admin.emp_masterlist_component')

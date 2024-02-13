@@ -5,29 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "icon" href = "/assets/Oikos Logo.png">
     <link rel="stylesheet" href = "/CSS/admin.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <title>Oikos Admin: Student Master List</title>
 </head>
 <body>
     @include('component.admin.sidenav')
     <div class="main-content">
-        <h1>Students Master List</h1>
-        <div class="std-log-body">
-            <div style="z-index:1;" class="std-log-container">
-                <div class="std-filter-container">
-                    <h2>Filtered List</h2>
-                    <label for="search"></label>
-                    <div class="std-search-container">
-                        <input type="text" id="search" oninput="applyFilter()">
-                        <i class="fas fa-search" id="search-icon"></i>
+        <h1>Student Master List</h1>
+            <div class="std-log-container">
+                <div class="header-std-list"><h2>Student List</h2>
+                    <div class="std-filter-container">
+                        <div class="search-table-container">
+                            <div class="std-search-container">
+                                <input type="text" id="search" size="30" placeholder="Search...">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <table style="width: 100%;" class="std-attendance-type">
+                <table class="std-attendance-type" style="width: 100%;">    
                     <thead>
                         <tr>
                             <th>QR</th>
@@ -123,10 +119,91 @@
                             <td>Pending</td>
                             <td><i class="fa-solid fa-pencil"></i></td>
                         </tr>
+                        <tr>
+                            <td>C024</td>
+                            <td>202017612</td>
+                            <td>Usada Pekora</td>
+                            <td>02/21/2020</td>
+                            <td>Grade 2</td>
+                            <td>Leonidas</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C025</td>
+                            <td>202065748</td>
+                            <td>Shirokami Fubuki</td>
+                            <td>02/24/2018</td>
+                            <td>Grade 3</td>
+                            <td>Xeres</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C026</td>
+                            <td>202010234</td>
+                            <td>Rin Penrose</td>
+                            <td>02/03/2020</td>
+                            <td>Grade 4</td>
+                            <td>Athena</td>
+                            <td>Pending</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C027</td>
+                            <td>202012903</td>
+                            <td>Gin Penrose</td>
+                            <td>02/23/2020</td>
+                            <td>Grade 7</td>
+                            <td>Atreus</td>
+                            <td>Pending</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C028</td>
+                            <td>202010164</td>
+                            <td>Amano Pikamee</td>
+                            <td>02/21/2020</td>
+                            <td>Grade 5</td>
+                            <td>Maximus</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C029</td>
+                            <td>202012394</td>
+                            <td>Uruha Rushia</td>
+                            <td>02/03/2020</td>
+                            <td>Grade 6</td>
+                            <td>Decimus</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C030</td>
+                            <td>202048625</td>
+                            <td>Asa Coco</td>
+                            <td>02/03/2020</td>
+                            <td>Grade 11</td>
+                            <td>Meridus</td>
+                            <td>Pending</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
+                        <tr>
+                            <td>C031</td>
+                            <td>202008520</td>
+                            <td>Tokino Sora</td>
+                            <td>02/03/2020</td>
+                            <td>Grade 10</td>
+                            <td>Gradius</td>
+                            <td>Enrolled</td>
+                            <td><i class="fa-solid fa-pencil"></i></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
             <div class="container"></div>
+    </div>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var tableBody = document.getElementById('logTableBody');

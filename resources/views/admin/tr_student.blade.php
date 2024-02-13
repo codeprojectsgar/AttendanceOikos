@@ -272,7 +272,6 @@
 
             <div class="student-group">
                 <div class="table-header">
-                   
                 </div>
                 <div class="log-body">
                 <table style = "width: 100%;" class="attendance-type">
