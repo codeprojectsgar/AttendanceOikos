@@ -32,7 +32,7 @@ class Pages extends Controller
     }
 
     public function s_userInfo () {
-        return view("student.user");
+        return view("student.userinfo");
     }
 
     public function s_calendar () {

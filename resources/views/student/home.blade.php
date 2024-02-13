@@ -191,6 +191,14 @@
                 }
             });
         }
+
+        let btn = document.querySelector('#btn');
+        let sidebar = document.querySelector('.sidebar');
+
+        btn.onclick = function () {
+            sidebar.classList.toggle('active');
+        }
+        
         function selectElement(classSelector,showClass){
             let selectedElement=document.querySelector('.selected');
             let infoClass=document.querySelector('.hide');
