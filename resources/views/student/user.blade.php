@@ -97,7 +97,7 @@
     </style>
 </head>
 <body>
-    @include('component.employee.sidenav')   
+    @include('component.student.sidenav')   
     <div class="main-content">
         <h1>User Info</h1>
         <div class="container">
