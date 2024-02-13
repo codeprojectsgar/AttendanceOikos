@@ -1,3 +1,8 @@
+@if(!session('studentsuccess'))
+    <script>
+        window.location.href='/';
+    </script>
+@endif
 <div class="sidebar">
     <div class="top">
         <div class="logo">

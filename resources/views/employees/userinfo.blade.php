@@ -43,12 +43,14 @@
         .selector.active-div{
             border-left:5px solid #323468;
         }
-        .employee-container,.family-container{
+        .employee-container,.family-container,.experience-container ,.reference-container, .education-container{
             margin-left:1em;
+            position:absolute;
+            visibility:hidden;
             width:85%;
             padding:1em;
             background-color:white;
-            opacity:1;
+            opacity:0;
             border-radius:5px;
             transition: opacity 400ms ease-in-out;
         }
@@ -84,10 +86,10 @@
             font-size:1rem;
             border-bottom:1px solid #dedede;
         }
-        .hidden{
-            position:absolute;
-            opacity: 0;
-            visibility:hidden;
+        .show{
+            position:relative;
+            opacity: 1;
+            visibility:visible;
         }
         label{
             margin-top:.5em;
@@ -101,17 +103,31 @@
         <h1>User</h1>
         <div class="container">
             <div class="side-nav">
-                <div class="personal selector active-div" onclick="selectInput('.personal','.personal-i','.family-container')">
+                <div class="personal selector active-div" onclick="selectInput('.personal','.personal-i','.employee-container')">
                     Personal Information 
                     <i class="personal-i fas fa-chevron-right show-arrow"></i>
                 </div> 
-                <div class="background selector" onclick="selectInput('.background','.background-i','.employee-container')">
+                <div class="background selector" onclick="selectInput('.background','.background-i','.family-container')">
                     Family Background
                     <i class="background-i fas fa-chevron-right"></i>
                 </div> 
+
+                <div class="education selector" onclick="selectInput('.education','.education-i','.education-container')">
+                    Education
+                    <i class="education-i fas fa-chevron-right"></i>
+                </div> 
+
+                <div class="experience selector" onclick="selectInput('.experience','.experience-i','.experience-container')">
+                    Work Experience
+                    <i class="experience-i fas fa-chevron-right"></i>
+                </div> 
+                <div class="reference selector" onclick="selectInput('.reference','.reference-i','.reference-container')">
+                    References
+                    <i class="reference-i fas fa-chevron-right"></i>
+                </div> 
             </div>
             <!-- Container for employee details -->
-            <div class="employee-container">
+            <div class="employee-container show">
                 <h3 id=container-title>Employee Details</h3>
                 <div class="field-group">
                     <div class="input-group">
@@ -187,7 +203,7 @@
                 </div>
             </div>
             <!-- container for family backgroud-->
-            <div class="family-container hidden">
+            <div class="family-container ">
                 <h3 id=container-title>Father's Name</h3>
                 <div class="field-group">
                     <div class="input-group">
@@ -268,6 +284,305 @@
                     </div>
                 </div>
             </div>
+            <!-- EDUCATION BACKG-->
+                            <!--1st education-->
+            <div class="education-container ">
+                <h3 id=container-title>Educational Background</h3><br>
+                <h3 style=" margin-top:1rem; margin-bottom:-1rem; text-align:center; font-weight:100;">JUNIOR HIGH</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_one_name' value="Siena College" readonly>
+                        <label for="school_one_name">School</label>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_one_year' value="2001 - 2015" readonly >
+                        <label for="year">Year</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_one_contact' value="Mr Joshimiy Gibbs" readonly >
+                        <label for="contact">Contact Person</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_one_number' value="09154054370" readonly >
+                        <label for="number">Phone Number</label>
+                    </div>
+                </div>          
+                <div class="field-group">
+                    <div class="input-group-single">
+                        <input type="text" class='input-field' id='school_one_address' value="1 Riyal Street CBE Town Brgy Pasong Tamo Quezon City" readonly >
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+
+                <!--2nd education-->
+                <h3 style=" margin-top:1rem; margin-bottom:-1rem; text-align:center; font-weight:100;">SENIOR HIGH</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_two_name' value="Siena College" readonly>
+                        <label for="school_two_name">School</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_two_year' value="2001 - 2015" readonly >
+                        <label for="year">Year</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_two_contact' value="Mr Joshimiy Gibbs" readonly >
+                        <label for="contact">Contact Person</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_two_number' value="09154054370" readonly >
+                        <label for="number">Phone Number</label>
+                    </div>
+                </div>
+                            
+                <div class="field-group">
+                    <div class="input-group-single">
+                        <input type="text" class='input-field' id='school_two_address' value="1 Riyal Street CBE Town Brgy Pasong Tamo Quezon City" readonly >
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+
+                <!--3rd education-->
+                <h3 style=" margin-top:1rem; margin-bottom:-1rem; text-align:center; font-weight:100;">COLLEGE</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_three_name' value="Siena College" readonly>
+                        <label for="school_three_name">School</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_three_year' value="2001 - 2015" readonly >
+                        <label for="first-name">Year</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_three_contact' value="Mr Joshimiy Gibbs" readonly >
+                        <label for="middle-name">Contact Person</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='school_three_number' value="09154054370" readonly >
+                        <label for="extension">Phone Number</label>
+                    </div>
+                </div>
+                            
+                <div class="field-group">
+                    <div class="input-group-single">
+                        <input type="text" class='input-field' id='school_three_address' value="1 Riyal Street CBE Town Brgy Pasong Tamo Quezon City" readonly >
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+            </div>
+            <!--Work Experience-->
+            <!--Company 1-->
+            <div class="experience-container ">
+                <h3 id=container-title>Work Experience</h3>
+                <h3 style=" margin-top:1rem; margin-bottom:-1rem; text-align:center; font-weight:100;">COMPANY 1</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_one_company' value="Umbrella corp." readonly>
+                        <label for="Company Name">Company name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_one_title' value="Assistant Researcher" readonly >
+                        <label for="title/position">title/position</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_one_contact' value="Mr. Alber Wesker" readonly >
+                        <label for="contact">contact person </label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_one_description' value="Medicine Development" readonly >
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+                <!--Company 2-->
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_one_duration' value="1 to 3 years" readonly >
+                        <label for="Duration">Duration</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='exp_one_number' value="09154054370" readonly >
+                        <label for="phone-number">Phone Number4</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group-single">
+                        <input type="text" class='input-field' id='exp_one_address' value="4221 raccoon City" readonly >
+                        <label for="address">address</label>
+                    </div>
+                </div>
+                
+                <!--Company 3-->
+                <h3 style=" margin-top:1rem; margin-bottom:-1rem; text-align:center; font-weight:100;">COMPANY 2</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_two_company' value="Oikos" readonly>
+                        <label for="Company Name">Company name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_two_title' value="Front-end Developer" readonly >
+                        <label for="title/position">title/position</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_two_contact' value="Jonel Rubio" readonly >
+                        <label for="contact">contact person </label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_two_description' value="Website Development" readonly >
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+                
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_two_duration' value="2023 - 2024" readonly >
+                        <label for="Duration">Duration</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='exp_two_number' value="09154054370" readonly >
+                        <label for="phone-number">Phone Number4</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group-single">
+                        <input type="text" class='input-field' id='exp_two_address' value="Gotesco Grand Central 1400,  Caloocan City" readonly >
+                        <label for="address">address</label>
+                    </div>
+                </div>
+
+                
+                <h3 style=" margin-top:1rem; margin-bottom:-1rem; text-align:center; font-weight:100;">Company 3</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_three_company' value="marine" readonly>
+                        <label for="Company Name">Company name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_three_title' value="Front-end Developer" readonly >
+                        <label for="title/position">title/position</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_three_contact' value="Jonel Rubio" readonly >
+                        <label for="contact">contact person </label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_three_description' value="Website Development" readonly >
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='exp_three_duration' value="2023 - 2024" readonly >
+                        <label for="Duration">Duration</label>
+                    </div>
+                    <div class="input-group-special">
+                        <input type="text" class='input-field' id='exp_three_number' value="09154054370" readonly >
+                        <label for="phone-number">Phone Number4</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group-single">
+                        <input type="text" class='input-field' id='exp_three_address' value="Gotesco Grand Central 1400,  Caloocan City" readonly >
+                        <label for="address">address</label>
+                    </div>
+                </div>
+            </div>
+
+
+            
+
+            <!--REFERENCE-->
+            <!--Reference 1-->
+            <div class="reference-container ">
+                <h3 id=container-title>References</h3>
+                <h3 style=" margin-top:1rem; margin-bottom:-1rem; text-align:center; font-weight:100;">REFERENCE 1</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-one-name' value="Lupin" readonly>
+                        <label for="name"> Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-one-company' value="Copernicus" readonly >
+                        <label for="company">Company Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-one-numbers' value="6546547" readonly >
+                        <label for="middle-name">Contact Numbers</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-one-relation' value="Boss" readonly >
+                        <label for="relation">Relation</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-one-position' value="CEO" readonly >
+                        <label for="position">Position</label>
+                    </div>
+                
+                </div>
+                <!--Reference 2-->
+                <h3 style=" margin-top:1rem; margin-bottom:-1rem; text-align:center; font-weight:100;">REFERENCE 2</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-twp-name' value="amanda" readonly>
+                        <label for="name"> Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-two-company' value="Copernicus" readonly >
+                        <label for="company">Company Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-two-numbers' value="321346541325" readonly >
+                        <label for="middle-name">Contact Numbers</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-two-relation' value="Assistant" readonly >
+                        <label for="relation">Relation</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-two-position' value="assistant head" readonly >
+                        <label for="position">Position</label>
+                    </div>
+                
+                </div>
+                
+                <!--Reference 3-->
+                
+               
+                <h3 style=" margin-top:1rem; margin-bottom:-1rem; text-align:center; font-weight:100;">REFERENCE 3</h3>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-three-name' value="Lupin" readonly>
+                        <label for="name"> Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-three-company' value="Umbrella" readonly >
+                        <label for="company">Company Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-three-numbers' value="0915577121" readonly >
+                        <label for="middle-name">Contact Numbers</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-three-relation' value="Co-worker" readonly >
+                        <label for="relation">Relation</label>
+                    </div>
+                </div>
+                <div class="field-group">
+                    <div class="input-group">
+                        <input type="text" class='input-field' id='reference-three-position' value="medicine assistant" readonly >
+                        <label for="position">Position</label>
+                    </div>
+                
+                </div>
+                
+                
+            </div>
+
+
         </div>
     </div>
 
@@ -280,9 +595,9 @@
             sidebar.classList.toggle('active');
         }
         
-        function selectInput(div,div_i,prevDisplay){
-            let preDisplay=document.querySelector(prevDisplay);
-            let targetDisplay=document.querySelector('.hidden');
+        function selectInput(div,div_i,selectDisplay){
+            let prevDisplay=document.querySelector(".show");
+            let targetDisplay=document.querySelector(selectDisplay);
             let activeDiv=document.querySelector('.active-div');
             let showedDiv=document.querySelector('.show-arrow');
             let targetDiv=document.querySelector(div);
@@ -291,8 +606,8 @@
             showedDiv.classList.remove('show-arrow');
             targetDiv.classList.add('active-div');
             targetDivI.classList.add('show-arrow');
-            targetDisplay.classList.remove('hidden');
-            preDisplay.classList.add('hidden');
+            prevDisplay.classList.remove('show');
+            targetDisplay.classList.add('show');
         }
     </script>
 
