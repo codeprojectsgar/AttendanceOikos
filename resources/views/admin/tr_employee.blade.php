@@ -53,8 +53,8 @@
 						font-weight: 600;
 						outline: none;						
 					}
-				
-			
+
+                    
 		}
 	
 .section-header {
