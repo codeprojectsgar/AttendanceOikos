@@ -174,10 +174,6 @@
         </div>
     </div>
         <!--Student Information-->
-        
-
-
-
     <script>
         // Logout
         function logout() {
