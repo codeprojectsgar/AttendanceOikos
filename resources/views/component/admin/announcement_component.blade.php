@@ -6,7 +6,7 @@
             </div>
         </div>
         <ul id="announcement-list">
-            <a href="">
+            <a href="/admin/Announcement/View">
                 <li class="announcement">
                     <div class="sender-icon"><img src="../assets/female_emp1.jpg" alt="user icon" class="sender-img"></div>
                     <div class="announcement-header"><h3>Welcome</h3><br>Welcome New Employees</div>
