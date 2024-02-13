@@ -11,6 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Oikos Admin: Student Time Record</title>
     <style>
+
         .time-record,
         .tr-label {
             display: inline;
@@ -36,7 +37,7 @@
 					background-color: #ffffff;
                     border: 1px solid #bbc3c9;
 					border-radius: 5px;
-					width: 25%;
+					width: 30%;
 
                 }
 					
@@ -62,48 +63,37 @@
 		justify-items: center;
 		align-items: center;
 
-		.sort-dropdown {
-			display: flex;
+        }
+
+        .custom-select {
+            display: flex;
             background-color: #ffffff;
 			border-radius: 5px;
 			padding: 12px;
 			color: black;
-			font-size: 1em;
+			font-size: .80em;
 			font-weight: 600;
-			.by,
-			i {
-				color: black;
-				margin-left: 5px;
-			}
-			.drop {
-				border-left: 1px solid #bbc3c9;
-				margin-left: 10px;
-			}
-		}
+            width: 500%;
+            margin-right:5px;
+        }
 
-		.icon {
-			margin: 0 10px;
-			padding: 10px;
-			border-radius: 5px;
-			box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
-			position: relative;
-			color:#bbc3c9;
-			
-			&:first-child {				
-				border-top-right-radius: 0;
-				border-bottom-right-radius: 0;
-			}
-			
-			&:last-child {				
-				border-top-left-radius: 0;
-				border-bottom-left-radius: 0;
-			}
-			
-			&.selected {
-				background-color: lighten(#565d68, 50%);
-				color: lighten(#565d68, 20%);
-			}
-		}
+
+
+        .custom-select select{
+        appearance: none;
+        -webkit-appearance: none;
+
+        width: 100%;
+        border: none;
+        font-size: 1.15rem;
+        background-color: #fff;
+        color: #000;
+        }
+
+        
+        .custom-select i{
+        font-size:20px;
+        }
 
 		.display-group {
 			display: flex;
@@ -112,8 +102,21 @@
 				margin-left: 0;
 			}
 		}
+
+        .filter{
+
+            display:flex;
+            padding:12px;
+            background-color:#5C5EB3;
+            font-size:1em;
+			font-weight:600;
+            margin-right:20px;
+            color:white;
+            border:none;
+
+        }
 	}
-}
+
 
 .section-content{
 
@@ -225,7 +228,7 @@
             margin-left:5em;
             color:#606360;
         }
-        
+
     </style>
 </head>
 <body>
@@ -239,28 +242,56 @@
             <section class="section-header">
 
 					<header>
-                        
+
 						<div class="searchbox">
-							<input type="text" name="search" placeholder="Name of Student" class="search-text"> </input>
+							<input type="text" id="nameFilter" name="search" placeholder="Name of Student" class="search-text"> 
 						</div>
 
-						<div class="app-list-options">
-							<div class="sort-dropdown" style="margin-right:20px;"> By <span class="by"> Grade Level </span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-								<div class="drop"> <i class="fa fa-caret-down" aria-hidden="true"></i> </div>
-							</div>
+                        <div class="app-list-options">
 
-                            <div class="sort-dropdown" style="margin-right:20px;"> By <span class="by"> Section </span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-								<div class="drop"> <i class="fa fa-caret-down" aria-hidden="true"></i> </div>
-							</div>
+                        
 
-                            <div class="sort-dropdown" style="margin-right:20px;"> Date <span class="by"> From </span> <i class="fa fa-calendar" aria-hidden="true"></i>
-							</div>
+                        <div class="custom-select">
+                       
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
 
-                            <div class="sort-dropdown" style="margin-right:20px;"> Date <span class="by"> To </span> <i class="fa fa-calendar" aria-hidden="true"></i>
-							</div>
+                        <select style="margin-left:5px;" id="gradeFilter">
+                        <option value="">Filter by Grade</option>
+                        <option value="Grade 8">Grade 8</option>
+                        <option value="Grade 9">Grade 9</option>
+                        <option value="Grade 10">Grade 10</option>
+                        
+                        
+                    </select>
 
-                            <div class="sort-dropdown" style="background-color:#5C5EB3; margin-right:20px; color:white;"> Apply Filter
-							</div>
+                    
+                        </div>
+
+                        <div class="custom-select">
+
+                        <i class="fa fa-caret-down" aria-hidden="true"></i>
+
+                        <select style="margin-left:5px;" id="sectionFilter">
+                            <option value="">Filter by Section</option>
+                            <option value="A">Section A</option>
+                            <option value="B">Section B</option>
+                            <option value="B">Section C</option>
+                        </select>
+                        </div>
+
+                        <div class="custom-select">
+
+                        Date From <input type="date">
+
+                        </div>
+
+                        <div class="custom-select">
+
+                        Date To <input type="date">
+
+                        </div>
+
+                            <button onclick="applyFilter()" class="filter"> Apply Filter </button>
 							
 						</div>
 
@@ -274,51 +305,96 @@
                 <div class="table-header">
                 </div>
                 <div class="log-body">
-                <table style = "width: 100%;" class="attendance-type">
-                    <thead>
-                        <tr>
-                            <th colspan="3"></th>
-                            <th colspan="2">Morning Attendance</th>
-                            <th colspan="2">Afternoon Attendance</th>
-                            <th colspan="2">Evening Attendance</th>
-                        </tr>
-                        <tr>
-                            <th>Student Name</th>
-                            <th>Role</th>
-                            <th>Date</th>
-                            <th>In</th>
-                            <th>Out</th>
-                            <th>In</th>
-                            <th>Out</th>
-                            <th>In</th>
-                            <th>Out</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>John Doe</td>
-                            <td>Teacher</td>
-                            <td>2024-01-30</td>
-                            <td>09:00 AM</td>
-                            <td>01:00 PM</td>
-                            <td>06:00 PM</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Miles Davis</td>
-                            <td>IT </td>
-                            <td>2024-01-30</td>
-                            <td>09:00 AM</td>
-                            <td>01:00 PM</td>
-                            <td>06:00 PM</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <table id="dataTable" style = "width:100%;" class="attendance-type">
+    <thead>
+
+    <tr>
+                <th colspan="4"></th>
+                <th colspan="2">Morning Attendance</th>
+                <th colspan="2">Afternoon Attendance</th>
+                <th colspan="2">Evening Attendance</th>
+            </tr>
+
+ 
+        <tr>
+
+            <th>Name</th>
+            <th>Grade</th>
+            <th>Section</th>
+            <th>Date</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+            <th>In</th>
+            <th>Out</th>
+            
+        </tr>
+
+    </thead>
+    <tbody>
+        <!-- Table rows will be dynamically generated -->
+        <tr>
+
+        <td>John Dwight</td>    
+        <td>Grade 9</td>    
+        <td>A</td>
+        <td>2024-01-30</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+            
+        </tr>
+        <tr>
+
+        <td>Jane Doe</td>
+        <td>Grade 9</td>
+        <td>B</td>
+        <td>2024-01-30</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+            
+        </tr>
+        <tr>
+
+        <td>Alice Wilde</td>
+        <td>Grade 10</td>
+        <td>A</td>
+        <td>2024-01-30</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+            
+        </tr>
+        <tr>
+
+        <td>Bob Newby</td>
+        <td>Grade 10</td>
+        <td>B</td>
+        <td>2024-01-30</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+            
+        </tr>
+        <!-- Add more rows as needed -->
+    </tbody>
+</table>
+
             </div>
             </div>
 
@@ -353,6 +429,32 @@
         }
 
     </script>
+
+<script>
+    function applyFilter() {
+        var grade = document.getElementById("gradeFilter").value;
+        var section = document.getElementById("sectionFilter").value;
+        var name = document.getElementById("nameFilter").value.toLowerCase();
+        
+        var table = document.getElementById("dataTable");
+        var rows = table.getElementsByTagName("tr");
+        
+        for (var i = 2; i < rows.length; i++) {
+            var row = rows[i];
+            var nameCell = row.getElementsByTagName("td")[0].innerText.toLowerCase();
+            var gradeCell = row.getElementsByTagName("td")[1];
+            var sectionCell = row.getElementsByTagName("td")[2];
+            
+            if ((grade === "" || gradeCell.innerHTML === grade) &&
+                (section === "" || sectionCell.innerHTML === section) &&
+                (name === "" || nameCell.includes(name))) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    }
+</script>
 
 
 </body>
