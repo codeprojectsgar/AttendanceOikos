@@ -16,6 +16,7 @@
             width:100%;
             height:80vh;
             border-radius:10px;
+            margin-top: 2em;
         } 
         .card .card-sidenav{
             width:20%;
@@ -174,10 +175,6 @@
         </div>
     </div>
         <!--Student Information-->
-        
-
-
-
     <script>
         // Logout
         function logout() {
@@ -191,6 +188,14 @@
                 }
             });
         }
+
+        let btn = document.querySelector('#btn');
+        let sidebar = document.querySelector('.sidebar');
+
+        btn.onclick = function () {
+            sidebar.classList.toggle('active');
+        }
+        
         function selectElement(classSelector,showClass){
             let selectedElement=document.querySelector('.selected');
             let infoClass=document.querySelector('.hide');

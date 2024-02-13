@@ -8,225 +8,191 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Oikos Student: User Info</title>
-    <style>
-        .container{
+    <title>Oikos Employee: Home</title>
+    <style> 
+        .card{
             display:flex;
-
+            background-color:white;
+            width:100%;
+            height:80vh;
+            border-radius:10px;
+        } 
+        .card .card-sidenav{
+            width:20%;
+            height:100%;
+            border-right:1px solid #dddddd;
+            display:flex;
+            flex-direction:column;
         }
-        .boxcont {
-        margin-top: 4em;
-        margin-left: 2em;
-        background-color: #ffffff;
-        height: 70vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-right-style: solid;
-        border-right-width: 1px;
-        border-top-left-radius:2em;
-        border-bottom-left-radius:2em;
-        overflow:hidden;
-        box-shadow: 0px 10px #999999;
-        
-    }
-    .boxcont2 {
-        margin-top: -70vh;
-        margin-left: 33.1em;
-        overflow:hidden;
-        
-        background-color: #ffffff;
-        height: 70vh;
-        width:70em;
-        display: flex;
-        box-shadow: 5px 10px #999999;
-        border-top-right-radius:2em;
-        border-bottom-right-radius:2em;
-}
-
-    .box {
-        padding: 4em;
-        text-align: center;
-        overflow:hidden;
-        width:23em;
-
-    }
-    .cont3{
-        height:5vh;
-        width:50vh;
-        background-color:#ececec;
-        color:#9f9f9f;
-        margin-left:0vh;
-        border-radius:20px;
-        font-size:20px;
-        padding:0.5em;
-        
-    }
-    .cont4{
-        height:5vh;
-        width:50vh;
-        background-color:#ececec;
-        margin-top:-5vh;
-        color:#9f9f9f;
-        font-size:20px;
-        margin-left:58.5vh;
-        border-radius:20px;
-        padding:0.5em;
-    }
-    #box2 {
-        padding: 4em;
-        text-align: left;
-        overflow:hidden;
-        height:auto;
-        width:70em;
-        
-    
-        
-    }
-    #box3 {
-        padding: 4em;
-        text-align: left;
-        overflow:hidden;
-        height:auto;
-        width:70em;
-        display:none;
-    
-    }
-    #box3 h1{
-        float:left;
-        margin:-1em;
-        font-size:30px;
-
-    }
-    #box2 h1{
-        float:left;
-        margin:-1em;
-        font-size:30px;
-
-    }
-    table{
-        text-align:left;
-    }
-
-    .box img {
-        border-radius: 100%;
-        height: 22vh;
-        width: 22vh;
-    }
-
-    .box .txt {
-        margin-top: 0.5vh;
-        font-size: 1.5rem;
-    }
-
-    .box .opt {
-        margin-top: 4.5vh;
-        text-align: center;
-        align-items: center;
-        height:2.5em;
-        transform:translateX(-3em);
-        width: 180%;
-        font-size: 2rem;
-        border:none;
-  
-        background-color: #51558F !important;
-    color: white !important;
-    cursor: default;
-        
-    }
-   
-    h1{
-        
-        font-size:0.9em;
-        text-align: center;
-    }
-    h2{
-        display:inline;
-        
-    }
-    p{
-        display:inline;
-    }
-        
+        .card .card-content{
+            width:80%;
+        }
+        .employee-info,.parent-info{
+            padding:1.3em;
+            display:flex;
+            flex-direction:column;
+            visibility:visible;
+        }
+        .employee-info .field-group,.parent-info .field-group{
+            display:flex;
+            margin-top:1em;
+        }
+        .employee-info .field-group .input-group,.parent-info .field-group .input-group{
+            width:45%;
+            display:flex;
+            flex-direction:column;
+        }
+        .field-group .input-group input{
+            width:95%;
+            display:flex;
+            flex-direction:column;
+            padding-left:.5em;
+            height:2.3em;
+            font-size:1.1rem;
+            color:gray;
+            border:1px solid #dddddd;
+            border-radius:10px;
+        }
+        .field-group .input-group label{
+            font-size:1.2rem;
+        }
+        .card-sidenav .avatar-container{
+            display:flex;
+            flex-direction:column;
+            padding:1.3em;
+            height:50%;
+            align-items: center;
+        }
+        .avatar-container img{
+            width:70%;
+            height:70%;
+            border-radius:50%;
+        }
+        .avatar-container p{
+            font-size:1.2rem;
+        }
+        .link-employee-container,.link-parent-container{
+            font-size:1.2rem;
+            text-align: center;
+            padding:1.3em;
+            cursor:pointer
+        }
+        .selected{
+            background-color:#51558f;
+            color:white;
+        }
+        .hide{
+            visibility:hidden;
+            position:absolute;
+        }
+        @media(max-width:1024px){
+            .card .card-sidenav{
+                width:30%;
+                height:100%;
+                border-right:1px solid #dddddd;
+                display:flex;
+                flex-direction:column;
+            }
+        }
     </style>
 </head>
 <body>
     @include('component.employee.sidenav')
-
     <div class="main-content">
-
-        <h1 style="float:left; font-size:25px; margin:1rem;  letter-spacing:5px;" >HOME</h1>
+        <h1>Home</h1>
         <div class="container">
-            <div class="boxcont">
-                <div class="box">
-                    <img src="/assets/emp_ph.jpg">
-                    <div class="txt">
-                    <p>(Employee Name) <br> (Employee Number)</p>
-
+            <div class="card">
+                <div class="card-sidenav">
+                    <div class="avatar-container">
+                        <img src="/assets/pfp.jpg" alt="Doog">
+                        <p>Beatrice Field</p>
+                        <p>202010106</p>
                     </div>
-                    <button class="opt">
-                        <p>Employee Information</p>
-                    </button>
-                </div>
-            </div>    
-        </div>
-        
-
-        <div class="boxcont2">
-            <div id="box2">
-                <h1>Employee Information</h1>
-                <br>
-                <br>
-                <h2>Name</h2>
-                <br><br>
-                <div class="cont3" style="margin-top:-2vh; width:108.5vh;">
-                <p>Beatrice Field</p>
-                </div>
-                <br>
-                <h2>Employment Status</h1>
-                <h2 style="margin-left:13.5em;">Role</h2>
-                    <div class="cont4" style="margin-top:0vh;">
-                    <p ><u>Teacher</u></p>
+                    <div class="link-employee-container selected" onclick="selectElement('.link-employee-container','.parent-info')">
+                        Employee Information
                     </div>
-                    <div class="cont3" style="margin-top:-4.6vh;">
-                    <p ><u>Employed</u></p>
-                    </div>
-                    <br>
                     
-                <h2>Employee ID</h2><br>
-                <div class="cont3" style="margin-top:0vh;">
-                <p><u>202010921</u></p><br><br>
-                </div><br><br><br>
-
-
-                <h1 style="margin-left:5vh;">Personal Information</h1>
-                <h2>Email</h1>
-                    <h2 style="margin-left:20em;">Cellphone Number</h2>
-                        <div class="cont4" style="margin-top:0vh;">
-                        <p ><u>0925566581</u></p>
-                        </div>
-                        <div class="cont3" style="margin-top:-4.6vh;">
-                        <p ><u>Employee@gmail.com</u></p>
+                </div>
+                <div class="card-content">
+                    <!-- Employee info content -->
+                    <div class="employee-info">
+                        <h1>Employee Information</h1>
+                        <div class="field-group">
+                            <div class="input-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" value="Beatrice Field" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label for="role">role</label>
+                                <input type="text" id="role" value="Teacher" readonly>
+                            </div>
                         </div>
                         <br>
-                        
-                    <h2>Telephone ID</h2><br>
-                    <div class="cont3" style="margin-top:0vh;">
-                    <p><u>N/A</u></p><br><br>
+                        <div class="field-group">
+                            <div class="input-group">
+                                <label for="status">Employment Status</label>
+                                <input type="text" id="status" value="Employed" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label for="Employee ID">Employee ID</label>
+                                <input type="text" id="Employee ID" value="20202010421" readonly>
+                            </div>
+                        </div>
+                        <br>
 
+                        <h1>Personal Information</h1>
+                        <div class="field-group">
+                            <div class="input-group">
+                                <label for="email">Email</label>
+                                <input type="text" id="email" value="employee@gmail.com" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label for="Telephone Number">Telephone Number</label>
+                                <input type="text" id="Telephone Number" value="414-45-56" readonly>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <div class="input-group">
+                                <label for="number">Phone number</label>
+                                <input type="text" id="number" value="09121234569" readonly>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    
+                </div>
             </div>
+        </div>
     </div>
+        
+        
+
 
 
     <script>
-        let btn = document.querySelector('#btn');
-        let sidebar = document.querySelector('.sidebar');
-
-        btn.onclick = function () {
-            sidebar.classList.toggle('active');
+        // Logout
+        function logout() {
+            Swal.fire({
+                title: "Are you sure you want to logout??",
+                showCancelButton: true,
+                confirmButtonText: "Logout",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/employees/logout';
+                }
+            });
+        }
+        function selectElement(classSelector,showClass){
+            let selectedElement=document.querySelector('.selected');
+            let infoClass=document.querySelector('.hide');
+            let hideClass=document.querySelector(showClass);
+            let targetElement=document.querySelector(classSelector);
+            selectedElement.classList.remove('selected');
+            targetElement.classList.toggle('selected');
+            infoClass.classList.remove('hide');
+            hideClass.classList.toggle('hide');
         }
     </script>
-
-
 </body>
 </html>

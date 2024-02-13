@@ -98,7 +98,8 @@
     </style>
 </head>
 <body>
-    @include('component.employee.sidenav')   
+    @include('component.employee.sidenav')  
+    @include('component.employee.export_toaster') 
     <div class="main-content">
         <h1>User</h1>
         <div class="container">

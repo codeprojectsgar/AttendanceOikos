@@ -80,6 +80,7 @@
 </head>
 <body>
     @include('component.student.sidenav')
+    @include('component.student.export_toaster')
     <div class="main-content">
         <h1>Time Record</h1>
         <div class="log-body">

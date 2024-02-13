@@ -121,7 +121,7 @@
             transition: opacity 400ms ease-in-out;
             display: flex;
         }
-        i {
+        .steps-container i {
             font-size: 1.2em;
             cursor: pointer;
             float: right;
