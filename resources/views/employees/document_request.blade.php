@@ -108,7 +108,7 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        i {
+        .transparent-table i {
             font-size: 1.2em;
             float: right;
             margin-right: 1em;
