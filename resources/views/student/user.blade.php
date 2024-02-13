@@ -176,8 +176,7 @@
 
         btn.onclick = function () {
             sidebar.classList.toggle('active');
-        }
-        
+        }        
     </script>
 
 
