@@ -16,6 +16,7 @@
             width:100%;
             height:80vh;
             border-radius:10px;
+            margin-top: 2em;
         } 
         .card .card-sidenav{
             width:20%;

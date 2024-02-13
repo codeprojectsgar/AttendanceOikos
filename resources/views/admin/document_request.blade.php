@@ -71,7 +71,6 @@
         .document-type tr:nth-child(even) {
             background-color: #cacaca;
         }
-
         .document-type tr:hover {
             background-color: #e8e6e6;
         }
