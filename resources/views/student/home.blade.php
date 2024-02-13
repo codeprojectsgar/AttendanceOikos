@@ -14,7 +14,7 @@
             display:flex;
             background-color:white;
             width:100%;
-            height:45em;
+            height:80vh;
             border-radius:10px;
         } 
         .card .card-sidenav{

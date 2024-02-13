@@ -28,9 +28,7 @@ class Pages extends Controller
     }
 
     public function s_home () {
-
-        $student_info=Students::where("student_id",202000000)->get();
-        return view("student.home",["student_info" => $student_info]);
+        return view("student.home");
     }
 
     public function s_userInfo () {
