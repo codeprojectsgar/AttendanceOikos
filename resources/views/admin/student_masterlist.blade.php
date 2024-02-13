@@ -9,11 +9,138 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Oikos Admin: Student Master List</title>
+    <style>
+        .add-student-btn {
+            font-size: 1em;
+            font: sans-serif;
+            padding: 10px;
+            background-color: #323468;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        .far{
+            transform:translateX(1em);
+        }
+        .modal-mask{
+            position:absolute;
+            top:0;
+            left:0;
+            height:100vh;
+            width:100%;
+            z-index:100;
+            background-color:rgba(0, 0, 0, 0.534);
+            opacity:1;
+            transition:opacity 200ms ease-in-out;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+        }
+        .form-container{
+            background-color:white;
+            border-radius:5px;
+            width:65%;
+            display:flex;
+            flex-direction:column;
+            padding:2em;
+        }
+        .form-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+        #form-content {
+            display:flex;
+            flex-direction:column;
+            margin-top:1em;
+        }
+        .form-group{
+            display: flex;
+            gap: 1rem;
+            margin-top: 1em;
+        }
+        .form-group-select{
+            display: flex;
+            flex-direction: column;
+        }
+        .select-input{
+            height:2em;
+            font-size:1rem;
+            border:1px solid #dedede;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .btn-submit{
+            padding:1em;
+            background-color:#13c36b;
+            font-size:.8rem;
+            font-weight:bold;
+            color:white;
+            border:none;
+            border-radius: 15px;
+            width: 30%;
+            transition:opacity 150ms ease-in-out;
+        }
+        .btn-submit:hover{
+            cursor: pointer;
+            opacity:75%;
+        }
+        .btn-cancel{
+            padding:1em;
+            background-color:#DE3A3B;
+            font-size:.8rem;
+            font-weight:bold;
+            color:white;
+            border:none;
+            border-radius: 15px;
+            width: 30%;
+            transition:opacity 150ms ease-in-out;
+        }
+        .btn-cancel:hover{
+            cursor: pointer;
+            opacity:75%;
+        }
+        .submit-group{
+            display: flex;
+            justify-content: center;
+        }
+        textarea{
+            resize:none;
+            font-family:sans-serif;
+            font-size:1rem;
+            padding:.5rem;
+            border:1px solid #dedede;
+        }
+        .hidden{
+            visibility:hidden;
+            opacity:0;
+        }
+        .input-group{
+            width:25%;
+            display:flex;
+            flex-direction:column;
+        }
+        .input-group-special{
+            width:50%;
+            display:flex;
+            flex-direction:column;
+        }
+        .input-field{
+            border:none; 
+            height:2em;
+            font-size:1rem;
+            border: 1px solid #dedede;
+        }
+    </style>
 </head>
 <body>
     @include('component.admin.sidenav')
     <div class="main-content">
         <h1>Student Master List</h1>
+        <button class="add-student-btn">+ Add a Student</button>
             <div class="std-log-container">
                 <div class="header-std-list"><h2>Student List</h2>
                     <div class="std-filter-container">
@@ -204,7 +331,91 @@
             </div>
             <div class="container"></div>
     </div>
-        <script>
+    <div class="modal-mask hidden">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Add Student</h2>
+                <i class="far fa-times-circle" style="font-size:1.3rem;cursor:pointer;"></i>
+            </div>
+            <form id="form-content">
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="student-number">Student Number</label>
+                        <input type="text" class='input-field' id='student-number'>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group-special">
+                        <label for="first-name">First Name</label>
+                        <input type="text" class='input-field' id='first-name'>
+                    </div>
+                    <div class="input-group-special">
+                        <label for="middle-name">Middle Name</label>
+                        <input type="text" class='input-field' id='middle-name'>
+                    </div>
+                    <div class="input-group-special">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" class='input-field' id='last-name'>
+                    </div>
+                    <div class="input-group-special">
+                        <label for="extension">Extension</label>
+                        <input type="text" class='input-field' id='extension'>
+                    </div>
+                </div>
+                <div class="form-group-select">
+                        <label for="grade-level" style="margin-top: 1em;">Grade Level</label>
+                        <select id="grade-level" class="select-input">
+                        <option value="Grade 1">
+                            Grade 1
+                        </option>
+                        <option value="Grade 2">
+                            Grade 2
+                        </option>
+                        <option value="Grade 3">
+                            Grade 3
+                        </option>
+                        <option value="Grade 4">
+                            Grade 4
+                        </option>
+                        <option value="Grade 5">
+                            Grade 5
+                        </option>
+                        <option value="Grade 6">
+                            Grade 6
+                        </option>
+                        <option value="Grade 7">
+                            Grade 7
+                        </option>
+                        <option value="Grade 8">
+                            Grade 8
+                        </option>
+                        <option value="Grade 9">
+                            Grade 9
+                        </option>
+                        <option value="Grade 10">
+                            Grade 10
+                        </option>
+                        <option value="Grade 11">
+                            Grade 11
+                        </option>
+                        <option value="Grade 12">
+                            Grade 12
+                        </option>
+                    </select>
+                    <label for="section" style="margin-top: 1em;">Section</label>
+                    <select id="section" class="select-input">
+                    </select>
+                </div>
+                
+                <br><br>
+                <div class="submit-group">
+                    <button class="btn-submit">Add</button>
+                    <button class="btn-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var tableBody = document.getElementById('logTableBody');
                 var rows = tableBody.getElementsByTagName('tr');
@@ -224,14 +435,6 @@
                 applyFilter(); 
             });
             });
-        
-            let btn = document.querySelector('#btn');
-            let sidebar = document.querySelector('.sidebar');
-        
-            btn.onclick = function () {
-                sidebar.classList.toggle('active');
-            }
-        
             function applyFilter() {
                 var searchValue = document.getElementById('search').value.toLowerCase();
                 var tableBody = document.getElementById('logTableBody');
@@ -427,6 +630,24 @@
                 const matches = level.match(/\d+/);
                 return matches ? parseInt(matches[0]) : 0;
         }
-</script>
+        let btn = document.querySelector('#btn');
+        let sidebar = document.querySelector('.sidebar');
+        let toggleModal=document.querySelector('.add-student-btn');
+        let showModal=document.querySelector('.modal-mask');
+        let closeModal=document.querySelector('.far');
+        let textArea=document.querySelector('textarea');
+        let select=document.querySelector('select');
+        btn.onclick = function () {
+            sidebar.classList.toggle('active');
+        }
+        toggleModal.onclick=()=>{
+            showModal.classList.remove('hidden');
+        }
+        closeModal.onclick=()=>{
+            showModal.classList.toggle('hidden');
+            select.value="Certificate of Good Moral Character";
+            textArea.value="";
+        }
+    </script>
 </body>
 </html>
