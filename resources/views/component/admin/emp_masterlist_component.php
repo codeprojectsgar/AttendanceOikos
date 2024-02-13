@@ -2,7 +2,7 @@
         <div class="employee-list">
                 <div class="header-emp-list"><h3>Employee List</h3>
                     <div class="search-emp-list">
-                        <input type="text" id="search-bar" size="30" placeholder="Search...">
+                    <input type="text" id="search-bar" size="30" placeholder="Search..." oninput="applyFilter()">
                     </div>
                     <table class="emp-masterlist" style="width: 100%;">
                         <thead>
@@ -180,6 +180,32 @@
         </div>
 
         <script>
+function applyFilter() {
+    var searchValue = document.getElementById('search-bar').value.toLowerCase();
+    var tableBody = document.getElementById('emp-masterlist-body');
+    var rows = tableBody.getElementsByTagName('tr');
+
+    for (var i = 0; i < rows.length; i++) {
+        var searchCells = rows[i].getElementsByTagName('td');
+        var found = false;
+
+        for (var j = 0; j < searchCells.length; j++) {
+            var cellContent = searchCells[j].textContent.toLowerCase();
+
+            if (cellContent.includes(searchValue)) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            rows[i].style.display = '';
+        } else {
+            rows[i].style.display = 'none';
+        }
+    }
+}
+
         let btn = document.querySelector('#btn');
         let sidebar = document.querySelector('.sidebar');
         let toggleModals = document.querySelectorAll('.action-btn');
@@ -231,7 +257,7 @@
         newCloseModal.addEventListener('click', function() {
             showModal.classList.add('hidden');
         });
-
+        
         </script>
 
         

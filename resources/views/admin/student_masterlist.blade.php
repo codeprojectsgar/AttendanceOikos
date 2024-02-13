@@ -19,7 +19,8 @@
                     <div class="std-filter-container">
                         <div class="search-table-container">
                             <div class="std-search-container">
-                                <input type="text" id="search" size="30" placeholder="Search...">
+                                <button id="search-icon" class="search-btn"></button>
+                                <input type="text" id="search" size="30" placeholder="Search..." oninput="applyFilter()">
                             </div>
                         </div>
                     </div>
@@ -205,25 +206,42 @@
             <div class="container"></div>
     </div>
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var tableBody = document.getElementById('logTableBody');
-                var rows = tableBody.getElementsByTagName('tr');
-                for (var i = 0; i < rows.length; i++) {
-                    var statusCell = rows[i].querySelector('td:nth-child(7)');
-                    if (statusCell.textContent.toLowerCase() === 'pending') {
-                        statusCell.style.color = 'Orange';
-                    } else if (statusCell.textContent.toLowerCase() === 'enrolled') {
-                        statusCell.style.color = 'green';
-                    } else {
-                        statusCell.style.color = '';
-                    }
-                }
-                const searchIcon = document.getElementById('search-icon');
+document.addEventListener('DOMContentLoaded', function () {
+    var tableBody = document.getElementById('logTableBody');
+    var rows = tableBody.getElementsByTagName('tr');
+    for (var i = 0; i < rows.length; i++) {
+        var statusCell = rows[i].querySelector('td:nth-child(7)');
+        if (statusCell.textContent.toLowerCase() === 'pending') {
+            statusCell.style.color = 'Orange';
+        } else if (statusCell.textContent.toLowerCase() === 'enrolled') {
+            statusCell.style.color = 'green';
+        } else {
+            statusCell.style.color = '';
+        }
+    }
 
-            searchIcon.addEventListener('click', function () {
-                applyFilter(); 
-            });
-            });
+    const searchIcon = document.getElementById('search-icon');
+
+    searchIcon.addEventListener('click', function () {
+        applyFilter(); // Call the function to apply search filter
+    });
+});
+
+function applyFilter() {
+    var searchValue = document.getElementById('search').value.toLowerCase();
+    var tableBody = document.getElementById('logTableBody');
+    var rows = tableBody.getElementsByTagName('tr');
+
+    for (var i = 0; i < rows.length; i++) {
+        var searchCell = rows[i].textContent.toLowerCase();
+
+        if (searchValue === '' || searchCell.includes(searchValue)) {
+            rows[i].style.display = '';
+        } else {
+            rows[i].style.display = 'none';
+        }
+    }
+}
         
             let btn = document.querySelector('#btn');
             let sidebar = document.querySelector('.sidebar');
@@ -231,25 +249,9 @@
             btn.onclick = function () {
                 sidebar.classList.toggle('active');
             }
-        
-            function applyFilter() {
-                var searchValue = document.getElementById('search').value.toLowerCase();
-                var tableBody = document.getElementById('logTableBody');
-                var rows = tableBody.getElementsByTagName('tr');
-        
-                for (var i = 0; i < rows.length; i++) {
-                    var searchCell = rows[i].textContent.toLowerCase();
-        
-                    if (searchValue === '' || searchCell.includes(searchValue)) {
-                        rows[i].style.display = '';
-                    } else {
-                        rows[i].style.display = 'none';
-                    }
-                }
-            }
+
             let sortDirectionID = 1;
             let sortDirectionName = 1;
-             
             let sortDirectionDate = 1;
             let sortDirectionLevel = 1; 
             let sortDirectionSection = 1; 
