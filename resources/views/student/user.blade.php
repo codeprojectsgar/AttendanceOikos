@@ -12,17 +12,9 @@
     <style>
         .container{
             padding-top: 2em;
-            padding-left: 14em;
             margin-top:1em;
             display: block;
-        }
-        .side-nav{
-            background-color:white;
-            border-radius:5px;
-            display:flex;
-            flex-direction:column;
-            width:15%;
-            min-height:55em;
+            margin: 1em;
         }
         .fa-chevron-right{
             opacity:0;
@@ -44,9 +36,8 @@
         .selector.active-div{
             border-left:5px solid #323468;
         }
-        .employee-container,.family-container{
-            margin-left:1em;
-            width:85%;
+        .employee-container {
+            width: 100%;
             padding:1em;
             background-color:white;
             opacity:1;
@@ -185,8 +176,7 @@
 
         btn.onclick = function () {
             sidebar.classList.toggle('active');
-        }
-        
+        }        
     </script>
 
 
