@@ -75,10 +75,29 @@
 				color: black;
 				margin-left: 5px;
 			}
-			.drop {
-				border-left: 1px solid #bbc3c9;
-				margin-left: 10px;
+			.drop select{
+                border:none;
 			}
+
+            .GradeLevelDropdown{
+
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .GradeLevelDropdown select{
+
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+
+            }
 		}
 
 		.icon {
@@ -226,6 +245,8 @@
             color:#606360;
         }
 
+
+
     </style>
 </head>
 <body>
@@ -247,9 +268,11 @@
 
 						<div class="app-list-options">
 							<div class="sort-dropdown" style="margin-right:20px;"> By <span class="by"> Grade Level </span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-								<div class="drop"> <i class="fa fa-caret-down" aria-hidden="true"></i> </div>
-							</div>
+                            <div class="drop"> <i class="fa fa-caret-down" aria-hidden="true"></i> </div>
 
+                            
+                            </div>
+                            
                             <div class="sort-dropdown" style="margin-right:20px;"> By <span class="by"> Section </span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
 								<div class="drop"> <i class="fa fa-caret-down" aria-hidden="true"></i> </div>
 							</div>
@@ -260,8 +283,8 @@
                             <div class="sort-dropdown" style="margin-right:20px;"> Date <span class="by"> To </span> <i class="fa fa-calendar" aria-hidden="true"></i>
 							</div>
 
-                            <div class="sort-dropdown" style="background-color:#5C5EB3; margin-right:20px; color:white;"> Apply Filter
-							</div>
+                            <button class="sort-dropdown" style="background-color:#5C5EB3; margin-right:20px; color:white;"> Apply Filter
+                            </button>
 							
 						</div>
 
@@ -279,14 +302,15 @@
                 <table style = "width: 100%;" class="attendance-type">
                     <thead>
                         <tr>
-                            <th colspan="3"></th>
+                            <th colspan="4"></th>
                             <th colspan="2">Morning Attendance</th>
                             <th colspan="2">Afternoon Attendance</th>
                             <th colspan="2">Evening Attendance</th>
                         </tr>
                         <tr>
                             <th>Student Name</th>
-                            <th>Role</th>
+                            <th>Grade & Section</th>
+                            <th>Section</th>
                             <th>Date</th>
                             <th>In</th>
                             <th>Out</th>
@@ -299,7 +323,8 @@
                     <tbody>
                         <tr>
                             <td>John Doe</td>
-                            <td>Teacher</td>
+                            <td>3</td>
+                            <td>Honesty</td>
                             <td>2024-01-30</td>
                             <td>09:00 AM</td>
                             <td>01:00 PM</td>
@@ -307,10 +332,12 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                   
                         </tr>
                         <tr>
                             <td>Miles Davis</td>
-                            <td>IT </td>
+                            <td>2</td>
+                            <td>Orange</td>
                             <td>2024-01-30</td>
                             <td>09:00 AM</td>
                             <td>01:00 PM</td>
@@ -318,6 +345,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                      
                         </tr>
                     </tbody>
                 </table>
@@ -354,6 +382,25 @@
             });
         }
 
+    </script>
+
+    <script>
+    function myFunction() {
+    document.getElementById("displayGradeLevel").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("GradeLevelDropdown");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+        }
+        }
+    }
+    }
     </script>
 
 
