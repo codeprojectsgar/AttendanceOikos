@@ -146,7 +146,8 @@
                     <div class="std-filter-container">
                         <div class="search-table-container">
                             <div class="std-search-container">
-                                <input type="text" id="search" size="30" placeholder="Search...">
+                                <button id="search-icon" class="search-btn"></button>
+                                <input type="text" id="search" size="30" placeholder="Search..." oninput="applyFilter()">
                             </div>
                         </div>
                     </div>
@@ -365,89 +366,48 @@
                 <div class="form-group-select">
                         <label for="grade-level" style="margin-top: 1em;">Grade Level</label>
                         <select id="grade-level" class="select-input">
-                        <option value="null">
-                            ---
-                        </option>
-                        <option value="1">
+                        <option value="Grade 1">
                             Grade 1
                         </option>
-                        <option value="2">
+                        <option value="Grade 2">
                             Grade 2
                         </option>
-                        <option value="3">
+                        <option value="Grade 3">
                             Grade 3
                         </option>
-                        <option value="4">
+                        <option value="Grade 4">
                             Grade 4
                         </option>
-                        <option value="5">
+                        <option value="Grade 5">
                             Grade 5
                         </option>
-                        <option value="6">
+                        <option value="Grade 6">
                             Grade 6
                         </option>
-                        <option value="7">
+                        <option value="Grade 7">
                             Grade 7
                         </option>
-                        <option value="8">
+                        <option value="Grade 8">
                             Grade 8
                         </option>
-                        <option value="9">
+                        <option value="Grade 9">
                             Grade 9
                         </option>
-                        <option value="10">
+                        <option value="Grade 10">
                             Grade 10
                         </option>
-                        <option value="11">
+                        <option value="Grade 11">
                             Grade 11
                         </option>
-                        <option value="12">
+                        <option value="Grade 12">
                             Grade 12
                         </option>
                     </select>
                     <label for="section" style="margin-top: 1em;">Section</label>
                     <select id="section" class="select-input">
-                        <option value="null">
-                            ---
-                        </option>
-                        <option class = "_1" value="Luke" hidden>
-                            Luke
-                        </option>
-                        <option class = "_1" value="Tyrone" hidden>
-                            Tyrone
-                        </option>
-                        <option class = "_1" value="Adrian" hidden>
-                            Adrian
-                        </option>
-                        <option class = "_1" value="Fuack" hidden>
-                            Fuack
-                        </option>
-                        <option class = "_2" value="Eyo" hidden>
-                            Eyo
-                        </option>
-                        <option class = "_2" value="Leggo" hidden>
-                            Leggo
-                        </option>
-                        <option class = "_2" value="Bruh" hidden>
-                            Bruh
-                        </option>
-                        <option class = "_2" value="Cap" hidden>
-                            Cap
-                        </option>
-                        <option class = "_3" value="Placeholder" hidden>
-                            Placeholder
-                        </option>
-                        <option class = "_3" value="Masipag" hidden>
-                            Masipag
-                        </option>
-                        <option class = "_3" value="Matatag" hidden>
-                            Matatag
-                        </option>
-                        <option class = "_3" value="Blood" hidden>
-                            Blood
-                        </option>
                     </select>
                 </div>
+                
                 <br><br>
                 <div class="submit-group">
                     <button class="btn-submit">Add</button>
@@ -457,43 +417,51 @@
         </div>
     </div>
     <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var tableBody = document.getElementById('logTableBody');
-                var rows = tableBody.getElementsByTagName('tr');
-                for (var i = 0; i < rows.length; i++) {
-                    var statusCell = rows[i].querySelector('td:nth-child(7)');
-                    if (statusCell.textContent.toLowerCase() === 'pending') {
-                        statusCell.style.color = 'Orange';
-                    } else if (statusCell.textContent.toLowerCase() === 'enrolled') {
-                        statusCell.style.color = 'green';
-                    } else {
-                        statusCell.style.color = '';
-                    }
-                }
-                const searchIcon = document.getElementById('search-icon');
-
-            searchIcon.addEventListener('click', function () {
-                applyFilter(); 
-            }); 
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add an event listener to the search input field
+            var searchInput = document.getElementById('search');
+            searchInput.addEventListener('input', function () {
+                applyFilter(); // Call the function to apply search filter
             });
-            function applyFilter() {
-                var searchValue = document.getElementById('search').value.toLowerCase();
-                var tableBody = document.getElementById('logTableBody');
-                var rows = tableBody.getElementsByTagName('tr');
-        
-                for (var i = 0; i < rows.length; i++) {
-                    var searchCell = rows[i].textContent.toLowerCase();
-        
-                    if (searchValue === '' || searchCell.includes(searchValue)) {
-                        rows[i].style.display = '';
-                    } else {
-                        rows[i].style.display = 'none';
-                    }
+        });
+        setRowColors();
+
+        function applyFilter() {
+            var searchValue = document.getElementById('search').value.toLowerCase();
+            var tableBody = document.getElementById('logTableBody');
+            var rows = tableBody.getElementsByTagName('tr');
+
+            for (var i = 0; i < rows.length; i++) {
+                var rowText = rows[i].textContent.toLowerCase();
+                if (searchValue === '' || rowText.includes(searchValue)) {
+                    rows[i].style.display = ''; 
+                } else {
+                    rows[i].style.display = 'none';
                 }
             }
+        }
+        function setRowColors() {
+    var tableBody = document.getElementById('logTableBody');
+    var rows = tableBody.getElementsByTagName('tr');
+
+    for (var i = 0; i < rows.length; i++) {
+        var statusCell = rows[i].querySelector('td:nth-child(7)');
+        var statusText = statusCell.textContent.trim().toLowerCase();
+
+        // Set color based on status
+        if (statusText === 'pending') {
+            statusCell.style.color = 'orange'; // Set color to orange for pending
+        } else if (statusText === 'enrolled') {
+            statusCell.style.color = 'green'; // Set color to green for enrolled
+        } else {
+            statusCell.style.color = ''; // Reset color if neither pending nor enrolled
+        }
+    }
+}
+            
+
             let sortDirectionID = 1;
             let sortDirectionName = 1;
-             
             let sortDirectionDate = 1;
             let sortDirectionLevel = 1; 
             let sortDirectionSection = 1; 
@@ -678,36 +646,17 @@
         let closeModal=document.querySelector('.far');
         let textArea=document.querySelector('textarea');
         let select=document.querySelector('select');
-        let gradeElement=document.getElementById('grade-level');
         btn.onclick = function () {
             sidebar.classList.toggle('active');
         }
         toggleModal.onclick=()=>{
             showModal.classList.remove('hidden');
-            select.value = "null";
         }
         closeModal.onclick=()=>{
             showModal.classList.toggle('hidden');
-            select.value="null";
+            select.value="Certificate of Good Moral Character";
+            textArea.value="";
         }
-        gradeElement.addEventListener('change', ()=>{
-            let sectionSelector = '._' + gradeElement.value;
-            let previousSelected = document.querySelectorAll('.show');
-            let sections = document.querySelectorAll(sectionSelector);
-            if (!previousSelected) {
-                return;
-            }
-            else{
-                previousSelected.forEach(prev => {
-                    prev.hidden = true;
-                    prev.classList.remove('show');
-                });
-            }
-            sections.forEach(section=>{
-                section.hidden = false;
-                section.classList.toggle('show');
-            });
-        });
     </script>
 </body>
 </html>
