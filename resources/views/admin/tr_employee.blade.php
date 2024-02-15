@@ -127,7 +127,7 @@ margin: 20px;
 
 }
 
-.section-content .student-group{
+.section-content .employee-group{
     display:flex;
     flex-direction:column;
     margin-top:2em;
@@ -136,7 +136,7 @@ margin: 20px;
     width:100%;
 }
 
-.student-group .table-header{
+.employee-group .table-header{
     display:flex;
     justify-content: space-between;
 }
@@ -287,7 +287,7 @@ margin: 20px;
 
     <section class="section-content">
 
-<div class="student-group">
+<div class="employee-group">
     <div class="table-header">
     </div>
     <div class="log-body">
