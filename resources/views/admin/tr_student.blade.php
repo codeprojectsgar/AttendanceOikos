@@ -37,7 +37,7 @@
 					background-color: #ffffff;
                     border: 1px solid #bbc3c9;
 					border-radius: 5px;
-					width: 30%;
+					width: 25%;
 
                 }
 					
@@ -69,9 +69,9 @@
             display: flex;
             background-color: #ffffff;
 			border-radius: 5px;
-			padding: 12px;
+			padding: 10px;
 			color: black;
-			font-size: .80em;
+			font-size: .75em;
 			font-weight: 600;
             width: 500%;
             margin-right:5px;
@@ -85,7 +85,7 @@
 
         width: 100%;
         border: none;
-        font-size: 1.15rem;
+        font-size: 1rem;
         background-color: #fff;
         color: #000;
         }
@@ -106,7 +106,7 @@
         .filter{
 
             display:flex;
-            padding:12px;
+            padding:10px;
             background-color:#5C5EB3;
             font-size:1em;
 			font-weight:600;
@@ -249,9 +249,7 @@
 
                         <div class="app-list-options">
 
-                        
-
-                        <div class="custom-select">
+                        <div class="custom-select" style="padding:14px;">
                        
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
 
@@ -267,7 +265,7 @@
                     
                         </div>
 
-                        <div class="custom-select">
+                        <div class="custom-select" style="padding:14px;">
 
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
 
@@ -281,13 +279,13 @@
 
                         <div class="custom-select">
 
-                        Date From <input type="date">
+                        <span style="margin-right:5px;"> Date <br> From </span> <input type="date">
 
                         </div>
 
-                        <div class="custom-select">
+                        <div class="custom-select" style="margin-right:20px;">
 
-                        Date To <input type="date">
+                        <span style="margin-right:5px;"> Date <br> From </span> <input type="date">
 
                         </div>
 
