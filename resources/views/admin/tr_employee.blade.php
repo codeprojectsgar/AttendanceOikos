@@ -12,224 +12,224 @@
     <title>Oikos Admin: Employee Time Record</title>
     <style>
 
-        .time-record,
-        .tr-label {
-            display: inline;
+.time-record,
+.tr-label {
+    display: inline;
+}
+
+.section-header {
+    margin: 20px;
+    background-color: #323468;
+    border-radius: 5px;
+    height: 100px;
+
+    header {
+        padding-top: 25px;
+        margin: 20px;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    header .searchbox {
+            display: flex;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid #bbc3c9;
+            border-radius: 5px;
+            width: 25%;
+
         }
-
-        .section-header {
-			margin: 20px;
-			background-color: #323468;
-			border-radius: 5px;
-			height: 100px;
-
-			header {
-                padding-top: 25px;
-				margin: 20px;
-				display: flex;
-				justify-content: space-between;
-
+            
+    .searchbox .icon {
+                color: #bbc3c9;
+                margin: 0 5px;
             }
 
-            header .searchbox {
-					display: flex;
-					padding: 10px;
-					background-color: #ffffff;
-                    border: 1px solid #bbc3c9;
-					border-radius: 5px;
-					width: 30%;
-
-                }
-					
-            .searchbox .icon {
-						color: #bbc3c9;
-						margin: 0 5px;
-					}
-
-					input.search-text {
-                        border: none;
-						background-color: inherit;
-						font-size: 1em;
-						font-weight: 600;
-						outline: none;						
-					}
-				
-			
-		}
-	
-.section-header {
-	header .app-list-options {
-		display: flex;
-		justify-items: center;
-		align-items: center;
-
-        }
-
-        .custom-select {
-            display: flex;
-            background-color: #ffffff;
-			border-radius: 5px;
-			padding: 12px;
-			color: black;
-			font-size: .80em;
-			font-weight: 600;
-            width: 500%;
-            margin-right:5px;
-        }
-
-
-
-        .custom-select select{
-        appearance: none;
-        -webkit-appearance: none;
-
-        width: 100%;
-        border: none;
-        font-size: 1.15rem;
-        background-color: #fff;
-        color: #000;
-        }
-
+            input.search-text {
+                border: none;
+                background-color: inherit;
+                font-size: 1em;
+                font-weight: 600;
+                outline: none;						
+            }
         
-        .custom-select i{
-        font-size:20px;
-        }
+    
+}
 
-		.display-group {
-			display: flex;
-			.icon {
-				margin-right:0;
-				margin-left: 0;
-			}
-		}
+.section-header {
+header .app-list-options {
+display: flex;
+justify-items: center;
+align-items: center;
 
-        .filter{
+}
 
-            display:flex;
-            padding:12px;
-            background-color:#5C5EB3;
-            font-size:1em;
-			font-weight:600;
-            margin-right:20px;
-            color:white;
-            border:none;
+.custom-select {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+    font-size: .75em;
+    font-weight: 600;
+    width: 500%;
+    margin-right:5px;
+}
 
-        }
-	}
+
+
+.custom-select select{
+appearance: none;
+-webkit-appearance: none;
+
+width: 100%;
+border: none;
+font-size: 1rem;
+background-color: #fff;
+color: #000;
+}
+
+
+.custom-select i{
+font-size:20px;
+}
+
+.display-group {
+    display: flex;
+    .icon {
+        margin-right:0;
+        margin-left: 0;
+    }
+}
+
+.filter{
+
+    display:flex;
+    padding:10px;
+    background-color:#5C5EB3;
+    font-size:1em;
+    font-weight:600;
+    margin-right:20px;
+    color:white;
+    border:none;
+
+}
+}
 
 
 .section-content{
 
-    margin: 20px;
-			background-color: #ffffff;
-			border-radius: 5px;
-			height: 500px;
+margin: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    height: 500px;
 
 }
 
 .section-content .student-group{
-            display:flex;
-            flex-direction:column;
-            margin-top:2em;
-            padding:1em;
-            background-color:white;
-            width:100%;
-        }
+    display:flex;
+    flex-direction:column;
+    margin-top:2em;
+    padding:1em;
+    background-color:white;
+    width:100%;
+}
 
-        .student-group .table-header{
-            display:flex;
-            justify-content: space-between;
-        }
-        .table-header .field-group{
-            display:flex;
-            justify-content: space-between;
-            padding:.3em;
-            width:15%;
-            border-radius:10px;
-            border:1px solid black;
-        }
-        .table-header .field-group{
-            display:flex;
-            justify-content: space-between;
-            width:15%;
-            border-radius:10px;
-            border:1px solid black;
-            transition:border 150ms ease-in-out;
-        }
-        .table-header .field-group input{
-            border:none;
-            width:90%;
-        }
-        .table-header .field-group input:focus{
-            outline:none;
-        } 
-        #count{
-            height:30px;
-            width:30px;
-            font-weight:lighter;
-            font-size:1rem;
-            color:white;
-            display:flex;
-            align-items:center;
-            justify-content: center;
-            border-radius:50%;
-            background-color:#ff3131;
-        }
-        .attendance-type {
-            padding: 10px;
-        }
+.student-group .table-header{
+    display:flex;
+    justify-content: space-between;
+}
+.table-header .field-group{
+    display:flex;
+    justify-content: space-between;
+    padding:.3em;
+    width:15%;
+    border-radius:10px;
+    border:1px solid black;
+}
+.table-header .field-group{
+    display:flex;
+    justify-content: space-between;
+    width:15%;
+    border-radius:10px;
+    border:1px solid black;
+    transition:border 150ms ease-in-out;
+}
+.table-header .field-group input{
+    border:none;
+    width:90%;
+}
+.table-header .field-group input:focus{
+    outline:none;
+} 
+#count{
+    height:30px;
+    width:30px;
+    font-weight:lighter;
+    font-size:1rem;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border-radius:50%;
+    background-color:#ff3131;
+}
+.attendance-type {
+    padding: 10px;
+}
 
-        .attendance-type th,
-        .attendance-type td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: center;
-        }
+.attendance-type th,
+.attendance-type td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
 
-        .attendance-type th {
-            background-color: #323468;
-            color: #fff;
-        }
+.attendance-type th {
+    background-color: #323468;
+    color: #fff;
+}
 
-        .attendance-type tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+.attendance-type tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
 
-        .attendance-type tr:hover {
-            background-color: #f1f1f1;
-        }
-        .fc{
-            width:100%;
-            height:50em;
-        }
-        .list{
-            margin-top:1em;
-            display:flex;
-            flex-direction:column;
-        }
-        .list .data{
-            display:flex;
-            justify-content:flex-start;
-            align-items: center;
-            margin-top:.5em;
-        }
-        .list .data .point{
-            height:.8em;
-            width:.8em;
-            border-radius:50%;
-        }
-        .list .data .date{
-            margin-left:.5em;
-        }
-        .list .data .date{
-            margin-left:.5em;
-        }
-        .list .data .event{
-            margin-left:5em;
-            color:#606360;
-        }
+.attendance-type tr:hover {
+    background-color: #f1f1f1;
+}
+.fc{
+    width:100%;
+    height:50em;
+}
+.list{
+    margin-top:1em;
+    display:flex;
+    flex-direction:column;
+}
+.list .data{
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    margin-top:.5em;
+}
+.list .data .point{
+    height:.8em;
+    width:.8em;
+    border-radius:50%;
+}
+.list .data .date{
+    margin-left:.5em;
+}
+.list .data .date{
+    margin-left:.5em;
+}
+.list .data .event{
+    margin-left:5em;
+    color:#606360;
+}
 
-    </style>
+</style>
 </head>
 <body>
     @include('component.admin.sidenav')
@@ -242,30 +242,47 @@
 
         <section class="section-header">
 
-        <header>
+            <header>
 
-        <div class="searchbox">
-							<input type="text" name="search" placeholder="Name of Employee" class="search-text"> </input>
-						</div>
+                <div class="searchbox">
+                    <input type="text" id="nameFilter" name="search" placeholder="Name of Employee" class="search-text"> 
+                </div>
 
-                        <div class="app-list-options">
-							<div class="sort-dropdown" style="margin-right:20px;"> By <span class="by"> Role </span> <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
-                            <div class="drop"> <i class="fa fa-caret-down" aria-hidden="true"></i> </div>
-                            </div>
+                <div class="app-list-options">
 
-                            <div class="sort-dropdown" style="margin-right:20px;"> Date <span class="by"> From </span> <i class="fa fa-calendar" aria-hidden="true"></i>
-							</div>
+                <div class="custom-select" style="padding:14px;">
 
-                            <div class="sort-dropdown" style="margin-right:20px;"> Date <span class="by"> To </span> <i class="fa fa-calendar" aria-hidden="true"></i>
-							</div>
+                <i class="fa fa-caret-down" aria-hidden="true"></i>
 
-                            <button class="sort-dropdown" style="background-color:#5C5EB3; margin-right:20px; color:white;"> Apply Filter
-                            </button>
-							
-						</div>
+                <select style="margin-left:5px;" id="roleFilter">
+                <option value="">Filter by Role</option>
+                <option value="IT">IT</option>
+                <option value="Teacher">Teacher</option>
 
 
-    </header>
+
+                </select>
+
+
+                </div>
+
+                <div class="custom-select">
+
+                <span style="margin-right:5px;"> Date <br> From </span> <input type="date">
+
+                </div>
+
+                <div class="custom-select" style="margin-right:20px;">
+
+                <span style="margin-right:5px;"> Date <br> To </span> <input type="date">
+
+                </div>
+
+                    <button onclick="applyFilter()" class="filter"> Apply Filter </button>
+                    
+                </div>
+
+                </header>
     </section>
 
     <section class="section-content">
@@ -399,6 +416,29 @@
         }
 
     </script>
+
+<script>
+    function applyFilter() {
+        var role = document.getElementById("roleFilter").value;
+        var name = document.getElementById("nameFilter").value.toLowerCase();
+        
+        var table = document.getElementById("dataTable");
+        var rows = table.getElementsByTagName("tr");
+        
+        for (var i = 2; i < rows.length; i++) {
+            var row = rows[i];
+            var nameCell = row.getElementsByTagName("td")[0].innerText.toLowerCase();
+            var roleCell = row.getElementsByTagName("td")[1];
+            
+            if ((role === "" || roleCell.innerHTML === role) &&
+                (name === "" || nameCell.includes(name))) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        }
+    }
+</script>
 
 
 </body>
