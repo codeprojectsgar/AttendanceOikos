@@ -200,7 +200,7 @@
                         <i class="fas fa-folder" style="background-color:#ffbd59; font-size:1.3rem; padding:1rem; color:white;border-radius:50%"></i>
                         <div class="labels">
                             10 Documents
-                            <a href="/admin/Employee_Masterlist">View Details</a>
+                            <a href="/admin/Document_Request">View Details</a>
                         </div>
                     </div>
                     <div class="right-hand">
