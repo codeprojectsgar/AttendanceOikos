@@ -139,7 +139,6 @@
                 </div>
             </div>
 
-
         <div class="eml-modal-mask hidden">
             <div class="eml-form-container">
                 <div class="eml-details">
