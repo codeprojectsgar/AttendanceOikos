@@ -257,44 +257,52 @@
         </div>
     </div>
     <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var tableBody = document.getElementById('logTableBody');
-                var rows = tableBody.getElementsByTagName('tr');
-                for (var i = 0; i < rows.length; i++) {
-                    var statusCell = rows[i].querySelector('td:nth-child(7)');
-                    if (statusCell.textContent.toLowerCase() === 'pending') {
-                        statusCell.style.color = 'Orange';
-                    } else if (statusCell.textContent.toLowerCase() === 'enrolled') {
-                        statusCell.style.color = 'green';
-                    } else {
-                        statusCell.style.color = '';
-                    }
-                }
-                const searchIcon = document.getElementById('search-icon');
-            searchIcon.addEventListener('click', function () {
-                applyFilter(); 
-            }); 
+        document.addEventListener('DOMContentLoaded', function () {
+        var tableBody = document.getElementById('logTableBody');
+        var rows = tableBody.getElementsByTagName('tr');
+        for (var i = 0; i < rows.length; i++) {
+            var statusCell = rows[i].querySelector('td:nth-child(7)');
+            if (statusCell.textContent.toLowerCase() === 'pending') {
+                statusCell.style.color = 'Orange';
+            } else if (statusCell.textContent.toLowerCase() === 'enrolled') {
+                statusCell.style.color = 'green';
+            } else {
+                statusCell.style.color = '';
+            }
+        }
+
+        const searchIcon = document.getElementById('search-icon');
+        searchIcon.addEventListener('click', function () {
+            applyFilter();
+        });
+        });
+
         document.addEventListener('DOMContentLoaded', function () {
             // Add an event listener to the search input field
             var searchInput = document.getElementById('search');
             searchInput.addEventListener('input', function () {
                 applyFilter(); // Call the function to apply search filter
             });
+
             function applyFilter() {
                 var searchValue = document.getElementById('search').value.toLowerCase();
                 var tableBody = document.getElementById('logTableBody');
                 var rows = tableBody.getElementsByTagName('tr');
-        
+
                 for (var i = 0; i < rows.length; i++) {
                     var searchCell = rows[i].textContent.toLowerCase();
-        
+
                     if (searchValue === '' || searchCell.includes(searchValue)) {
                         rows[i].style.display = '';
                     } else {
                         rows[i].style.display = 'none';
                     }
+                }
+            }
         });
+
         setRowColors();
+
         function applyFilter() {
             var searchValue = document.getElementById('search').value.toLowerCase();
             var tableBody = document.getElementById('logTableBody');
@@ -302,66 +310,72 @@
             for (var i = 0; i < rows.length; i++) {
                 var rowText = rows[i].textContent.toLowerCase();
                 if (searchValue === '' || rowText.includes(searchValue)) {
-                    rows[i].style.display = ''; 
+                    rows[i].style.display = '';
                 } else {
                     rows[i].style.display = 'none';
                 }
             }
         }
+
         function setRowColors() {
-    var tableBody = document.getElementById('logTableBody');
-    var rows = tableBody.getElementsByTagName('tr');
-    for (var i = 0; i < rows.length; i++) {
-        var statusCell = rows[i].querySelector('td:nth-child(7)');
-        var statusText = statusCell.textContent.trim().toLowerCase();
-        // Set color based on status
-        if (statusText === 'pending') {
-            statusCell.style.color = 'orange'; // Set color to orange for pending
-        } else if (statusText === 'enrolled') {
-            statusCell.style.color = 'green'; // Set color to green for enrolled
-        } else {
-            statusCell.style.color = ''; // Reset color if neither pending nor enrolled
+            var tableBody = document.getElementById('logTableBody');
+            var rows = tableBody.getElementsByTagName('tr');
+            for (var i = 0; i < rows.length; i++) {
+                var statusCell = rows[i].querySelector('td:nth-child(7)');
+                var statusText = statusCell.textContent.trim().toLowerCase();
+                // Set color based on status
+                if (statusText === 'pending') {
+                    statusCell.style.color = 'orange'; // Set color to orange for pending
+                } else if (statusText === 'enrolled') {
+                    statusCell.style.color = 'green'; // Set color to green for enrolled
+                } else {
+                    statusCell.style.color = ''; // Reset color if neither pending nor enrolled
+                }
+            }
         }
-    }
-}
-            
+
         let sortDirectionID = 1;
         let sortDirectionName = 1;
         let sortDirectionDate = 1;
-        let sortDirectionLevel = 1; 
-        let sortDirectionSection = 1; 
+        let sortDirectionLevel = 1;
+        let sortDirectionSection = 1;
+
         function extractNumericValue(level) {
-        let closeModal=document.querySelector('.far');
-        let textArea=document.querySelector('textarea');
-        let select=document.querySelector('select');
-        let gradeElement=document.getElementById('grade-level');
+            let closeModal = document.querySelector('.far');
+            let textArea = document.querySelector('textarea');
+            let select = document.querySelector('select');
+            let gradeElement = document.getElementById('grade-level');
+        }
+
         btn.onclick = function () {
             sidebar.classList.toggle('active');
-        }
-        toggleModal.onclick=()=>{
+        };
+
+        toggleModal.onclick = () => {
             showModal.classList.remove('hidden');
             select.value = "null";
-        }
-        closeModal.onclick=()=>{
+        };
+
+        closeModal.onclick = () => {
             showModal.classList.toggle('hidden');
-            select.value="null";
-            select.value="Certificate of Good Moral Character";
-            textArea.value="";
-        }
-        gradeElement.addEventListener('change', ()=>{
+            select.value = "null";
+            select.value = "Certificate of Good Moral Character";
+            textArea.value = "";
+        };
+
+        gradeElement.addEventListener('change', () => {
             let sectionSelector = '._' + gradeElement.value;
             let previousSelected = document.querySelectorAll('.show');
             let sections = document.querySelectorAll(sectionSelector);
             if (!previousSelected) {
                 return;
-            }
-            else{
+            } else {
                 previousSelected.forEach(prev => {
                     prev.hidden = true;
                     prev.classList.remove('show');
                 });
             }
-            sections.forEach(section=>{
+            sections.forEach(section => {
                 section.hidden = false;
                 section.classList.toggle('show');
             });
