@@ -80,7 +80,7 @@
                 <div class="poster-info">
                     <i class="fas fa-user-circle"></i>
                     <h3 style = "margin-left: 1em;">Amalee</h3>
-                    <h4 style = "margin-left: 72em; font-weight: 400;">19/01/2023</h4>
+                    <h4 style = "margin-left: 62em; font-weight: 400;">19/01/2023</h4>
                 </div>
                 <textarea cols="30" rows="30" readonly>🌟 Welcoming the Bright Stars to Oikos Technologies! 🌟
 

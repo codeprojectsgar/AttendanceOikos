@@ -57,14 +57,6 @@
             <span class="tooltip">Time Record</span>
         </li>
         <li>
-            <a href = "/admin/Privileges">
-                <i class="fa-sharp fa-solid fa-user-check"></i>
-                <span class="nav-item" style="height:50px;">Privileges</span>
-            </a>
-            <span class="tooltip">Privileges</span>
-        </li>
-
-        <li>
             <a href = "/admin/Student_Masterlist">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <span class="nav-item" style="height:50px;">Student Masterlist</span>

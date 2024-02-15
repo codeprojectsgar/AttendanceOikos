@@ -366,48 +366,89 @@
                 <div class="form-group-select">
                         <label for="grade-level" style="margin-top: 1em;">Grade Level</label>
                         <select id="grade-level" class="select-input">
-                        <option value="Grade 1">
+                        <option value="null">
+                            ---
+                        </option>
+                        <option value="1">
                             Grade 1
                         </option>
-                        <option value="Grade 2">
+                        <option value="2">
                             Grade 2
                         </option>
-                        <option value="Grade 3">
+                        <option value="3">
                             Grade 3
                         </option>
-                        <option value="Grade 4">
+                        <option value="4">
                             Grade 4
                         </option>
-                        <option value="Grade 5">
+                        <option value="5">
                             Grade 5
                         </option>
-                        <option value="Grade 6">
+                        <option value="6">
                             Grade 6
                         </option>
-                        <option value="Grade 7">
+                        <option value="7">
                             Grade 7
                         </option>
-                        <option value="Grade 8">
+                        <option value="8">
                             Grade 8
                         </option>
-                        <option value="Grade 9">
+                        <option value="9">
                             Grade 9
                         </option>
-                        <option value="Grade 10">
+                        <option value="10">
                             Grade 10
                         </option>
-                        <option value="Grade 11">
+                        <option value="11">
                             Grade 11
                         </option>
-                        <option value="Grade 12">
+                        <option value="12">
                             Grade 12
                         </option>
                     </select>
                     <label for="section" style="margin-top: 1em;">Section</label>
                     <select id="section" class="select-input">
+                        <option value="null">
+                            ---
+                        </option>
+                        <option class = "_1" value="Luke" hidden>
+                            Luke
+                        </option>
+                        <option class = "_1" value="Tyrone" hidden>
+                            Tyrone
+                        </option>
+                        <option class = "_1" value="Adrian" hidden>
+                            Adrian
+                        </option>
+                        <option class = "_1" value="Fuack" hidden>
+                            Fuack
+                        </option>
+                        <option class = "_2" value="Eyo" hidden>
+                            Eyo
+                        </option>
+                        <option class = "_2" value="Leggo" hidden>
+                            Leggo
+                        </option>
+                        <option class = "_2" value="Bruh" hidden>
+                            Bruh
+                        </option>
+                        <option class = "_2" value="Cap" hidden>
+                            Cap
+                        </option>
+                        <option class = "_3" value="Placeholder" hidden>
+                            Placeholder
+                        </option>
+                        <option class = "_3" value="Masipag" hidden>
+                            Masipag
+                        </option>
+                        <option class = "_3" value="Matatag" hidden>
+                            Matatag
+                        </option>
+                        <option class = "_3" value="Blood" hidden>
+                            Blood
+                        </option>
                     </select>
                 </div>
-                
                 <br><br>
                 <div class="submit-group">
                     <button class="btn-submit">Add</button>
@@ -435,7 +476,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             searchIcon.addEventListener('click', function () {
                 applyFilter(); 
-            });
+            }); 
             });
             function applyFilter() {
                 var searchValue = document.getElementById('search').value.toLowerCase();
@@ -666,17 +707,36 @@ function applyFilter() {
         let closeModal=document.querySelector('.far');
         let textArea=document.querySelector('textarea');
         let select=document.querySelector('select');
+        let gradeElement=document.getElementById('grade-level');
         btn.onclick = function () {
             sidebar.classList.toggle('active');
         }
         toggleModal.onclick=()=>{
             showModal.classList.remove('hidden');
+            select.value = "null";
         }
         closeModal.onclick=()=>{
             showModal.classList.toggle('hidden');
-            select.value="Certificate of Good Moral Character";
-            textArea.value="";
+            select.value="null";
         }
+        gradeElement.addEventListener('change', ()=>{
+            let sectionSelector = '._' + gradeElement.value;
+            let previousSelected = document.querySelectorAll('.show');
+            let sections = document.querySelectorAll(sectionSelector);
+            if (!previousSelected) {
+                return;
+            }
+            else{
+                previousSelected.forEach(prev => {
+                    prev.hidden = true;
+                    prev.classList.remove('show');
+                });
+            }
+            sections.forEach(section=>{
+                section.hidden = false;
+                section.classList.toggle('show');
+            });
+        });
     </script>
 </body>
 </html>

@@ -11,50 +11,13 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Oikos Admin: Employee Time Record</title>
     <style>
+
         .time-record,
         .tr-label {
-            display: inline-block;
-        }
-        .Emp-From{
-            display: inline-block;
-            
-        }
-        .Emp-To{
-            display: inline-block;
-            padding: 1em;
-            padding-left: 270px;
-           
-        }
-        .Emp-Role{
-            display: inline-block;
-            padding-left: 270px;
-            
-        }
-        .Emp-Name{
-            display: inline-block;
-            padding-left: 270px;
-            
-        }
-        .Date-Field-From{
-            display: inline;
-            
-            
-        }
-        .Date-Field-To{
-            display: inline;
-            padding-left: 90px;
-           
-        }
-        .Date-Field-Role{
-            display: inline;
-            padding-left: 40px;
-            
-        }
-        .Date-Field-Name{
             display: inline;
         }
 
-            .section-header {
+        .section-header {
 			margin: 20px;
 			background-color: #323468;
 			border-radius: 5px;
@@ -74,7 +37,7 @@
 					background-color: #ffffff;
                     border: 1px solid #bbc3c9;
 					border-radius: 5px;
-					width: 25%;
+					width: 30%;
 
                 }
 					
@@ -90,8 +53,8 @@
 						font-weight: 600;
 						outline: none;						
 					}
-
-                    
+				
+			
 		}
 	
 .section-header {
@@ -100,67 +63,37 @@
 		justify-items: center;
 		align-items: center;
 
-		.sort-dropdown {
-			display: flex;
+        }
+
+        .custom-select {
+            display: flex;
             background-color: #ffffff;
 			border-radius: 5px;
 			padding: 12px;
 			color: black;
-			font-size: 1em;
+			font-size: .80em;
 			font-weight: 600;
-			.by,
-			i {
-				color: black;
-				margin-left: 5px;
-			}
-			.drop select{
-                border:none;
-			}
+            width: 500%;
+            margin-right:5px;
+        }
 
-            .RoleDropdown{
 
-                display: none;
-                position: absolute;
-                background-color: #f1f1f1;
-                min-width: 160px;
-                overflow: auto;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-            }
 
-            .RoleDropdown select{
+        .custom-select select{
+        appearance: none;
+        -webkit-appearance: none;
 
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
+        width: 100%;
+        border: none;
+        font-size: 1.15rem;
+        background-color: #fff;
+        color: #000;
+        }
 
-            }
-		}
-
-		.icon {
-			margin: 0 10px;
-			padding: 10px;
-			border-radius: 5px;
-			box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
-			position: relative;
-			color:#bbc3c9;
-			
-			&:first-child {				
-				border-top-right-radius: 0;
-				border-bottom-right-radius: 0;
-			}
-			
-			&:last-child {				
-				border-top-left-radius: 0;
-				border-bottom-left-radius: 0;
-			}
-			
-			&.selected {
-				background-color: lighten(#565d68, 50%);
-				color: lighten(#565d68, 20%);
-			}
-		}
+        
+        .custom-select i{
+        font-size:20px;
+        }
 
 		.display-group {
 			display: flex;
@@ -169,8 +102,21 @@
 				margin-left: 0;
 			}
 		}
+
+        .filter{
+
+            display:flex;
+            padding:12px;
+            background-color:#5C5EB3;
+            font-size:1em;
+			font-weight:600;
+            margin-right:20px;
+            color:white;
+            border:none;
+
+        }
 	}
-}
+
 
 .section-content{
 
@@ -181,7 +127,7 @@
 
 }
 
-.section-content .employee-group{
+.section-content .student-group{
             display:flex;
             flex-direction:column;
             margin-top:2em;
@@ -190,7 +136,7 @@
             width:100%;
         }
 
-        .employee-group .table-header{
+        .student-group .table-header{
             display:flex;
             justify-content: space-between;
         }
@@ -283,171 +229,6 @@
             color:#606360;
         }
 
-            padding-left: 40px;
-           
-        }
-        .Role-Form{
-            display: inline;
-            padding-left: 40px;
-            
-        }
-        .Name-Form{
-            display: inline;
-            height: 40px;
-            padding-left: 40px;
-            padding-right: 70px;
-        }
-        .Apply-Filter{
-            display: inline;
-            box-sizing: border-box; width: 220px; height: 40px;
-            border-radius: 3px;
-            padding: 10px 20px;
-            font-size: 15px;
-            color: white;
-            background-color: #51558F;
-            box-shadow: none;
-        }
-
-        .container{
-            align-content: center;
-            width: 1600px; 
-            margin: 50px auto;
-            background-color: white;
-            padding: 10px 20px;
-            padding-bottom: 35px;
-            border-radius: 8px;
-        }
-        .Employment-logs-container{
-            align-content: center;
-            width: 1600px;
-            height: 600px; 
-            margin: 50px auto;
-            background-color: white;
-            padding: 10px 20px;
-            padding-bottom: 35px;
-            border-radius: 8px;
-        }
-        .Attendance-Container {
-            display: grid;
-            grid-template-columns: repeat(4, 360px);
-            gap: 0px;
-            max-width: 1500px;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            
-        }
-        .Attendance-Item {
-            font-size: 20px;
-            font-weight: bold;
-            border: 1px solid #ddd;
-            padding-top: 7%;
-            height: 70px; 
-            text-align: center;
-        }
-        .info-Container {
-            display: grid;
-            grid-template-columns: repeat(3, 34.3%);
-            gap: 0px; 
-            max-width: 350px; 
-            background-color: #fff;
-            border-radius: 8px;
-            height: 30px;
-        }
-        .info-Item {
-            font-size: 14px;
-            height: 70px;
-            font-weight: bold;
-            padding-top: 7%;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        .info-Item-2 {
-            font-size: 14px;
-            height: 70px;
-            padding-top: 7%; 
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        .Morning-Attendance {
-            display: grid;
-            grid-template-columns: repeat(2, 51.5%);
-            gap: 0px; 
-            max-width: 350px; 
-            background-color: #fff;
-            border-radius: 8px;
-            height: 30px;
-        }
-        .Morning-Item {
-            font-size: 14px;
-            height: 70px;
-            font-weight: bold;
-            padding-top: 7%;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        .Morning-Item-2 {
-            font-size: 14px;
-            height: 70px;
-            padding-top: 7%;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        .Afternoon-Attendance {
-            display: grid;
-            grid-template-columns: repeat(2, 51.5%);
-            gap: 0px; 
-            max-width: 350px; 
-            background-color: #fff;
-            border-radius: 8px;
-            height: 30px;
-        }
-        .Afternoon-Item {
-            font-size: 14px;
-            height: 70px;
-            font-weight: bold;
-            padding-top: 7%;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        .Afternoon-Item-2 {
-            font-size: 14px;
-            height: 70px;
-            padding-top: 7%;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        .Evening-Attendance {
-            display: grid;
-            grid-template-columns: repeat(2, 51.5%);
-            gap: 0px; 
-            max-width: 350px; 
-            background-color: #fff;
-            border-radius: 8px;
-            height: 30px;
-        }
-        .Evening-Item {
-            font-size: 14px;
-            height: 70px;
-            font-weight: bold;
-            padding-top: 7%;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        .Evening-Item-2 {
-            font-size: 14px;
-            height: 70px;
-            font-weight: bold;
-            padding-top: 7%;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        .PageNum{
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-        }
-        
     </style>
 </head>
 <body>
@@ -489,56 +270,99 @@
 
     <section class="section-content">
 
-<div class="employee-group">
+<div class="student-group">
     <div class="table-header">
-       
     </div>
     <div class="log-body">
-    <table style = "width: 100%;" class="attendance-type">
-        <thead>
-            <tr>
-                <th colspan="3"></th>
-                <th colspan="2">Morning Attendance</th>
-                <th colspan="2">Afternoon Attendance</th>
-                <th colspan="2">Evening Attendance</th>
-            </tr>
-            <tr>
-                <th>Student Name</th>
-                <th>Role</th>
-                <th>Date</th>
-                <th>In</th>
-                <th>Out</th>
-                <th>In</th>
-                <th>Out</th>
-                <th>In</th>
-                <th>Out</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>John Doe</td>
-                <td>Teacher</td>
-                <td>2024-01-30</td>
-                <td>09:00 AM</td>
-                <td>01:00 PM</td>
-                <td>06:00 PM</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>Miles Davis</td>
-                <td>IT</td>
-                <td>2024-01-30</td>
-                <td>09:00 AM</td>
-                <td>01:00 PM</td>
-                <td>06:00 PM</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    <table id="dataTable" style = "width:100%;" class="attendance-type">
+<thead>
+
+<tr>
+    <th colspan="3"></th>
+    <th colspan="2">Morning Attendance</th>
+    <th colspan="2">Afternoon Attendance</th>
+    <th colspan="2">Evening Attendance</th>
+</tr>
+
+
+<tr>
+
+<th>Name</th>
+<th>Role</th>
+<th>Date</th>
+<th>In</th>
+<th>Out</th>
+<th>In</th>
+<th>Out</th>
+<th>In</th>
+<th>Out</th>
+
+</tr>
+
+</thead>
+<tbody>
+<!-- Table rows will be dynamically generated -->
+<tr>
+
+<td>John Dwight</td>    
+<td>IT</td>    
+<td>2024-01-30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
+
+</tr>
+<tr>
+
+<td>Jane Doe</td>
+<td>IT</td>
+<td>2024-01-30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
+
+</tr>
+<tr>
+
+<td>Alice Wilde</td>
+<td>Teacher</td>
+<td>2024-01-30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
+
+</tr>
+<tr>
+
+<td>Bob Newby</td>
+<td>Teacher</td>
+<td>2024-01-30</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+
+
+
+</tr>
+<!-- Add more rows as needed -->
+</tbody>
+</table>
+
 </div>
 </div>
 
@@ -550,106 +374,7 @@
         </div>
 
        
-        <div class="container">  
-            <div class = "log-container">
-            <h5 class = "Emp-From"> From: </h5>  
-            <h5 class = "Emp-To"> To: </h5>
-            <h5 class = "Emp-Role"> Role: </h5>
-            <h5 class = "Emp-Name"> Name: </h5>
-            </div>
-                <div class = "Date-Field-From">
-                <input type = "date" style = "color: rgba(100, 100, 100, 0.700); text-decoration: none; height: 40px; width: 220px; font-size: 20px; "></input>
-                </div>
-                <div class = "Date-Field-To">
-                <input type = "date" style = "color: rgba(100, 100, 100, 0.700); text-decoration: none; height: 40px; width: 220px; font-size: 20px;"></input>
-                </div>
-        <div class = "Date-Field-Role">
-                <form class = "Role-Form">
-                    <select name = "Roles" style = "color: rgba(100, 100, 100, 0.700); text-decoration: none;width: 220px; height: 40px; border-radius: 3px; font-size: 20px;">
-                            <option value = "Teacher">Teacher</option>
-                            <option value = "IT">IT</option>
-                            <option value = "Staff">Staff</option>
-                    </select>
-            </form>
-        </div>
-        <div class = "Date-Field-Name">
-            <form class = "Name-Form">
-                   <input type ="text" name = "fname" placeholder="Amelia Watson" style = "width: 300px; height: 40px; border-radius: 3px; font-size: 20px; padding-left: 5px;">
-            </form>
-        </div>
-        <button class = "Apply-Filter">
-            Apply Filter
-        </button>
-    </div>
-    <div class = "Employment-logs-container" style = "padding:20px; font-size:40px;"><h4>Employee Logs</h4>
-    <div class="Attendance-Container">
-    <div class="Attendance-Item"></div>
-        <div class="Attendance-Item">Morning Attendance</div>
-        <div class="Attendance-Item">Afternoon Attendance</div>
-        <div class="Attendance-Item">Evening Attendance</div>
-        <div class="info-Container">
-        <div class="info-Item">Employee Name</div>
-        <div class="info-Item">Role</div>
-        <div class="info-Item">Date</div>
-        <div class="info-Item-2">Amelia Watson</div>
-        <div class="info-Item-2">Teacher</div>
-        <div class="info-Item-2">January 03, 2024</div>
-        <div class="info-Item-2"></div>
-        <div class="info-Item-2"></div>
-        <div class="info-Item-2">January 04, 2024</div>
-        <div class="info-Item-2"></div>
-        <div class="info-Item-2"></div>
-        <div class="info-Item-2">January 05, 2024</div>
         
-    </div>
-    <div class="Morning-Attendance">
-        <div class="Morning-Item">In</div>
-        <div class="Morning-Item">Out</div>
-        <div class="Morning-Item-2">7:44 am</div>
-        <div class="Morning-Item-2"></div>
-        <div class="Morning-Item-2">7:44 am</div>
-        <div class="Morning-Item-2"></div>
-        <div class="Morning-Item-2">7:44 am</div>
-        <div class="Morning-Item-2"></div>
-    </div>
-        
-    <div class="Afternoon-Attendance">
-        <div class="Afternoon-Item">In</div>
-        <div class="Afternoon-Item">Out</div>
-        <div class="Afternoon-Item-2"></div>
-        <div class="Afternoon-Item-2">5:00 pm</div>
-        <div class="Afternoon-Item-2"></div>
-        <div class="Afternoon-Item-2">5:00 pm</div>
-        <div class="Afternoon-Item-2"></div>
-        <div class="Afternoon-Item-2">5:00 pm</div>
-        
-    </div>
-    <div class="Evening-Attendance">
-        <div class="Evening-Item">In</div>
-        <div class="Evening-Item">Out</div>
-        <div class="Evening-Item-2"></div>
-        <div class="Evening-Item-2"></div>
-        <div class="Evening-Item-2"></div>
-        <div class="Evening-Item-2"></div>
-        <div class="Evening-Item-2"></div>
-        <div class="Evening-Item-2"></div>
-    </div>
-    
-    </div>
-    <div class ="PageNum">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        1> >>
-    </div>
     <script>
         let btn = document.querySelector('#btn');
         let sidebar = document.querySelector('.sidebar');
